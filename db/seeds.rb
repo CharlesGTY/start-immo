@@ -36,6 +36,7 @@ last_name = %w"Mottet Gotty Ceron Meyer"
     email: email[i],
     first_name: first_name[i],
     last_name: last_name[i],
+    password: "123456"
     phone_number: "0101010101",
     attes_collab_number: "0101010101",
     attes_collab_number_date: "0101010101",
