@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+agence = Agence.new({
+juridic_form: "SARL",
+social_denomination: "Notre agence SARL",
+enseigne_name: "Notre agence",
+email: "contact@notreagence.com",
+phone_number: "0101010101",
+fax: "0101010101",
+address: "16 Villa Gaudelet",
+city: "Paris",
+director_first_name: "Boris",
+director_last_name: "Paillard",
+director_card_number: "010101",
+director_card_date: "01/10/16",
+director_card_city: "Paris",
+vat_number: "010101",
+siren_number: "010101",
+insurance_number: "010101",
+social_capital: "100000",
+professional_card_mention: "Syndic",
+civil_respons_insurance_name: "AXA",
+civil_respons_insurance_address: "17 Villa Gaudelet",
+civil_respons_police_number: "010101011",
+civil_respons_police_geo_zone: "France",
+})
