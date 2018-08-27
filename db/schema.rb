@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_143427) do
+ActiveRecord::Schema.define(version: 2018_08_27_150316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,36 @@ ActiveRecord::Schema.define(version: 2018_08_27_143427) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "agents", force: :cascade do |t|
+    t.bigint "agence_id"
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "attes_collab_number"
+    t.date "attes_collab_number_date"
+    t.string "attes_collab_number_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agence_id"], name: "index_agents_on_agence_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "email"
+    t.string "phone_number"
+    t.string "address"
+    t.date "birth_date"
+    t.string "birth_place"
+    t.string "company_name"
+    t.string "siret_number"
+    t.string "rcs_number"
+    t.string "hq_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -54,4 +84,5 @@ ActiveRecord::Schema.define(version: 2018_08_27_143427) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "agents", "agences"
 end
