@@ -39,7 +39,7 @@ last_name = %w"Mottet Gotty Ceron Meyer"
     phone_number: "0101010101",
     attes_collab_number: "0101010101",
     attes_collab_number_date: "0101010101",
-    attes_collab_number_city: "0101010101",
+    attes_collab_number_city: %w"Paris Bordeaux Nice Lille".sample,
     agence: agence
   })
 end
