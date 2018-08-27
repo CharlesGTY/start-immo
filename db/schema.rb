@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_150316) do
+ActiveRecord::Schema.define(version: 2018_08_27_162427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,38 @@ ActiveRecord::Schema.define(version: 2018_08_27_150316) do
     t.index ["agence_id"], name: "index_agents_on_agence_id"
   end
 
+  create_table "houses", force: :cascade do |t|
+    t.bigint "owner_id"
+    t.bigint "agent_id"
+    t.string "address"
+    t.string "description"
+    t.string "type"
+    t.string "usage_type"
+    t.string "notary_name"
+    t.boolean "smoke_detector_presence"
+    t.integer "nb_rooms"
+    t.integer "nb_bedrooms"
+    t.integer "nb_livingrooms"
+    t.integer "nb_diningrooms"
+    t.integer "nb_bathrooms"
+    t.boolean "equiped_kitchen"
+    t.integer "nb_showers"
+    t.integer "nb_bathtubs"
+    t.integer "nb_terraces"
+    t.integer "nb_balconies"
+    t.float "surface_living"
+    t.float "surface_Carrez"
+    t.float "surface_total"
+    t.boolean "dpe_done"
+    t.float "energy_consumption"
+    t.float "ges_emission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["agent_id"], name: "index_houses_on_agent_id"
+    t.index ["owner_id"], name: "index_houses_on_owner_id"
+  end
+
   create_table "owners", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -85,4 +117,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_150316) do
   end
 
   add_foreign_key "agents", "agences"
+  add_foreign_key "houses", "agents"
+  add_foreign_key "houses", "owners"
 end
