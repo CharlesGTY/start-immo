@@ -42,19 +42,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "agents", force: :cascade do |t|
-    t.bigint "agence_id"
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.string "attes_collab_number"
-    t.date "attes_collab_number_date"
-    t.string "attes_collab_number_city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["agence_id"], name: "index_agents_on_agence_id"
-  end
+
+  
 
   create_table "houses", force: :cascade do |t|
     t.bigint "owner_id"
@@ -88,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.index ["owner_id"], name: "index_houses_on_owner_id"
   end
 
+
   create_table "owners", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -96,6 +86,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.string "address"
     t.date "birth_date"
     t.string "birth_place"
+    t.boolean "is_business"
     t.string "company_name"
     t.string "siret_number"
     t.string "rcs_number"
@@ -112,11 +103,21 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "agence"
+    t.bigint "agence_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "attes_collab_number"
+    t.string "attes_collab_number_date"
+    t.string "attes_collab_number_city"
+    t.index ["agence_id"], name: "index_users_on_agence_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "agents", "agences"
+  
+  add_foreign_key "users", "agences"
   add_foreign_key "houses", "agents"
   add_foreign_key "houses", "owners"
 end
