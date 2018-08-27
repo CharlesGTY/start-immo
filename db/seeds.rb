@@ -44,7 +44,7 @@ last_name = %w"Mottet Gotty Ceron Meyer"
   })
 end
 
-Owner.create( {
+owner_one = Owner.create( {
   first_name: "Boris",
   last_name: "Paillard",
   email: "boris@lewagon.fr",
@@ -55,7 +55,7 @@ Owner.create( {
   is_business: false
 })
 
-Owner.create( {
+owner_two = Owner.create( {
   first_name: "Seb",
   last_name: "Saunier",
   email: "seb@lewagon.fr",

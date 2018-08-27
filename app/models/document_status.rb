@@ -1,0 +1,2 @@
+class DocumentStatus < ApplicationRecord
+end
