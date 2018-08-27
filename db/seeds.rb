@@ -39,12 +39,12 @@ last_name = %w"Mottet Gotty Ceron Meyer"
     phone_number: "0101010101",
     attes_collab_number: "0101010101",
     attes_collab_number_date: "0101010101",
-    attes_collab_number_city: "0101010101",
+    attes_collab_number_city: %w"Paris Bordeaux Nice Lille".sample,
     agence: agence
   })
 end
 
-Owner.create( {
+owner_one = Owner.create( {
   first_name: "Boris",
   last_name: "Paillard",
   email: "boris@lewagon.fr",
@@ -55,7 +55,7 @@ Owner.create( {
   is_business: false
 })
 
-Owner.create( {
+owner_two = Owner.create( {
   first_name: "Seb",
   last_name: "Saunier",
   email: "seb@lewagon.fr",
