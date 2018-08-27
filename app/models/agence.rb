@@ -1,0 +1,2 @@
+class Agence < ApplicationRecord
+end
