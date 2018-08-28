@@ -1,0 +1,34 @@
+<h1> List of Houses </h1>
+<ul>
+  <% @houses.each do |house| %>
+  <%= link_to house_path(house), class:"message-hover" do %>
+  <div class="message">
+    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
+    <div class="message-name">
+      <h3>Mateo Ceron</h3>
+      <p>10/07/17</p>
+    </div>
+    <div class="message-body">
+      <p><strong><%= house.house_type %></strong></p>
+      <p>
+        <%= house.address %>
+      </p>
+    </div>
+    <div class="message-type">
+      <p>
+        <%= house.owner.first_name %> <%= house.owner.last_name %>
+      </p>
+    </div>
+    <div class="message-status">
+      <p class="status pending">Pending</p>
+      <p class="price"><%= house.price %>€</p>
+    </div>
+    <div class="message-date">
+      <p class="date pending">Created at</p>
+      <p class="price"><%= house.created_at %></p>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+</ul>
+

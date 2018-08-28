@@ -1,0 +1,20 @@
+.boxes {
+  display: flex;
+}
+
+.box-numb h1 {
+  font-size: 24px;
+}
+
+.box-numb p {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.box-numb {
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 200px;
+}

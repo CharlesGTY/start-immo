@@ -1,27 +1,6 @@
-<h1> List of Houses </h1>
-
-<ul>
-<% @houses.each do |house| %>
-<div class="card">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="card-name">
-    <h3><%= house.owner.last_name %><%= house.owner.first_name %></h3>
-    <p><%= house.address %></p>
-  </div>
-  <div class="card-body">
-    <p><strong>I am not sure yet!</strong></p>
-    <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-    </p>
-  </div>
-  <div class="card-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
+<div class="wrapper">
+  <div class="container">
+    <%= render 'shared/numbers-houses' %>
+    <%= render 'shared/listing-houses' %>
   </div>
 </div>
-
-
-
-
-<% end %>
-</ul>
