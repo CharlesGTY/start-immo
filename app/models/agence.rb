@@ -1,3 +1,3 @@
 class Agence < ApplicationRecord
-  has_many :agents
+  has_many :users
 end
