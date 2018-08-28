@@ -58,9 +58,11 @@
 
 
 
-
-
-
+  <div class="col-xs-3">
+    <%= simple_form_for [@house, @document] do |f| %>
+      <%= f.association :document_type %>
+      <%= f.button :submit %>
+    <% end %>
 
     <div class="content-right">
       <h3>Document juridiques</h3>

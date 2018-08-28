@@ -24,7 +24,8 @@ class HousesController < ApplicationController
   end
 
   def show
-     authorize @house
+    @document = Document.new
+    authorize @house
   end
 
   def house_selector
