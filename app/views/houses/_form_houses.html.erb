@@ -1,9 +1,8 @@
 <%= simple_form_for [@house] do |f| %>
 <h2>Désignation du bien</h2>
-  <%= f.input :type, label: 'Type de bien'%>
+  <%= f.input :house_type, label: 'Type de bien'%>
   <%= f.input :address, label: 'Adresse du bien'%>
   <%= f.input :usage_type, label: 'Bien à usage'%>
-  <%= f.input :type, label: 'Présence de locataire à vérifier'%>
 
 <h2>Intérieur du bien</h2>
   <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
