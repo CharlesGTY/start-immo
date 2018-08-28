@@ -1,0 +1,17 @@
+<%= simple_form_for [@house] do |f| %>
+<h4>Désignation du bien</h4>
+  <%= f.input :house_type, label: 'Type de bien'%>
+  <%= f.input :address, label: 'Adresse du bien'%>
+  <%= f.input :usage_type, label: 'Bien à usage'%>
+
+  <h4>Intérieur du bien</h4>
+  <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
+  <%= f.input :nb_bedrooms, label: 'Chambre'%>
+  <%= f.input :nb_livingrooms, label: 'Séjour'%>
+  <%= f.input :nb_diningrooms, label: 'Salle de bain à verifier'%>
+  <%= f.input :nb_diningrooms, label: 'Cuisine'%>
+  <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
+  <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+
+  <%= f.submit 'save' %>
+<% end %>

@@ -1,0 +1,16 @@
+<%= simple_form_for [@house] do |f| %>
+  <h4>Diagnostique énergétique</h4>
+  <%= f.input :dpe_done, label: 'DPE effectué'%>
+  <%= f.input :energy_consumption, label: 'Consommation'%>
+  <%= f.input :ges_emission, label: 'Emsission GES'%>
+
+  <h4>Prix de vente et rémunération</h4>
+  <%= f.input :dpe_done, label: 'Prix TTC à verifier avec price cents'%>
+  <%= f.input :energy_consumption, label: 'Prix Net Vendeur à verifier'%>
+  <%= f.input :ges_emission, label: 'Charges acquereur à verifier'%>
+  <%= f.input :ges_emission, label: 'Honoraires TTC à verifier'%>
+
+  <h4>Photos</h4>
+
+  <%= f.submit 'save' %>
+<% end %>
