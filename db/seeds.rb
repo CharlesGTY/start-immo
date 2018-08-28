@@ -1,6 +1,7 @@
 Agence.destroy_all
 User.destroy_all
 Owner.destroy_all
+House.destroy_all
 
 agence = Agence.create({
 juridic_form: "SARL",
@@ -45,7 +46,7 @@ last_name = %w"Mottet Gotty Ceron Meyer"
   })
 end
 
-Owner.create( {
+owner_one  = Owner.create( {
   first_name: "Boris",
   last_name: "Paillard",
   email: "boris@lewagon.fr",
@@ -56,7 +57,7 @@ Owner.create( {
   is_business: false
 })
 
-Owner.create( {
+owner_two = Owner.create( {
   first_name: "Seb",
   last_name: "Saunier",
   email: "seb@lewagon.fr",
@@ -66,3 +67,31 @@ Owner.create( {
   birth_place: "Paris",
   is_business: false
 })
+
+10.times do |i|
+  House.create({
+    owner: Owner.all.sample,
+    user: User.all.sample,
+    price: 100000,
+    description: "Belle maison",
+    house_type: %w"Maison Appartement".sample,
+    smoke_detector_presence: true,
+    nb_rooms: rand(1..4),
+    nb_bedrooms: rand(1..4),
+    nb_livingrooms: rand(1..4),
+    nb_diningrooms: rand(1..4),
+    nb_bathrooms: rand(1..4),
+    equiped_kitchen: true,
+    nb_showers: rand(1..4),
+    nb_bathtubs:rand(1..4),
+    nb_terraces:rand(1..4),
+    nb_balconies:rand(1..4),
+    surface_living: rand(50..150),
+    surface_Carrez: rand(50..150),
+    surface_total: rand(50..150),
+    dpe_done: true,
+    energy_consumption: 100,
+    ges_emission: 100
+  })
+end
+
