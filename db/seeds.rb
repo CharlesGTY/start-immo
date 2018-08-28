@@ -72,7 +72,7 @@ owner_two = Owner.create( {
   House.create({
     owner: Owner.all.sample,
     user: User.all.sample,
-    price: 100000,
+    price: [100000, 200000, 300000, 400000].sample,
     description: "Belle maison",
     house_type: %w"Maison Appartement".sample,
     smoke_detector_presence: true,
