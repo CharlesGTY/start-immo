@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_165901) do
+ActiveRecord::Schema.define(version: 2018_08_28_100733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,26 @@ ActiveRecord::Schema.define(version: 2018_08_27_165901) do
     t.string "civil_respons_police_geo_zone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "document_types", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.bigint "house_id"
+    t.bigint "document_type_id"
+    t.integer "status"
+    t.text "data"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["document_type_id"], name: "index_documents_on_document_type_id"
+    t.index ["house_id"], name: "index_documents_on_house_id"
+    t.index ["owner_id"], name: "index_documents_on_owner_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -113,6 +133,9 @@ ActiveRecord::Schema.define(version: 2018_08_27_165901) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "documents", "document_types"
+  add_foreign_key "documents", "houses"
+  add_foreign_key "documents", "owners"
   add_foreign_key "houses", "owners"
   add_foreign_key "houses", "users"
   add_foreign_key "users", "agences"
