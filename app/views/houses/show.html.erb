@@ -1,51 +1,59 @@
 <!-- show.html.erb -->
 <div class="container" id="show-house">
+  <div class="content-flex">
+    <div class="content-left">
 
-  <div class="col-xs-9">
+      <div class="row">
+        <div class="white-back">
+          <h3><i class="fas fa-star"></i>Propriétaire</h3>
+          <div class="wrap">
+            <div class="wrap-inside"><%= @house.owner.first_name %></div>
+            <div class="wrap-inside"><%= @house.owner.last_name %></div>
+            <div class="wrap-inside"><%= @house.owner.email %></div>
+            <div class="wrap-inside"><%= @house.owner.phone_number%></div>
+          </div>
 
-    <div class="row">
-      <div class="white-back">
-        <h3><i class="fas fa-star"></i>Propriétaire</h3>
-        <div class="wrapper">
-          <div class="wrapper-inside"><%= @house.owner.first_name %></div>
-          <div class="wrapper-inside"><%= @house.owner.last_name %></div>
-          <div class="wrapper-inside"><%= @house.owner.email %></div>
-          <div class="wrapper-inside"><%= @house.owner.phone_number%></div>
         </div>
+      </div>
 
+      <div class="row">
+        <div class="white-back">
+          <h3><i class="fas fa-star"></i>Intérieur du bien</h3>
+          <div class="wrap">
+            <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
+            <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
+            <div class="wrap-inside">Carrez: <%= @house.surface_Carrez%> m2</div>
+          </div>
+          <div class ="wrap">
+            <div class="wrap-inside"><%= @house.nb_rooms %> pièces</div>
+            <div class="wrap-inside"><%= @house.nb_bedrooms %> chambres</div>
+            <div class="wrap-inside"><%= @house.nb_livingrooms%> séjours</div>
+            <div class="wrap-inside"><%= @house.nb_bathrooms%> salles de bain</div>
+            <div class="wrap-inside"><%= @house.equiped_kitchen ? "Cuisine équipée" : "Cuisine non équipée" %></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="white-back">
+          <h3><i class="fas fa-star"></i>Extérieur du bien</h3>
+          <div class="wrap">
+            <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
+            <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
+            <div class="wrap-inside">Carrez: <%= @house.surface_Carrez%> m2</div>
+          </div>
+          <div class ="wrap">
+            <div class="wrap-inside"><%= @house.nb_rooms %> pièces</div>
+            <div class="wrap-inside"><%= @house.nb_bedrooms %> chambres</div>
+            <div class="wrap-inside"><%= @house.nb_livingrooms%> séjours</div>
+            <div class="wrap-inside"><%= @house.nb_bathrooms%> salles de bain</div>
+            <div class="wrap-inside"><%= @house.equiped_kitchen ? "Cuisine équipée" : "Cuisine non équipée" %></div>
+          </div>
+
+        </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="white-back">
-        <h3><i class="fas fa-star"></i>Intérieur du bien</h3>
-        <div class="wrapper">
-          <div class="wrapper-inside">Surface habitable: <%= @house.surface_living%> m2</div>
-          <a href="#" data-toggle="tooltip" title="Hooray!">Plus de détails</a>
-        </div>
-        <div class ="wrapper">
-          <div class="wrapper-inside">Pièces: <%= @house.owner.first_name %></div>
-          <div class="wrapper-inside">Etages: <%= @house.owner.last_name %></div>
-          <div class="wrapper-inside">Chambres: <%= @house.owner.email %></div>
-          <div class="wrapper-inside">Séjours: <%= @house.owner.phone_number%></div>
-          <div class="wrapper-inside">Salles de bain: <%= @house.owner.phone_number%></div>
-          <div class="wrapper-inside">Wc separés: <%= @house.owner.phone_number%></div>
-          <div class="wrapper-inside">Cuisine: <%= @house.owner.phone_number%></div>
-          <div class="wrapper-inside">Cuisine équipée: <%= @house.owner.phone_number%></div>
-        </div>
-
-      </div>
-    </div>
-
-
-
-
-
-  </div>
-
-
-
-
 
 
 
@@ -55,36 +63,19 @@
       <%= f.association :document_type %>
       <%= f.button :submit %>
     <% end %>
+
+    <div class="content-right">
+      <h3>Document juridiques</h3>
+      <ul>
+        <% @house.documents.each do |document| %>
+          <a href=""><i class="far fa-file-pdf"></i></a>
+          <li>
+            <% document.type %> créé le <% document.created_at %>
+            <p> document.status </p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-<% @house.address %>
-<% @house.description %>
-<% @house.house_type %>
-<% @house.usage_type %>
-<% @house.notary_name %>
-<% @house.smoke_detector_presence %>
-<% @house.nb_rooms %>
-<% @house.nb_bedrooms %>
-<% @house.nb_livingrooms %>
-<% @house.nb_diningrooms %>
-<% @house.nb_bathrooms %>
-<% @house.equiped_kitchen %>
-<% @house.nb_showers %>
-<% @house.nb_bathtubs %>
-<% @house.nb_terraces %>
-<% @house.nb_balconies %>
-<% @house.surface_living %>
-<% @house.surface_Carrez %>
-<% @house.surface_total %>
-<% @house.energy_consumption %>
-<% @house.ges_emission%>
-
