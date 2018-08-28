@@ -42,12 +42,9 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.datetime "updated_at", null: false
   end
 
-
-  
-
   create_table "houses", force: :cascade do |t|
     t.bigint "owner_id"
-    t.bigint "agent_id"
+    t.bigint "user_id"
     t.string "address"
     t.string "description"
     t.string "type"
@@ -73,10 +70,9 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
-    t.index ["agent_id"], name: "index_houses_on_agent_id"
     t.index ["owner_id"], name: "index_houses_on_owner_id"
+    t.index ["user_id"], name: "index_houses_on_user_id"
   end
-
 
   create_table "owners", force: :cascade do |t|
     t.string "last_name"
@@ -116,8 +112,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_162427) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  
-  add_foreign_key "users", "agences"
-  add_foreign_key "houses", "agents"
   add_foreign_key "houses", "owners"
+  add_foreign_key "houses", "users"
+  add_foreign_key "users", "agences"
 end
