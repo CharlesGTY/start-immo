@@ -51,7 +51,10 @@
 
 
   <div class="col-xs-3">
-    Doc
+    <%= simple_form_for [@house, @document] do |f| %>
+      <%= f.association :document_type %>
+      <%= f.button :submit %>
+    <% end %>
   </div>
 
 </div>

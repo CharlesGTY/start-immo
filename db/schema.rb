@@ -52,14 +52,12 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
   create_table "documents", force: :cascade do |t|
     t.bigint "house_id"
     t.bigint "document_type_id"
-    t.integer "status"
+    t.string "status", default: "attente_signature_agent"
     t.text "data"
-    t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["document_type_id"], name: "index_documents_on_document_type_id"
     t.index ["house_id"], name: "index_documents_on_house_id"
-    t.index ["owner_id"], name: "index_documents_on_owner_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -135,7 +133,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
 
   add_foreign_key "documents", "document_types"
   add_foreign_key "documents", "houses"
-  add_foreign_key "documents", "owners"
   add_foreign_key "houses", "owners"
   add_foreign_key "houses", "users"
   add_foreign_key "users", "agences"
