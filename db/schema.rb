@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_165901) do
     t.bigint "user_id"
     t.string "address"
     t.string "description"
-    t.string "type"
+    t.string "house_type"
     t.string "usage_type"
     t.string "notary_name"
     t.boolean "smoke_detector_presence"
