@@ -5,7 +5,7 @@ class HousePolicy < ApplicationPolicy
     end
 
     def new?
-      return true
+      return false
     end
 
     def index?
