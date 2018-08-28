@@ -9,7 +9,14 @@ class HousesController < ApplicationController
   end
 
   def create
-     authorize @house
+    @house = House.new(house_params)
+    @house.user = current_user
+    authorize @house
+    if @house.save
+      redirect_to house_path(@house)
+    else
+      render :new
+    end
   end
 
   def index

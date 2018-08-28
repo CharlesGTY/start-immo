@@ -1,4 +1,31 @@
 <!-- new.html.erb -->
-<h1>Formulaire</h1>
-
-<%= render 'form_houses', house: @house %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'form_houses1', house: @house %>
+    </div>
+    <div class="col-sm-6 form-right">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'form_houses2', house: @house %>
+    </div>
+    <div class="col-sm-6 form-right">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'form_houses3', house: @house %>
+    </div>
+    <div class="col-sm-6 form-right">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'form_houses4', house: @house %>
+    </div>
+    <div class="col-sm-6 form-right">
+    </div>
+  </div>
+</div>
