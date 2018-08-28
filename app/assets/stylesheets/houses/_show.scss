@@ -1,17 +1,28 @@
-#show-house {
+  .container {
+    width:90% !important;
+  }
+
+
+  .content-flex {
+    display:flex;
+  }
+
+  .content-right {
+    background: white;
+  }
 
   .row{
     padding: 10px;
   }
 
-  .wrapper {
+  .wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
   }
 
-  .wrapper-inside {
+  .wrap-inside {
     padding: 0 10px;
   }
 
@@ -27,4 +38,4 @@
   }
 
 
-}
+
