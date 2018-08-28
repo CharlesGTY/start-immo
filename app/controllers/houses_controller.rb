@@ -13,7 +13,14 @@ class HousesController < ApplicationController
   end
 
   def index
-    @houses = policy_scope(House).order(created_at: :desc)
+    if params[:query].present?
+      @houses = policy_scope(House).order(created_at: :desc)
+      @houses = House.global_search(params[:query])
+      authorize @houses
+    else
+      @houses = policy_scope(House).order(created_at: :desc)
+      authorize @houses
+    end
   end
 
   def show

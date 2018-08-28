@@ -1,21 +1,24 @@
-<div class="boxes">
-  <div class="box-numb">
-    <h1>Total de biens en mandats</h1>
-    <p class="text-center"><%= @houses.count %> </p>
-  </div>
+<div class="row">
 
-  <div class="box-numb">
-    <h1>Nouveaux avis de valeurs</h1>
-    <p class="text-center"> 5</p>
-  </div>
+  <div class="boxes">
+    <div class="col-md-3 col-xs-12 box-numb z-depth-2">
+      <p class="text-center"><%= @houses.count %> </p>
+      <h2>Mandats</h2>
+    </div>
 
-  <div class="box-numb">
-    <h1>Nouvelles offres</h1>
-    <p class="text-center"> 4</p>
-  </div>
+    <div class="col-md-3 col-xs-12 box-numb z-depth-2">
+      <p class="text-center">5</p>
+      <h2>Avis de valeurs</h2>
+    </div>
 
-  <div class="box-numb">
-    <h1>Compromis de vente</h1>
-    <p class="text-center"> 3</p>
+    <div class="col-md-3 col-xs-12 box-numb z-depth-2">
+      <p class="text-center">4</p>
+      <h2>Offres</h2>
+    </div>
+
+    <div class="col-md-3 col-xs-12 box-numb z-depth-2">
+      <p class="text-center">3</p>
+      <h2>Compromis de vente</h2>
+    </div>
   </div>
 </div>

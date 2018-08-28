@@ -1,20 +1,31 @@
 .boxes {
   display: flex;
+  color: $blue;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.box-numb h1 {
-  font-size: 24px;
+.box-numb h2 {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 .box-numb p {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 100px;
+  padding: 0;
+  line-height: 100px;
 }
 
 .box-numb {
-  background-color: white;
-  padding: 10px;
+  background-color: $white;
+  padding: 10px 10px 20px 10px;
   margin: 10px;
   border-radius: 5px;
   max-width: 200px;
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+  }
 }
