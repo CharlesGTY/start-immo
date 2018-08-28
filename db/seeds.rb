@@ -95,3 +95,6 @@ owner_two = Owner.create( {
   })
 end
 
+mandat = DocumentType.create({
+  type: "Mandat de vente"
+})
