@@ -5,7 +5,7 @@ class CreateHouses < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.string :address
       t.string :description
-      t.string :type
+      t.string :house_type
       t.string :usage_type
       t.string :notary_name
       t.boolean :smoke_detector_presence
