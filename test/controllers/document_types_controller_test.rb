@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DocumentControllerTest < ActionDispatch::IntegrationTest
+class DocumentTypesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
