@@ -1,0 +1,30 @@
+#show-house {
+
+  .row{
+    padding: 10px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  .wrapper-inside {
+    padding: 0 10px;
+  }
+
+  .empty-text {
+    border: 1px solid black;
+    padding: 0px 5px;
+    color: gray
+  }
+
+  .white-back {
+    background: white;
+    padding:10px;
+  }
+
+
+}
