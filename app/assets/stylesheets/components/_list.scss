@@ -81,10 +81,6 @@
 .sticky {
   position: fixed;
   z-index: 2;
-  width: 80%;
   top:0;
-}
-
-.sticky + .message {
-  padding-top: 60px;
+  width: 80%;
 }
