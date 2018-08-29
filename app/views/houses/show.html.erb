@@ -6,7 +6,7 @@
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Propriétaire</h3>
+          <h3>Propriétaire</h3>
           <div class="wrap">
             <div class="wrap-inside"><%= @house.owner.first_name %></div>
             <div class="wrap-inside"><%= @house.owner.last_name %></div>
@@ -19,7 +19,7 @@
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Intérieur du bien</h3>
+          <h3>Intérieur du bien</h3>
           <div class="wrap">
             <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
             <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
@@ -38,7 +38,7 @@
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Extérieur du bien</h3>
+          <h3>Extérieur du bien</h3>
           <div class="wrap">
             <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
             <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
@@ -61,7 +61,7 @@
 
 
     <div class="content-right">
-      <div class="background-white">
+      <div class="white-back">
       <h3 class="background-blue">Document juridiques</h3>
         <ul>
           <% @house.documents.each do |document| %>
