@@ -1,7 +1,7 @@
 <div class="row margin-list">
   <div class="title-search-bar col-sm-10 col-sm-offset-1">
     <h5 id="list-title">Liste des biens </h5>
-    <div class="logo-and-search-bar" id="navbar-fixed">
+    <div class="logo-and-search-bar z-depth-2" id="navbar-fixed">
       <div class="flex-btn-search-bar">
         <div class="logo-search-bar">
           <i class="fas fa-search"></i>
@@ -18,41 +18,37 @@
         <%= link_to "Créer un bien", "", class:"btn-base" %>
       </div>
     </div>
+    <% @houses.each do |house| %>
+      <%= link_to house_path(house), class:"message-hover" do %>
+        <div class="message z-depth-3">
+          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
+          <div class="message-name">
+            <h3>Mateo Ceron</h3>
+            <p>10/07/17</p>
+          </div>
+          <div class="message-body">
+            <p><strong><%= house.house_type %></strong></p>
+            <p>
+              <%= house.address %>
+            </p>
+          </div>
+          <div class="message-type">
+            <p>
+              <%= house.owner.first_name %> <%= house.owner.last_name %>
+            </p>
+          </div>
+          <div class="message-status">
+            <p class="status pending">Pending</p>
+            <p class="price"><%= house.price %>€</p>
+          </div>
+          <div class="message-date">
+            <p class="date pending">Created at</p>
+            <p class="price"><%= house.created_at %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-<ul>
-  <% @houses.each do |house| %>
-  <%= link_to house_path(house), class:"message-hover" do %>
-  <div class="row margin-list">
-    <div class="message z-depth-3 col-sm-10 col-sm-offset-1">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
-      <div class="message-name">
-        <h3>Mateo Ceron</h3>
-        <p>10/07/17</p>
-      </div>
-      <div class="message-body">
-        <p><strong><%= house.house_type %></strong></p>
-        <p>
-          <%= house.address %>
-        </p>
-      </div>
-      <div class="message-type">
-        <p>
-          <%= house.owner.first_name %> <%= house.owner.last_name %>
-        </p>
-      </div>
-      <div class="message-status">
-        <p class="status pending">Pending</p>
-        <p class="price"><%= house.price %>€</p>
-      </div>
-      <div class="message-date">
-        <p class="date pending">Created at</p>
-        <p class="price"><%= house.created_at %></p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
-</ul>
 

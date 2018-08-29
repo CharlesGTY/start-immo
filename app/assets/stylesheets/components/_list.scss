@@ -7,19 +7,15 @@
   background-color: $white;
   border-radius: 5px;
   color: $blue;
-  transition: all .2s ease-in-out;
+  transition: all .1s ease-in-out;
 
   &:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 }
 
 .message-hover:hover {
   text-decoration: none !important;
-}
-
-.margin-list {
-  margin-bottom:0 !important;
 }
 
 .message-date {
@@ -53,6 +49,7 @@
   padding: 0px 10px;
   background-color: $blue;
   border-radius: 3px;
+  margin-bottom: 10px;
 }
 
 .logo-search-bar i {
@@ -82,5 +79,4 @@
   position: fixed;
   z-index: 2;
   top:0;
-  width: 80%;
 }
