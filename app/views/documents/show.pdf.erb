@@ -1,1 +1,370 @@
-  <h1><%=@document.status %></h1>
+<div class="text-pdf">
+
+<h1 class="text-center"> MANDAT DE VENTE SIMPLE HORS ÉTABLISSEMENT </h1>
+<h1 class="text-center"><strong>(SANS EXCLUSIVITE)</strong></h1>
+<h2 class="text-center">En application des articles 6 de la loi N°70-9 du 2 janvier 1970 et
+articles 72 et suivants du décret n°72-678 du 20 juillet 1972</h2>
+<h2 class="text-center">(RÉMUNÉRATION À LA CHARGE DE “OPTION“) </h2>
+
+<h2 class="text-center"> NUMÉRO DE MANDAT : <span class="data"> <%= @document.id %> </span></h2>
+
+<br/>
+<br/>
+<br/>
+
+
+<h1>Identification du mandataire : </h1>
+
+<ul>
+  <li> <h2> Dénomination sociale : <span class="data"> <%= @agence.social_denomination %> </span></h2></li>
+  <li><h2> Forme Juridique (SARL / SAS / EI …) : <span class="data"> <%= @agence.juridic_form %> </span></h2></li>
+  <li><h2> Au “capital social“ de : <span class="data"> <%= @agence.social_capital %> </span> € </h2></li>
+  <li><h2>Sous “l'enseigne“ : <span class="data"> <%= @agence.enseigne_name %> </span></h2></li>
+  <li><h2>Dont le siège social est situé à l'adresse : <span class="data"> <%= @agence.address %> <%= @agence.city %>  </span></h2></h2></li>
+  <li><h2>Immatriculé sous le numéro SIREN : <span class="data"> <%= @agence.siren_number %> </span></h2></li>
+  <li><h2>Au RCS de “VILLE“</h2></li>
+</ul>
+<br/>
+<h1>Représenté par <span class="data"> <%= @agence.director_first_name %> <%= @agence.director_last_name %></span> en sa qualité de “DIRIGEANT“, dument habilité à l’effet des présentes.</h1>
+<ul>
+  <li><h2>Numéro individuel d’indentification à la TVA : <span class="data"> <%= @agence.vat_number %> </span></h2></li>
+
+  <li><h2>Titulaire de la carte professionnelle numéro <span class="data"> <%= @agence.director_card_number %> </span></h2></li>
+  <li><h2>Délivrée le : <span class="data"> <%= @agence.director_card_date %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= @agence.director_card_city %> </span></h2></li>
+
+  <li><h2>Adhérent de la fédération “NOM DE LA FÉDÉRATION“ (OPTIONNEL)</h2></li>
+
+  <li><h2>Titulaire d’une carte professionnelle portant la mention “<span class="data"> <%= @agence.professional_card_mention %> </span>“ et d’un titre professionnel d’agent immobilier obtenu en France dont l’activité est régie par la loi n° 70-9 du 2 janvier 1970 (dite « loi Hoguet ») et son décret d’application n° 72678 du 20 juillet 1972.</h2></li>
+
+  <li><h2>Garanti par “ORGANISME FINANCIER“ situé au “ADRESSE“ pour un montant de “MONTANT“ pour les activités de “ACTIVITÉS“, contrat couvrant la zone géographique suivante : “ZONE GÉOGRAPHIQUE“. Titulaire du compte spécial
+(article 55 du décret de 20 juillet 1972) n° “NUMÉRO“ en “ACTIVITÉ“ ouvert auprés de “BANQUE“. (OPTIONNEL).</h2></li>
+</ul>
+
+OU
+
+<li><h2>Le professionnel prestataire déclare sur l’honneur ne recevoir aucun fonds, effet ou valeur autre que ceux représentatifs de sa rémunération ou commission. </h2></li>
+
+<li><h2> Titulaire d’une assurance en responsabilité civile professionnelle auprès de <span class="data"> <%= @agence.civil_respons_insurance_name %> </span> situé au <span class="data"> <%= @agence.civil_respons_insurance_address %> </span> sous le numéro de police <span class="data"> <%= @agence.civil_respons_police_number %> </span>, couvrant la zone géographique suivante : <span class="data"> <%= @agence.civil_respons_police_geo_zone %> </span>. </h2></li>
+<br/>
+
+<h1><span class="data"> <%= @user.first_name %> <%= @user.last_name %> </span>,
+titulaire de l’attestation de collaborateur numéro <span class="data"> <%= @user.attes_collab_number %> </span>
+Délivrée le <span class="data"> <%= @user.attes_collab_number_date %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= @user.attes_collab_number_city %> </span> </h1>
+<ul>
+    <li><h2> Téléphone de l’agence : <span class="data"> <%= @agence.phone_number %> </span> </h2></li>
+
+    <li><h2>Fax de l’agence : <span class="data"> <%= @agence.fax %> </span>  </h2></li>
+
+    <li><h2> E-mail de l’agence : <span class="data"> <%= @agence.email %> </span>  </h2></li>
+</ul>
+  <br/>
+
+
+-------------------------------------------------------------------</p>
+
+<h1>Identification du (des) mandant (s) :</h1>
+
+<h2>Nous soussignés :</h2>
+
+<uL>
+  <li><h2>  Mandant N°1 : </h2></li>
+  <li><h2>  Nom : </h2></li>
+  <li><h2>  Prénom : </h2></li>
+  <h2>  <li><h2> Tél* :</h2></li>
+</h2>
+
+*  (vous avez la possibilité de vous inscrire sur www.bloctel.gouv.fr pour vous opposer à tout démarchage téléphonique conformément à l’article L223-1 du Code de la Consommation).
+  <li><h2> E-mail :</h2></li>
+  <li><h2> Adresse :</h2></li>
+
+  <li><h2> Mandant N°2 :</h2></li>
+
+  <li><h2> Nom :</h2></li>
+  <li><h2> Prénom :</h2></li>
+  <li><h2> Tél* :</h2></li>
+*  (vous avez la possibilité de vous inscrire sur www.bloctel.gouv.fr pour vous opposer à tout démarchage téléphonique conformément à l’article L223-1 du Code de la Consommation).
+  <li><h2> E-mail :</h2></li>
+  <li><h2> Adresse :</h2></li>
+
+
+Pour les personnes morales :
+
+  <li><h2> Nom de la société :</h2></li>
+  <li><h2> SIRET :</h2></li>
+  <li><h2> RCS :</h2></li>
+  <li><h2> Siège social :</h2></li>
+  <li><h2> Réprésentant :</h2></li>
+  <li><h2> Né (e) le :</h2></li>
+  <li><h2> À :</h2></li>
+  <li><h2> Adresse :</h2></li>
+
+
+Après avoir pris connaissance des conditions générales, ci-après, mandatons sans exclusivité par la présente le mandataire agent immobilier afin de rechercher un acquéreur et réaliser toutes démarches en vue de vendre les biens et droit, ci-dessous désignés. Nous Nous engageons à produire toutes justifications de propriété du bien objet du présent mandat. Et en cas d’indivision, nous agissons conjointement, solidairement et indivisiblement EN QUALITÉ DE SEULS PROPRIÉTAIRES.
+
+-------------------------------------------------------------------
+
+Désignation :
+
+  <li><h2> Type de bien :</h2></li>
+
+  <li><h2> Appartement</h2></li>
+  <li><h2> Maison individuelle</h2></li>
+  <li><h2> Terrain</h2></li>
+  <li><h2> Immeuble</h2></li>
+  <li><h2> Cave</h2></li>
+  <li><h2> Garage</h2></li>
+  <li><h2> “OPTION“</h2></li>
+
+  <li><h2> Adresse du bien : “ADRESSE“</h2></li>
+
+  <li><h2> Bien à usage :</h2></li>
+
+  <li><h2> D’habitation</h2></li>
+  <li><h2> Professionnel</h2></li>
+  <li><h2> Mixte</h2></li>
+
+Dont nous sommes devenus propriétaires par acte authentique chez Maitre “NOM DU NOTAIRE DU VENDEUR“
+
+
+  <li><h2> Le bien est vendu :</h2></li>
+
+  <li><h2> Libre de toute occupation</h2></li>
+  <li><h2> Loué suivant le contrat de bail et les conditions ci annexés</h2></li>
+Si le(s) bien(s) objet des présentes ne sont pas loués, le mandant déclare que ce(s) bien(s) seront, le jour de la signature de l’acte authentique de vente, libres de toute location ou occupation.
+Si le(s) bien(s) objet des présentes sont loués, ils le seront suivant l'état locatif ci-annexé.
+  <li><h2> Présence de détecteurs de fumée :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+
+  <li><h2> Nombre de pièces : “NOMBRE“</h2></li>
+  <li><h2> Nombre de chambre (s) : “NOMBRE“</h2></li>
+  <li><h2> Nombre de séjour (s) / salon (s) : “NOMBRE“</h2></li>
+  <li><h2> Nombre de salle (s) à manger : “NOMBRE“</h2></li>
+  <li><h2> Cuisine équipée :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+  <li><h2> Nombre de salle (s) d’eau (douche) : “NOMBRE“</h2></li>
+  <li><h2> Nombre de salle (s) de bain (baignoire) : “NOMBRE“</h2></li>
+  <li><h2> WC Séparé :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+  <li><h2> Terrasse (s) : “NOMBRE“</h2></li>
+  <li><h2> Balcon (s) : “NOMBRE“</h2></li>
+
+  <li><h2> Surface habitable d’environ : “NOMBRE“ M2</h2></li>
+  <li><h2> Si copropriété, Surface Carrez : “NOMBRE“ M2</h2></li>
+  <li><h2> Surface du terrain : “NOMBRE“ M2</h2></li>
+
+  <li><h2> Bien en Copropriété :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+  <li><h2> Nombre de lot au sein de la copropriété : “NOMBRE“</h2></li>
+  <li><h2> Charges “DURÉE“ de copropriété : “MONTANT“</h2></li>
+  <li><h2> Procédure en cours dans la copropriété :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+  <li><h2> Informations particulières sur les lots et l’immeuble : “PHRASES“</h2></li>
+
+  <li><h2> DPE effectué :</h2></li>
+  <li><h2> Oui</h2></li>
+  <li><h2> Non</h2></li>
+  <li><h2> Consommation énergétique : “NOMBRE“ kWhEP/m2/an</h2></li>
+  <li><h2> Émission GES : “NOMBRE“ KgéqCO2/m2/an</h2></li>
+
+
+-------------------------------------------------------------------
+
+Prix de vente et rémunération du mandataire :
+
+Le prix du bien présenté à la vente HONORAIRES INCLUS, sauf accord ultérieur des parties et payable comptant le jour de la réitération de l’acte authentique, tant à l’aide de prêts que de fonds propres est de : “PRIX“ TTC.
+En cas de réalisation de l’opération avec un acheteur présenté par le mandataire ou un mandataire substitué ou dirigé vers lui, le mandataire aura droit à une rémunération à la charge de “OPTION“ (Il est précisé que le taux de TVA 20,00 % est inclus et qu’il est susceptible de modification conformément à la règlementation fiscale), soit un montant de : “PRIX“ TTC.
+Les honoraires prévus au titre de la rémunération du mandataire seront exigibles intégralement le jour où l’opération sera effectivement conclue et réitérée par acte authentique conformément à l'article 74 du décret n° 72-678 du 20 juillet 1972. En cas d’exercice d’un droit de substitution ou de préemption, la rémunération sera due par le substitué ou le préempteur.
+Au regard du prix du bien présenté à la vente HONORAIRES INCLUS et du montant des HONORAIRES prévus au présent mandat, le prix de vente NET VENDEUR du bien sera de : “PRIX“ TTC.
+
+-------------------------------------------------------------------
+Durée du mandat et conditions de réalisation :
+LE MANDAT DE VENTE D’UN BIEN SANS EXCLUSIVITÉ EST CONSENTI POUR UNE DURÉE DE “NOMBRE (CHIFFRE + LETTRES“ MOIS À COMPTER DU JOUR DE SA SIGNATURE.
+LE MANDAT DE VENTE D’UN BIEN SANS EXCLUSIVITÉ EST DONNÉ À COMPTER DE SA SIGNATURE POUR UNE DURÉE IRRÉVOCABLE DE 3 MOIS. PASSÉ UN DÉLAI DE “DÉLAI“ À COMPTER DE SA SIGNATURE, IL POURRA ÊTRE DÉNONCÉ À TOUT MOMENT PAR CHACUNE DES PARTIES PAR LETTRE RECOMMANDÉE AVEC AVIS DE RÉCEPTION ENVOYÉE AU MOINS QUINZE JOURS À L'AVANCE CONFORMÉMENT À L’ARTICLE 78, ALINEA 2, DU DECRET N° 72-678 DU 20 JUILLET 1972.
+LES PRESCRIPTIONS DE L’ARTICLE L 136-1 RECODIFIÉ À L’ARTICLE L 215-1 DU CODE DE LA CONSOMMATION NE SONT PAS APPLICABLES AU PRÉSENT CONTRAT.
+
+
+-------------------------------------------------------------------
+
+Conditions particulières du mandat :
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+
+
+
+-------------------------------------------------------------------
+
+Commencement d’exécution :
+
+Conformément à l’article L. 221-25 du Code de la consommation, le mandant
+  <li><h2> souhaite expressément</h2></li>
+  <li><h2> ne souhaite pas</h2></li>
+que le mandataire commence ses prestations avant l’expiration du délai de rétractation.
+Préalablement à la signature des présentes, le mandant reconnaît expressément avoir pris connaissance de l’intégralité des caractéristiques essentielles des services et des modalités d’exécution définis au présent mandat, de toutes les informations prévues aux articles L. 221-5 à L. 221-8 du code de la consommation, ainsi que du traitement des données personnelles par le mandataire conformément au règlement européen 2016/679, lors de la remise du document d’information précontractuel.
+
+-------------------------------------------------------------------
+
+CONDITIONS GÉNÉRALES DU MANDAT
+
+
+Conditions relatives au mandant :
+
+Les parties au présent mandat reconnaissent avoir été informées des dispositions fiscales concernant les plus-values et déclarent agir en toute connaissance de cause. Si la vente est en T.V.A. le prix ci-dessus stipulé s'entend T.V.A. incluse.
+
+
+En considération du présent mandat, le mandant :
+
+  <li><h2> Déclare avoir la capacité pleine et entière de disposer des biens objets du présent mandat. Il déclare en outre et sous son entière responsabilité, ne faire l’objet d’aucune mesure de protection de la personne (curatelle, tutelle...) ni d’aucune procédure collective, notamment de redressement ou de liquidation judiciaires, et que les biens, objet du présent mandat, ne font l’objet d’aucune procédure de saisie immobilière ;</h2></li>
+
+  <li><h2> S’engage, pendant la durée du présent mandat, à assurer au mandataire les moyens de visiter avec tout éventuel acquéreur.</h2></li>
+
+  <li><h2> Déclare ne pas avoir consenti, auprès d’une autre agence immobilière, de mandat exclusif de vente non expiré ou dénoncé et s'interdit de le faire ultérieurement sans avoir préalablement dénoncé le présent mandat ;</h2></li>
+
+  <li><h2> S’engage à produire toutes les pièces justificatives de propriété demandées par le mandataire et à l'informer de toutes modifications concernant le bien et/ou le propriétaire. De plus, le mandant s’engage à réaliser et à fournir sans délai au mandataire l’ensemble des diagnostics obligatoires.</h2></li>
+
+  <li><h2> Devra répondre le cas échéant, à toute demande de tiers relatives à l’étendue du pouvoir du mandataire tel que prévu à l’article 1158 du Code civil ;</h2></li>
+
+  <li><h2> Donne en son nom et à ses frais tous pouvoirs au mandataire pour réclamer toutes pièces utiles auprès de toutes personnes privées ou publiques, notamment le certificat d'urbanisme ainsi que celles relatives au contrôle de l’installation d’assainissement équipant le bien objet du présent mandat ou encore l’ensemble des documents exigés par les dispositions de la loi Alur auprès du Syndic de copropriété concerné ;</h2></li>
+
+  <li><h2> Autorise expressément le mandataire, aux frais de ce dernier, à :</h2></li>
+  <li><h2> Saisir l'ensemble des informations personnelles contenu dans le présent mandat sur tout fichier de traitement automatisé de données. Ces données pourront être transmises au (x) notaire (s) ou co-contractant (s), aux organismes financiers éventuellement chargés du financement, ainsi qu’aux administrations concernées. Elles seront conservées pendant toute la durée de la relation commerciale puis pendant une durée de cinq ans à compter de la clôture des comptes ou de la cessation des relations contractuelles conformément à l’article L561-12 du Code monétaire et financier. En cas de réception, détention ou disposition de fonds, effets ou valeurs par l’intermédiaire prestataire de service, ce dernier devra conserver les registres-répertoires et reçus pendant dix ans quel que soit le support en vertu de l’article 53 du Décret N°72-678 du 20 juillet 1972. Le mandant pourra toutefois exercer son droit d’accès et de rectification, demander leur portabilité, ou exercer leur droit à opposition dans les conditions prévues par le règlement européen 2016/679.</h2></li>
+  <li><h2> Entreprendre les démarches et mettre en œuvre tous les moyens qu'il jugera utiles en vue de réaliser la mission confiée et tels que définis ci-dessous aux conditions concernant le mandataire ;</h2></li>
+  <li><h2> Substituer et faire appel à tout concours en vue de mener à bien la réalisation de la vente des biens ci-dessus désignés ;</h2></li>
+
+  <li><h2> S’engage, en cas de vente directe ou via un autre mandataire, à présenter à la vente les biens au prix des présentes de façon à ne pas entraver la mission du présent mandataire ;</h2></li>
+
+  <li><h2> Autorise le mandataire à établir tous actes sous seing privé aux clauses et conditions nécessaires à l'accomplissement des présentes et recueillir la signature de l’acquéreur ;</h2></li>
+
+  <li><h2> Autorise le mandataire, à satisfaire, s’il y a lieu, à la déclaration d’intention d’aliéner exigée par la loi et en cas d’exercice d’un droit de préemption, à négocier et conclure avec le préempteur, bénéficiaire de ce droit, sauf à en référer à son mandant, lequel conserve la faculté d’accepter le prix finalement obtenu par le mandataire ;</h2></li>
+
+  <li><h2> autorise expressément le mandataire à recevoir un versement d'un montant maximum de 10 % du prix total de la vente. Ce versement sera effectué à la banque où est ouvert le compte spécial (article 55 du décret du 20 juillet 1972) du mandataire, sous réserve que celui-ci n’ait pas souscrit la déclaration sur l’honneur qu’il n’est reçu, directement ou indirectement, d’autres fonds, effets ou valeurs que ceux représentatifs de sa rémunération (art. 3 6°et 80 4° du décret du 20 juillet 1972).</h2></li>
+En vue de garantir la bonne exécution des présentes et de leur suite, les fonds ou valeurs qu'il est d'usage de faire verser par l'acquéreur pourront également être détenus par tout séquestre habilité à cet effet (notaire).
+  <li><h2> S’interdit d’utiliser en copie l’ensemble des médias mis à la disposition pour la promotion de son bien par le mandataire (photographies, présentation vidéo etc...) qui restent la propriété exclusive de ce dernier. Cette interdiction vaut tant durant la durée du mandat qu’après la résiliation ou l’expiration de celui-ci ; le mandataire se réserve le droit d’utiliser ces médias librement et gratuitement pour toute action de communication et ce pendant toute la durée du mandat ainsi qu’après la vente du bien, la résiliation ou l’expiration du mandat.</h2></li>
+
+CLAUSE PÉNALE : De convention expresse et à titre de condition essentielle sans laquelle le mandataire n’aurait pas accepté la présente mission, le mandant :
+
+  <li><h2> GARDE TOUTE LIBERTE DE PROCEDER LUI-MEME A LA RECHERCHE D’UN ACQUEREUR ; TOUTEFOIS, EN CAS DE VENTE RÉALISÉE PAR LUI-MÊME OU VIA UN AUTRE INTERMEDIAIRE, IL S’ENGAGE À EN INFORMER IMMÉDIATEMENT LE MANDATAIRE EN LUI NOTIFIANT PAR LETTRE RECOMMANDÉE AVEC AVIS DE RÉCEPTION LES NOMS ET ADRESSES DE L’ACQUÉREUR, DU NOTAIRE CHARGÉ DE LA REDACTION DE L’ACTE AUTHENTIQUE ET DE L’INTERMEDIAIRE ÉVENTUELLEMENT INTERVENU, CE PENDANT LA DURÉE DU PRÉSENT MANDAT ET DEUX ANS APRÈS SON EXPIRATION. CETTE NOTIFICATION METTRA FIN AU MANDAT. A DEFAUT, LE MANDANT EN SUPPORTERAIT LES CONSEQUENCES, NOTAMMENT AU CAS OU LE MANDATAIRE AURAIT CONTRACTE AVEC UN AUTRE ACQUEREUR ;</h2></li>
+
+EN CAS DE NON RESPECT DE LA CLAUSE CI-DESSUS, LE MANDANT VERSERA UNE INDEMNITÉ COMPENSATRICE FORFAITAIRE CORRESPONDANT À LA MOITIÉ DES HONORAIRES CONVENUS.
+
+
+  <li><h2> S’ENGAGE PENDANT LA DUREE MANDAT A SIGNER AU PRIX, CHARGES ET CONDITIONS CONVENUES TOUTE PROMESSE DE VENTE OU TOUT COMPROMIS DE VENTE EVENTUELLEMENT ASSORTI D’UNE DEMANDE DE PRET IMMOBILIER AVEC TOUT ACQUEREUR PRESENTE PAR LE MANDATAIRE ET À LIBERER LES LIEUX POUR LE JOUR DE L'ACTE AUTHENTIQUE ;</h2></li>
+
+
+  <li><h2> S’INTERDIT DE VENDRE SANS LE CONCOURS DU PRESENT MANDATAIRE, DIRECTEMENT OU INDIRECTEMENT, A UN ACQUEREUR QUI AURAIT ETE PRESENTE PAR L’INTERMEDIAIRE DU PRESENT MANDATAIRE PENDANT LA DUREE DU MANDAT ET DEUX ANS APRES SON EXPIRATION OU SA DENONCIATION. CETTE INTERDICTION VISE TANT LA PERSONNE DE L’ACHETEUR QUE SON CONJOINT, CONCUBIN OU PARTENAIRE DE PACS AVEC LEQUEL CELUI-CI SE PORTERAIT ACQUEREUR, OU ENCORE TOUTE SOCIETE DANS LAQUELLE LEDIT ACHETEUR AURAIT UNE PARTICIPATION.</h2></li>
+EN CAS DE NON RESPECT DES OBLIGATIONS ÉNONCÉES CI-AVANT DANS LE PARAGRAPHE, IL S’ENGAGE EXPRESSÉMENT À VERSER AU MANDATAIRE, EN VERTU DE L'ARTICLE 1231-5 DU CODE CIVIL, UNE INDEMNITÉ COMPENSATRICE FORFAITAIRE ÉGALE AU MONTANT DE LA RÉMUNÉRATION PRÉVUE CI-AVANT.
+  <li><h2> EN CAS DE PRÉSENTATION DU BIEN À VENDRE À UN PRIX INFÉRIEUR À CELUI PRÉVU AU PRÉSENT MANDAT, LE MANDANT VERSERA UNE INDEMNITÉ COMPENSATRICE FORFAITAIRE CORRESPONDANT À LA MOITIÉ DES HONORAIRES CONVENUS, LE MANDATAIRE SUBISSANT UN PRÉJUDICE PAR LA PERTE D'UNE CHANCE DE VENDRE LE BIEN.</h2></li>
+Si le présent mandat porte sur un ou plusieurs lots ou fractions de lots de copropriété, l’article 46 de la loi n° 65557 du 10 juillet 1965 dispose que, sauf pour les caves, garages, emplacements de stationnement ou lots ou fractions de lots d'une superficie inférieure à 8 m², toute promesse unilatérale de vente, tout contrat réalisant ou constatant la vente d'un lot ou d'une fraction de lot mentionne la superficie de la partie privative de ce lot ou de cette fraction de lot. La nullité de l'acte peut être invoquée sur le fondement de l'absence de toute mention de cette superficie. Si la superficie est supérieure à celle exprimée dans l'acte, l'excédent de mesure ne donne lieu à aucun supplément de prix. Si la superficie est inférieure de plus d'un vingtième à celle exprimée dans l'acte, le vendeur, à la demande de l'acquéreur, supporte une diminution du prix proportionnelle à la moindre mesure. L’action en diminution du prix doit être intentée par l’acquéreur dans un délais d’un an à compter de l’acte authentique constatant la réalisation de la vente, à peine de déchéance.
+Cela rappelé, le mandant prend acte de ces dispositions et fournira, sous son entière et seule responsabilité, la superficie de la partie privative des biens objet du présent mandat dans les huit jours des présentes.
+
+  <li><h2> Si ce document n’est pas fourni sous huitaine par le mandant, celui-ci autorise à ses frais le mandataire à faire établir, par un homme de l’art, une attestation mentionnant la superficie exacte de la partie privative des biens objet du présent mandat.</h2></li>
+
+Si le présent mandat porte sur de biens immobiliers situés dans des zones couvertes par un plan de prévention des risques technologiques ou par un plan de prévention des risques naturels prévisibles, prescrit ou approuvé, dans des zones de sismicité ou dans des zones à potentiel radon définies par voie réglementaire, le (s) vendeur (s) se devra (ont) d’informer le (s) acquéreur (s) de l’existence de ce risque conformément à l’article L125-5 du Code de l’environnement.
+De plus, lorsqu'un immeuble bâti a subi un sinistre ayant donné lieu au versement d'une indemnité en application de l'article L. 125-2 ou de l'article L. 128-2 du code des assurances, le vendeur de l'immeuble est tenu d'informer par écrit l'acquéreur ou le locataire de tout sinistre survenu pendant la période où il a été propriétaire de l'immeuble ou dont il a été lui-même informé en application des présentes dispositions. En cas de vente de l'immeuble, cette information est mentionnée dans l'acte authentique constatant la réalisation de la vente. En cas de non-respect de cette disposition, l'acquéreur peut poursuivre la résolution du contrat ou demander au juge une diminution du prix.
+Cela rappelé, le mandant prend acte de ces dispositions et fournira, sous son entière et seule responsabilité, l’état des risques technologiques, naturels, miniers ou sismiques afférent aux biens objet du présent mandat dans les huit jours des présentes.
+
+Le bien objet des présentes ne pourra faire l’objet d’une campagne publicitaire qu’à la condition que soient transmis au mandataire le diagnostic performance énergétique (DPE) et en cas de copropriété́, le nombre de lots et le montant annuel de la quote-part, à la charge du vendeur, le budget prévisionnel correspondant aux dépenses courantes définies à l’article 14-1 de la loi n° 65-557 du 10 juillet 1965, et l’information sur les éventuelles procédures dont ferait l’objet le syndicat des copropriétaires sur le fondement des articles 29-1 A et 29-1 de la loi n° 65-557 du 10 juillet 1965 et de l’article L.615-6 du Code de la construction et de l’habitation.
+
+
+Conditions relatives au mandataire :
+
+
+Le mandataire détenant un mandat simple sans exclusivité s’engage à réaliser à ses frais les actions suivantes et à en assurer un suivi au mandant dans les conditions suivantes :
+
+  <li><h2> ACTIONS DE COMMUNICATION (au choix)</h2></li>
+
+  <li><h2> REALISATION D’UN DOSSIER DE PRESENTATION DU BIEN OBJET DU MANDAT.</h2></li>
+  <li><h2> AFFICHAGE PAR ROTATION DU BIEN DANS LA VITRINE DES LOCAUX COMMERCIAUX DU MANDATAIRE.</h2></li>
+  <li><h2> POSE D’UN PANNEAU SUR LE BIEN OBJET DU MANDAT, SI LA CONFIGURATION DES LIEUX LE PERMET.</h2></li>
+  <li><h2> DIFFUSION PERMANENTE DU BIEN SUR LE SITE INTERNET DU PROFESSIONNEL : “LIEN DU SITE WEB“</h2></li>
+  <li><h2> DIFFUSION PAR ROTATION DU BIEN SUR DES SITES INTERNET SPECIALISES DANS LA VENTE IMMOBILIERE : “LISTE“.</h2></li>
+* SAUF DENONCIATION OU MODIFICATION DE (S) CONTRAT (S) AVEC UN OU PLUSIEURS DES PRESTATAIRES DE L’ALINEA PRECEDENT.
+  <li><h2> DISTRIBUTION D’UN MAILING DE PRESENTATION À SES PROSPECTS.</h2></li>
+  <li><h2> “PERSONNALISATION“</h2></li>
+
+
+  <li><h2> SUIVI DES ACTIONS DE COMMUNICATION</h2></li>
+
+PENDANT TOUTE LA DUREE DU MANDAT, LE MANDATAIRE S’ENGAGE A :
+
+  <li><h2> TRANSMETTRE TOUTE OFFRE OU PROPOSITION ECRITE SUR LE (S) BIEN (S) DESIGNÉ (S).</h2></li>
+  <li><h2> FAIRE UN COMPTE RENDU DES VISITES REALISEES ET INFORMER PAR COURRIEL OU APPEL TELEPHONIQUE SON MANDATAIRE DE L’ENSEMBLE DES ACTIONS ET VISITES EFFECTUEES AVEC L’IDENTITE ET LES OBSERVATIONS DU PROSPECT TOUT (ES) LES “PÉRIODICITÉ</h2></li>
+
+  <li><h2> “PERSONNALISATION“</h2></li>
+
+Dans l’éventualité où le mandataire trouverait une personne intéressée par l’acquisition des biens objet du mandat, le mandataire restera tenu de poursuivre sa mission jusqu’à la réitération de la vente par acte authentique et se chargera, notamment de la négociation de la vente, de toutes les démarches nécessaires pour y parvenir et de la rédaction de tout avant-contrat de vente ou acte sous seing privé.
+En outre, à défaut de réalisation du mandat dans un délai de trois mois à compter de sa signature, le mandataire informera le mandant des évolutions et des tendances du marché sur la même zone géographique, le cas échéant, des travaux et des ajustements du prix qu’il conviendrait de réaliser par contact téléphonique et/ou courriel.
+Le mandataire ne pourra, en aucun cas, être considéré comme le gardien juridique des biens à vendre, sa mission étant de procéder à l’intermédiation d’une transaction immobilière. En conséquence, il appartiendra au mandant de prendre toutes dispositions, jusqu'à la vente, pour assurer la bonne conservation de ses biens et de souscrire toutes assurances qu'il estimerait nécessaires.
+Au plus tard dans les huit jours de l’opération, le mandataire informera le mandant, par lettre recommandée avec demande d’avis de réception ou par tout écrit remis contre récépissé ou émargement, de l’accomplissement du présent mandat et lui remettra dans les mêmes conditions une copie de la quittance ou du reçu délivré.
+Au cas où le mandant constaterait un manquement du mandataire sur un des engagements ci-dessus énoncés, il pourra dénoncer le mandat par lettre recommandée avec demande d'accusé réception.
+En cas de dénonciation du mandat, le mandataire conservera, son exemplaire du mandat par dérogation aux dispositions de l'article 2004 du Code civil.
+
+-------------------------------------------------------------------
+Droit de rétractation :
+Conformément aux dispositions des articles L. 221-18 à L. 221-28 du code de la consommation, en cas de mandat signé "hors établissement" ou "à distance“, le mandant dispose d’un droit de rétractation d’un délai de 14 jours et ce, sans avoir à motiver sa décision de rétractation. Ce délai court à compter du lendemain du jour de la conclusion du mandat et expire le dernier jour à minuit. Si ce dernier jour est un samedi, un dimanche, un jour férié ou chômé, le délai est prorogé jusqu’au premier jour ouvrable suivant.
+
+Le mandant reconnait avoir pris connaissance du formulaire de rétractation annexé au mandat et informe le mandataire de sa décision de rétractation en lui adressant, avant l’expiration du délai de rétractation le formulaire de rétractation ci-joint ou toute autre déclaration dénuée d’ambiguïté, exprimant sa volonté de se rétracter.
+
+La charge de la preuve de l'exercice du droit de rétractation dans les conditions prévues à l'article L. 221-21 du code de la consommation pèse sur le consommateur.
+
+Le mandant pourra, s'il le souhaite, lors de la signature du mandat, demander à ce que le mandataire commence ses prestations avant l'expiration du délai de rétractation. Le mandataire doit recueillir sa demande expresse sur papier ou sur support durable. Le mandant pourra toutefois se rétracter durant cette période, sauf si le mandataire a pleinement exécuté́ sa mission avant la fin du délai de rétractation.
+Si le mandat est signé à l’agence, le mandant ne bénéficie d’aucun droit de rétractation.
+
+-------------------------------------------------------------------
+
+Médiation des litiges :
+Tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable du litige qui l'oppose à un professionnel. A cet effet, le professionnel garantit au consommateur le recours effectif à un dispositif de médiation de la consommation, en vertu des articles L 152-1 et suivants du Code de la consommation ; vous pouvez trouver les coordonnées du médiateur sectoriel sur https://www.economie.gouv.fr/mediation-conso
+Conformément à l’article L 152-2 d) du Code de la consommation, un litige ne peut être examiné par le médiateur de la consommation lorsque le consommateur a introduit sa demande auprès du médiateur dans un délai supérieur à un an à compter de sa réclamation écrite auprès du professionnel.
+
+
+-------------------------------------------------------------------
+Prévention et règlement des litiges et réclamations :
+En cas de litige, toutes contestations relatives à l’application ou à l’interprétation du mandat seront régies par le droit français. Tout litige fera l’objet au préalable d’une concertation afin de trouver une solution amiable, à défaut la partie la plus diligente saisira le tribunal du lieu du domicile du défendeur conformément à l’article 42 du Code procédure civile.
+Le (s) mandant (s) reconnaît avoir pris connaissance des conditions générales du présent mandat.
+Fait et signé en “NOMBRES“ exemplaires, dont l’un est remis au mandant qui le reconnaît et l’autre étant conservé par le mandataire.
+Mots nuls “NOMBRES“
+Lignes nulles “NOMBRES“
+À “LIEU“ le “DATE“
+Signature du (des) mandant (s)
+Signature du mandataire
+
+
+
+
+
+-------------------------------------------------------------------
+Formulaire de rétractation :
+
+Conformément à l’article L221-9 du Code de la consommation et à l’annexe à l’article R221-1 du Code de la consommation issue du Décret n°2016-884 du 29 juin 2016, veuillez compléter et renvoyer le présent formulaire uniquement si vous souhaitez vous rétracter du contrat ci-avant :
+  <li><h2> À l’attention de : “NOM DU MANDATAIRE“</h2></li>
+  <li><h2> Nom de l’agence : “ENSEIGNE“</h2></li>
+  <li><h2> Adresse de l’agence : “ADRESSE“</h2></li>
+  <li><h2> Téléphone de l’agence : “NUMÉRO DE TÉLÉPHONE“</h2></li>
+  <li><h2> Télécopie (fax) : “ NUMÉRO DE TÉLÉCOPIE“</h2></li>
+  <li><h2> E-mail : “ADRESSE E-MAIL“</h2></li>
+Je/nous (*) vous notifie/notifions (*) par la présente ma/notre (*) rétractation du contrat portant sur la vente du bien (*)/pour la prestation de services (*) ci-dessous (* Rayer mention inutile) : __________________________________________________________________________________________________________________________________________________________________________
+
+Commandé le : “DATE“
+
+Nom du/des consommateur (s) : “NOM DU/DES CONSOMMATEURS“
+Adresse du/des consommateur (s) : “ADRESSE (S) DU/DES CONSOMMATEURS
+Date de la rétractation : “DATE“
+Signature du (des) consommateur (s)
+
+Notice de rétractation : En cas de rétractation, le client devra :
+  <li><h2> Compléter et signer ce formulaire de rétractation</h2></li>
+  <li><h2> L’envoyer par lettre recommandée avec accusé de réception</h2></li>
+  <li><h2> Utiliser l’adresse de l’agence ci-dessus</h2></li>
+  <li><h2> Exercer son droit de rétractation d’un délai de 14 jours et ce, sans avoir à motiver sa décision de rétractation. Ce délai court à compter du lendemain du jour de la conclusion du mandat et expire le dernier jour à minuit. Si ce dernier jour est un samedi, un dimanche, un jour férié ou chômé, le délai est prorogé jusqu’au premier jour ouvrable suivant.</h2></li>
+
+</div>

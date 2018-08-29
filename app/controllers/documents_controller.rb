@@ -20,6 +20,9 @@ class DocumentsController < ApplicationController
 
   def show
     @house = House.find(params[:house_id])
+    @user = @house.user
+    @owner = @house.owner
+    @agence = @house.user.agence
     authorize @document
     #template = "document/show.pdf.erb"
     #case condition
@@ -34,7 +37,7 @@ class DocumentsController < ApplicationController
       format.pdf do
         render pdf: "#{@house.address} - #{@document.document_type_id} - #{@document.created_at}",   # Excluding ".pdf" extension.
                template: "documents/show.pdf.erb",
-               locals: {document: @document}
+               locals: {document: @document, agence: @agence, user: @user, owner: @owner}
       end
     end
   end

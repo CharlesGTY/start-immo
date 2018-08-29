@@ -1,0 +1,12 @@
+.text-center {
+  text-align: center;
+}
+
+#content {
+  font-size: 50px;
+}
+
+.data{
+  color: blue;
+  font-weight: bolder;
+}
