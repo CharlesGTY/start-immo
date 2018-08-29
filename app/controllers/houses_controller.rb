@@ -4,14 +4,17 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
-    @owner = current_user
+    @owner = Owner.new
     authorize @house
   end
 
   def create
     @house = House.new(house_params)
+    @owner = Owner.new(owner_params)
+    @house.owner = @owner
     @house.user = current_user
     authorize @house
+    @owner.save
     if @house.save
       redirect_to house_path(@house)
     else
@@ -40,6 +43,40 @@ class HousesController < ApplicationController
   end
 
   def house_params
-    params.require(:article).permit(:address, :description, :photo)
+    params.require(:house).permit(
+      :owner,
+      :user,
+      :address,
+      :description,
+      :house_type,
+      :usage_type,
+      :notary_name,
+      :smoke_detector_presence,
+      :nb_rooms,
+      :nb_bedrooms,
+      :nb_livingrooms,
+      :nb_diningrooms,
+      :nb_bathrooms,
+      :equiped_kitchen,
+      :nb_showers,
+      :nb_bathtubs,
+      :nb_terraces,
+      :nb_balconies,
+      :surface_living,
+      :surface_Carrez,
+      :surface_total,
+      :dpe_done,
+      :energy_consumption,
+      :ges_emission
+    )
+  end
+
+  def owner_params
+    params.require(:house).require(:owner).permit(
+      :first_name,
+      :last_name,
+      :address,
+      :email
+    )
   end
 end

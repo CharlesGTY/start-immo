@@ -3,15 +3,16 @@
   <%= f.input :house_type, label: 'Type de bien'%>
   <%= f.input :address, label: 'Adresse du bien'%>
   <%= f.input :usage_type, label: 'Bien à usage'%>
-<% end %>
 
-<%= simple_form_for [@owner] do |f| %>
-<h4>Propriétaires</h4>
-  <%= f.input :first_name, label: 'Prénom'%>
-  <%= f.input :last_name, label: 'Nom'%>
-  <%= f.input :address, label: 'Adresse'%>
-  <%= f.input :email, label: 'email'%>
-  <%= f.input :phone_number, label: 'Téléphone'%>
-
+  <h4>Propriétaires</h4>
+    <%= f.simple_fields_for :owner do |o| %>
+      <%= o.input :first_name, label: 'Prénom'%>
+      <%= o.input :last_name, label: 'Nom'%>
+      <%= o.input :address, label: 'Adresse'%>
+      <%= o.input :email, label: 'email'%>
+      <%= o.input :phone_number, label: 'Téléphone'%>
+    <% end %>
   <%= f.submit 'save' %>
 <% end %>
+
+
