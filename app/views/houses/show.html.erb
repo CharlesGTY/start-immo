@@ -63,15 +63,14 @@
       <%= f.association :document_type %>
       <%= f.button :submit %>
     <% end %>
-
     <div class="content-right">
       <h3>Document juridiques</h3>
       <ul>
         <% @house.documents.each do |document| %>
-          <a href=""><i class="far fa-file-pdf"></i></a>
           <li>
-            <% document.type %> créé le <% document.created_at %>
-            <p> document.status </p>
+          <a href=""><i class="far fa-file-pdf"></i></a>
+            <%= document.document_type.name %> créé le <%= document.created_at %>
+            <p>Status: <%= document.status %> </p>
           </li>
         <% end %>
       </ul>
