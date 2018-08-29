@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0px 10px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   background-color: $white;
   border-radius: 5px;
-  margin: 20px 0px;
   color: $blue;
   transition: all .2s ease-in-out;
+
   &:hover {
     transform: scale(1.03);
   }
@@ -16,6 +16,10 @@
 
 .message-hover:hover {
   text-decoration: none !important;
+}
+
+.margin-list {
+  margin-bottom:0 !important;
 }
 
 .message-date {
@@ -41,32 +45,46 @@
 .message-name h3 {
   font-size: 20px;
 }
-.message-name p {
-
-}
-
-.message-body strong{
-}
-.message-body p {
-
-}
-.status.accepted {
-}
-.status.declined {
-}
-.status.pending {
-}
 
 .logo-and-search-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  background-color: $blue;
+  border-radius: 3px;
 }
 
 .logo-search-bar i {
-  color: $grey;
-  margin-right: 10px;
+  color: $white;
+  margin-right: 10px
 }
 
-.search-bar form{
-  min-width: 350px;
+.search-bar {
+  min-width: 200px;
+  color: $white !important;
+}
+
+.title-search-bar {
+  padding:0;
+}
+
+.flex-btn-search-bar {
+  display: flex;
+  align-items:center;
+}
+
+#list-title {
+  color: $blue;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 2;
+  width: 80%;
+  top:0;
+}
+
+.sticky + .message {
+  padding-top: 60px;
 }
