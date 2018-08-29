@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_action :document_selector, only: [:show]
 
   def create
     @house = House.find(params[:house_id])
@@ -18,7 +19,24 @@ class DocumentsController < ApplicationController
   end
 
   def show
-
+    @house = House.find(params[:house_id])
+    authorize @document
+    #template = "document/show.pdf.erb"
+    #case condition
+    #  when valeur then template = "document/show.pdf.erb"
+    #  when valeur then template = "document/show.pdf.erb"
+    #  when valeur then template = "document/show.pdf.erb"
+    #  when valeur then template = "document/show.pdf.erb"
+    #  else template = "document/show.pdf.erb"
+    #end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@house.address} - #{@document.document_type_id} - #{@document.created_at}",   # Excluding ".pdf" extension.
+               template: "documents/show.pdf.erb",
+               locals: {document: @document}
+      end
+    end
   end
 
   def edit
@@ -31,6 +49,10 @@ class DocumentsController < ApplicationController
   end
 
   private
+
+  def document_selector
+    @document = Document.find(params[:id])
+  end
 
   def document_params
     params.require('document').permit(:data, :status, :document_type)
