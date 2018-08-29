@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="btn-search-bar">
-        <%= link_to "Créer un bien", "", class:"btn-base" %>
+        <%= link_to "Créer un bien", new_house_path, class:"btn-base" %>
       </div>
     </div>
     <% @houses.each do |house| %>
@@ -23,7 +23,7 @@
         <div class="message z-depth-3">
           <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
           <div class="message-name">
-            <h3>Mateo Ceron</h3>
+            <h3> <%= house.user.first_name %> <%= house.user.last_name %> </h3>
             <p>10/07/17</p>
           </div>
           <div class="message-body">
