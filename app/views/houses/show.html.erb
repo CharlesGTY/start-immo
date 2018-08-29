@@ -1,11 +1,12 @@
 <!-- show.html.erb -->
 <div class="container" id="show-house">
+
   <div class="content-flex">
     <div class="content-left">
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Propriétaire</h3>
+          <h3>Propriétaire</h3>
           <div class="wrap">
             <div class="wrap-inside"><%= @house.owner.first_name %></div>
             <div class="wrap-inside"><%= @house.owner.last_name %></div>
@@ -18,7 +19,7 @@
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Intérieur du bien</h3>
+          <h3>Intérieur du bien</h3>
           <div class="wrap">
             <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
             <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
@@ -37,7 +38,7 @@
 
       <div class="row">
         <div class="white-back">
-          <h3><i class="fas fa-star"></i>Extérieur du bien</h3>
+          <h3>Extérieur du bien</h3>
           <div class="wrap">
             <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
             <div class="wrap-inside">Habitable: <%= @house.surface_living%> m2</div>
@@ -58,25 +59,37 @@
 
 
 
-  <div class="col-xs-3">
-    <%= simple_form_for [@house, @document] do |f| %>
-      <%= f.association :document_type %>
-      <%= f.button :submit %>
-    <% end %>
-    <div class="content-right">
-      <h3>Document juridiques</h3>
-      <ul>
-        <% @house.documents.each do |document| %>
-          <li>
-          <%= link_to "<i class='far fa-file-pdf'></i>".html_safe ,
-           house_document_path(@house,document, format: 'pdf') %>
-          <%= document.document_type.name %> créé le <%= document.created_at %>
-            <p>Status: <%= document.status %> </p>
 
-          </li>
-        <% end %>
-      </ul>
+    <div class="content-right">
+      <div class="white-back">
+      <h3 class="background-blue">Document juridiques</h3>
+        <ul>
+          <% @house.documents.each do |document| %>
+            <li>
+            <div class="pdf-link">
+              <%= link_to "<i class='far fa-file-pdf'></i>".html_safe ,
+               house_document_path(@house,document, format: 'pdf') %>
+            </div>
+            <div class="doc-descr">
+            <p><%= document.document_type.name %> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
+              </p>
+            </div>
+            <div class="doc-status">
+              <p>Status <br> <%= document.status %> </p>
+            </div>
+
+            </li>
+          <% end %>
+        </ul>
+        <hr>
+        <div class="text-center">
+            <%= simple_form_for [@house, @document] do |f| %>
+            <%= f.association :document_type %>
+            <%= f.button :submit, value: "Créer document"%>
+          <% end %>
+        </div>
+
+      </div>
     </div>
-  </div>
 
 </div>

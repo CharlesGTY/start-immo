@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
   create_table "documents", force: :cascade do |t|
     t.bigint "house_id"
     t.bigint "document_type_id"
-    t.string "status", default: "attente_signature_agent"
+    t.string "status", default: "attente signature agent"
     t.text "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
