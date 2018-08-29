@@ -1,5 +1,4 @@
 .boxes {
-  display: flex;
   color: $blue;
   text-align: center;
   margin-top: 30px;
@@ -21,7 +20,7 @@
 .box-numb {
   background-color: $white;
   padding: 10px 10px 20px 10px;
-  margin: 10px;
+  // margin: 10px;
   border-radius: 5px;
   max-width: 200px;
   transition: all .2s ease-in-out;
