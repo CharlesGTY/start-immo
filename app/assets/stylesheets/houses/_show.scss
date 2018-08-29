@@ -8,7 +8,37 @@
   }
 
   .content-right {
-    background: white;
+    padding:10px;
+    // background: white;
+    ul {
+      padding:10px;
+      display: flex-column;
+      font-size: 16px;
+    }
+    li {
+      display:flex;
+      justify-content:space-around;
+      align-items: center;
+    }
+    a {
+
+    }
+    .pdf-link {
+      width:5%;
+    }
+    .doc-descr {
+      width:40%
+    }
+    .doc-status {
+      width:40%
+    }
+    hr {
+      display: block;
+       height: 2px;
+       border-top: 2px solid $blue;
+       margin: 1em 0;
+       padding: 0;
+    }
   }
 
   .row{
@@ -37,5 +67,16 @@
     padding:10px;
   }
 
+.background-blue {
+  background: $blue;
+  border-radius: 5px;
+  padding: 10px;
+  color: $white;
+  font-size: 24px;
+  text-align: center;
+}
 
-
+.background-white {
+  background: $white;
+  padding: 10px;
+}
