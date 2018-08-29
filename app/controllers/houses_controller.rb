@@ -10,7 +10,11 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
-    @owner = Owner.new(owner_params)
+    if Owner.find_by(owner_params).nil?
+      @owner = Owner.new(owner_params)
+    else
+      Owner.find_by(owner_params)
+    end
     @house.owner = @owner
     @house.user = current_user
     authorize @house
