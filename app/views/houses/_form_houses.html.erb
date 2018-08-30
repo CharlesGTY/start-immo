@@ -1,7 +1,7 @@
-<h5>Etape 2 sur 3</h5>
+<h5>Etape <span id="step_count">1</span> sur 3</h5>
 <div class="boxContainer">
-<div class="boxItem text-center item-circle step-done"></div>
 <div class="boxItem text-center item-circle step-active"></div>
+<div class="boxItem text-center item-circle"></div>
 <div class="boxItem text-center item-circle"></div>
 </div>
 
@@ -78,6 +78,28 @@
 
 <script>
 
+  const changeStepProgressBar = () => {
+    let step_number
+    document.querySelectorAll(".step").forEach( (el) => {
+      if (el.style.display != "none") {
+        id = el.id;
+        step_number = id.substr(id.length - 1);
+        document.querySelector("#step_count").innerText = step_number
+      }
+    })
+    let i = 1
+    document.querySelectorAll(".boxItem").forEach( (el) => {
+      el.classList.remove("step-active");
+      el.classList.remove("step-done");
+      if (i < step_number) {
+        el.classList.add("step-done");
+      } else if (i == step_number) {
+        el.classList.add("step-active");
+      }
+      i+= 1;
+    })
+  }
+
   const showNextStep = (id) => {
     document.querySelectorAll(".step").forEach((el) => {
       el.style.display = "none";
@@ -91,6 +113,7 @@
     el.addEventListener("click", (ev) => {
       let id = ev.target.id;
       showNextStep(id.substr(id.length - 1));
+      changeStepProgressBar();
     })
   })
 
