@@ -6,19 +6,106 @@
 </div>
 
 <%= simple_form_for [@house] do |f| %>
-  <h4>Désignation du bien</h4>
 
-  <%= f.input :address, label: 'Adresse du bien'%>
-  <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
-  <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionel Mixte), as: :radio_buttons %>
+  <div class="step" id="step_1">
+    <h4>Désignation du bien</h4>
+    <%= f.input :address, label: 'Adresse du bien'%>
+    <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+    <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionel Mixte), as: :radio_buttons %>
 
-  <h4>Propriétaires</h4>
-    <%= f.simple_fields_for :owner do |o| %>
-      <%= o.input :last_name, label: 'Nom'%>
-      <%= o.input :first_name, label: 'Prénom'%>
-      <%= o.input :address, label: 'Adresse'%>
-      <%= o.input :email, label: 'email'%>
-      <%= o.input :phone_number, label: 'Téléphone'%>
-    <% end %>
-    <%= f.submit 'Continuer', class: "btn btn-primary"%>
+    <h4>Propriétaires</h4>
+      <%= f.simple_fields_for :owner do |o| %>
+        <%= o.input :last_name, label: 'Nom'%>
+        <%= o.input :first_name, label: 'Prénom'%>
+        <%= o.input :address, label: 'Adresse'%>
+        <%= o.input :email, label: 'email'%>
+        <%= o.input :phone_number, label: 'Téléphone'%>
+      <% end %>
+      <div class="button-next" id="button-1">Continuer</div>
+      <%# f.submit 'Continuer', class: "btn btn-primary"%>
+  </div>
+
+  <div class="step" id="step_2" style="display: none;" >
+      <h4>Intérieur du bien</h4>
+      <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+      <div class="row">
+        <div class="col-xs-3">
+          <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
+        </div>
+        <div class="col-xs-3">
+          <%= f.input :nb_bedrooms, label: 'Chambre'%>
+        </div>
+        <div class="col-xs-3">
+          <%= f.input :nb_livingrooms, label: 'Séjour'%>
+        </div>
+        <div class="col-xs-3">
+          <%= f.input :nb_diningrooms, label: 'Cuisine'%>
+        </div>
+      </div>
+      <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
+      <div class="switch">
+        <label>
+          Non
+          <input type="checkbox">
+          <span class="lever"></span>
+          Oui
+        </label>
+      </div>
+
+      <h4>Extérieur du bien</h4>
+      <%= f.input :construction_date, label: 'Année de construction'%>
+      <%= f.input :surface_total, label: 'Surface du terrain'%>
+      <%= f.input :nb_balconies, label: 'Balcon'%>
+      <div class="button-next" id="button-2">Continuer</div>
+  </div>
+
+
 <% end %>
+
+
+<script>
+
+  const showNextStep = (id) => {
+    document.querySelectorAll(".step").forEach((el) => {
+      el.style.display = "none";
+    })
+    document.querySelector(`#step_${parseInt(id)+1}`).style.display = "block";
+  }
+
+  document.querySelectorAll(".button-next").forEach( (el) => {
+    el.addEventListener("click", (ev) => {
+      let id = ev.target.id;
+      showNextStep(id.substr(id.length - 1));
+    })
+  })
+
+  const getNumberOfRooms = (surface) => {
+    let array = [];
+    if (surface <= 50) {
+      array = [2,1,1,1]
+    }
+    else if (surface <= 90) {
+      array = [4,2,1,1]
+    }
+    else if (surface <= 130) {
+      array = [6,3,2,1]
+    }
+    else {
+     array = [6,3,2,2]
+    }
+    return array;
+  }
+
+  const populateForm = (array) => {
+    document.querySelector("#house_nb_rooms").value = array[0];
+    document.querySelector("#house_nb_bedrooms").value = array[1];
+    document.querySelector("#house_nb_livingrooms").value = array[2];
+    document.querySelector("#house_nb_diningrooms").value = array[3];
+  }
+
+  document.querySelector("#house_surface_living").addEventListener("blur", (ev) => {
+    value = ev.target.value
+    populateForm(getNumberOfRooms(value));
+  })
+
+</script>

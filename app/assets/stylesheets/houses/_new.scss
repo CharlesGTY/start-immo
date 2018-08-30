@@ -28,6 +28,20 @@
 
 }
 
+.button-next {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: fit-content;
+
+  &:hover{
+    background-color: rgba(200,200,200, 0.5);
+    cursor: pointer;
+  }
+
+}
+
 input[type="radio"]:checked+label {
   background-color: rgba(200,200,200, 0.7);
 }
