@@ -11,14 +11,11 @@
       <strong><%= document.document_type.name %></strong> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
       </div>
       <div class="doc-time-status">
-        <% if  document.updated_at  %>
-        <i class='fas fa-hourglass-half fa-2x icon-green ' data-toggle="tooltip" data-placement="bottom" title="3 jours depuis la demande de signature"></i>
-        <% else %>
-        <% end %>
+        <i class='fas fa-hourglass-half fa-1x icon-green' data-toggle="tooltip" data-placement="bottom" title="3 jours depuis la demande de signature"></i>
       </div>
       <div class="doc-signature-status">
         <% if document.status == "attente signature agent" %>
-        <i class='fas fa-pen-fancy fa-2x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="agent"></i>
+        <i class='fas fa-pen-fancy fa-1x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="signature agent en attente"></i>
         <% else %>
         <% end %>
       </div>
