@@ -59,6 +59,19 @@
       <div class="button-next" id="button-2">Continuer</div>
   </div>
 
+  <div class="step" id="step_3" style="display: none;" >
+    <h4>Intérieur du bien</h4>
+    <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
+    <%= f.input :nb_bedrooms, label: 'Chambre'%>
+    <%= f.input :nb_livingrooms, label: 'Séjour'%>
+    <%= f.input :nb_diningrooms, label: 'Salle de bain à verifier'%>
+    <%= f.input :nb_diningrooms, label: 'Cuisine'%>
+    <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
+    <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+
+    <%= f.submit 'Créer le bien', class: "btn btn-primary" %>
+  </div>
+
 
 <% end %>
 
@@ -70,6 +83,8 @@
       el.style.display = "none";
     })
     document.querySelector(`#step_${parseInt(id)+1}`).style.display = "block";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   document.querySelectorAll(".button-next").forEach( (el) => {
