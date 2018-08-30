@@ -2,7 +2,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 160px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -16,37 +16,43 @@
 }
 .banner p {
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: normal;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
+  opacity: 0.9;
   margin-bottom: 30px;
 }
 
 .card {
-  height: 175px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
 }
+
+.card-sub {
+  height: 280px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
 }
-// .card-category {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   font-size: 15px;
-//   text-transform: uppercase;
-// }
+.card-category {
+  position: absolute;
+  top: 35px;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+}
 .card-description {
   position: absolute;
-  top: 20px;
+  top: 50px;
   text-align: center;
   width: 100%;
 }
@@ -58,6 +64,15 @@
   opacity: 0.7;
   font-weight: lighter;
 }
+
+.card-phrase{
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -98,4 +113,20 @@
 .daddy-container{
   margin-top: 70px !important;
 }
+
+.banner-bottom {
+  color: white;
+  text-align: center;
+  height: 250px;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.text-content h2{
+  font-size: 32px;
+}
+
 
