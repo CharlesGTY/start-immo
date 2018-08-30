@@ -1,17 +1,60 @@
 <%= simple_form_for [@house] do |f| %>
-<h4>Désignation du bien</h4>
-  <%= f.input :house_type, label: 'Type de bien'%>
-  <%= f.input :address, label: 'Adresse du bien'%>
-  <%= f.input :usage_type, label: 'Bien à usage'%>
 
   <h4>Intérieur du bien</h4>
-  <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
-  <%= f.input :nb_bedrooms, label: 'Chambre'%>
-  <%= f.input :nb_livingrooms, label: 'Séjour'%>
-  <%= f.input :nb_diningrooms, label: 'Salle de bain à verifier'%>
-  <%= f.input :nb_diningrooms, label: 'Cuisine'%>
-  <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
   <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
+    </div>
+    <div class="col-xs-3">
+      <%= f.input :nb_bedrooms, label: 'Chambre'%>
+    </div>
+    <div class="col-xs-3">
+      <%= f.input :nb_livingrooms, label: 'Séjour'%>
+    </div>
+    <div class="col-xs-3">
+      <%= f.input :nb_diningrooms, label: 'Cuisine'%>
+    </div>
+  </div>
+  <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
+
+  <h4>Extérieur du bien</h4>
+  <%= f.input :created_at, label: 'Année de construction à verifier'%>
+  <%= f.input :surface_total, label: 'Surface du terrain'%>
+  <%= f.input :nb_balconies, label: 'Terrasse à verifier'%>
+  <%= f.input :nb_balconies, label: 'Balcon'%>
 
   <%= f.submit 'save' %>
 <% end %>
+
+<script>
+  const getNumberOfRooms = (surface) => {
+    let array = [];
+    if (surface <= 50) {
+      array = [2,1,1,1]
+    }
+    else if (surface <= 90) {
+      array = [4,2,1,1]
+    }
+    else if (surface <= 130) {
+      array = [6,3,2,1]
+    }
+    else {
+     array = [6,3,2,2]
+    }
+    return array;
+  }
+
+  const populateForm = (array) => {
+    document.querySelector("#house_nb_rooms").value = array[0];
+    document.querySelector("#house_nb_bedrooms").value = array[1];
+    document.querySelector("#house_nb_livingrooms").value = array[2];
+    document.querySelector("#house_nb_diningrooms").value = array[3];
+  }
+
+  document.querySelector("#house_surface_living").addEventListener("blur", (ev) => {
+    value = ev.target.value
+    populateForm(getNumberOfRooms(value));
+  })
+
+</script>

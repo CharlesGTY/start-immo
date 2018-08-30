@@ -17,8 +17,8 @@
 
   <h4>Propriétaires</h4>
     <%= f.simple_fields_for :owner do |o| %>
-      <%= o.input :first_name, label: 'Prénom'%>
       <%= o.input :last_name, label: 'Nom'%>
+      <%= o.input :first_name, label: 'Prénom'%>
       <%= o.input :address, label: 'Adresse'%>
       <%= o.input :email, label: 'email'%>
       <%= o.input :phone_number, label: 'Téléphone'%>
