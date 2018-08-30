@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
   create_table "document_types", force: :cascade do |t|
     t.string "name"
     t.text "content"
+    t.string "data_type_changed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
     t.bigint "house_id"
     t.bigint "document_type_id"
     t.string "status", default: "attente signature agent"
-    t.text "data"
+    t.jsonb "data", default: "{}", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["document_type_id"], name: "index_documents_on_document_type_id"

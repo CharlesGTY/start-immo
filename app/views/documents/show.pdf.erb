@@ -15,25 +15,25 @@ articles 72 et suivants du décret n°72-678 du 20 juillet 1972</h2>
 <h1>Identification du mandataire : </h1>
 
 <ul>
-  <li> <h2> Dénomination sociale : <span class="data"> <%= @agence.social_denomination %> </span></h2></li>
-  <li><h2> Forme Juridique (SARL / SAS / EI …) : <span class="data"> <%= @agence.juridic_form %> </span></h2></li>
-  <li><h2> Au “capital social“ de : <span class="data"> <%= @agence.social_capital %> </span> € </h2></li>
-  <li><h2>Sous “l'enseigne“ : <span class="data"> <%= @agence.enseigne_name %> </span></h2></li>
-  <li><h2>Dont le siège social est situé à l'adresse : <span class="data"> <%= @agence.address %> <%= @agence.city %>  </span></h2></h2></li>
-  <li><h2>Immatriculé sous le numéro SIREN : <span class="data"> <%= @agence.siren_number %> </span></h2></li>
+  <li> <h2> Dénomination sociale : <span class="data"> <%= agence[:social_denomination] %> </span></h2></li>
+  <li><h2> Forme Juridique (SARL / SAS / EI …) : <span class="data"><%= agence[:juridic_form] %> </span></h2></li>
+  <li><h2> Au “capital social“ de : <span class="data"> <%= agence[:social_capital] %> </span> € </h2></li>
+  <li><h2>Sous “l'enseigne“ : <span class="data"> <%= agence[:enseigne_name] %> </span></h2></li>
+  <li><h2>Dont le siège social est situé à l'adresse : <span class="data"> <%= agence[:address] %> <%= agence[:city] %>  </span></h2></h2></li>
+  <li><h2>Immatriculé sous le numéro SIREN : <span class="data"> <%= agence[:siren_number] %> </span></h2></li>
   <li><h2>Au RCS de “VILLE“</h2></li>
 </ul>
 <br/>
-<h2>Représenté par <span class="data"> <%= @agence.director_first_name %> <%= @agence.director_last_name %></span> en sa qualité de “DIRIGEANT“, dument habilité à l’effet des présentes.</h2>
+<h2>Représenté par <span class="data"> <%= agence[:director_first_name] %> <%= agence[:director_last_name] %></span> en sa qualité de “DIRIGEANT“, dument habilité à l’effet des présentes.</h2>
 <ul>
-  <li><h2>Numéro individuel d’indentification à la TVA : <span class="data"> <%= @agence.vat_number %> </span></h2></li>
+  <li><h2>Numéro individuel d’indentification à la TVA : <span class="data"> <%= agence[:vat_number] %> </span></h2></li>
 
-  <li><h2>Titulaire de la carte professionnelle numéro <span class="data"> <%= @agence.director_card_number %> </span></h2></li>
-  <li><h2>Délivrée le : <span class="data"> <%= @agence.director_card_date %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= @agence.director_card_city %> </span></h2></li>
+  <li><h2>Titulaire de la carte professionnelle numéro <span class="data"> <%= agence[:director_card_number] %> </span></h2></li>
+  <li><h2>Délivrée le : <span class="data"> <%= agence[:director_card_date] %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= agence[:director_card_city] %> </span></h2></li>
 
   <li><h2>Adhérent de la fédération “NOM DE LA FÉDÉRATION“ (OPTIONNEL)</h2></li>
 
-  <li><h2>Titulaire d’une carte professionnelle portant la mention “<span class="data"> <%= @agence.professional_card_mention %> </span>“ et d’un titre professionnel d’agent immobilier obtenu en France dont l’activité est régie par la loi n° 70-9 du 2 janvier 1970 (dite « loi Hoguet ») et son décret d’application n° 72678 du 20 juillet 1972.</h2></li>
+  <li><h2>Titulaire d’une carte professionnelle portant la mention “<span class="data"> <%= agence[:professional_card_mention] %> </span>“ et d’un titre professionnel d’agent immobilier obtenu en France dont l’activité est régie par la loi n° 70-9 du 2 janvier 1970 (dite « loi Hoguet ») et son décret d’application n° 72678 du 20 juillet 1972.</h2></li>
 
   <li><h2>Garanti par “ORGANISME FINANCIER“ situé au “ADRESSE“ pour un montant de “MONTANT“ pour les activités de “ACTIVITÉS“, contrat couvrant la zone géographique suivante : “ZONE GÉOGRAPHIQUE“. Titulaire du compte spécial
 (article 55 du décret de 20 juillet 1972) n° “NUMÉRO“ en “ACTIVITÉ“ ouvert auprés de “BANQUE“. (OPTIONNEL).</h2></li>
@@ -43,18 +43,18 @@ OU
 
 <li><h2>Le professionnel prestataire déclare sur l’honneur ne recevoir aucun fonds, effet ou valeur autre que ceux représentatifs de sa rémunération ou commission. </h2></li>
 
-<li><h2> Titulaire d’une assurance en responsabilité civile professionnelle auprès de <span class="data"> <%= @agence.civil_respons_insurance_name %> </span> situé au <span class="data"> <%= @agence.civil_respons_insurance_address %> </span> sous le numéro de police <span class="data"> <%= @agence.civil_respons_police_number %> </span>, couvrant la zone géographique suivante : <span class="data"> <%= @agence.civil_respons_police_geo_zone %> </span>. </h2></li>
+<li><h2> Titulaire d’une assurance en responsabilité civile professionnelle auprès de <span class="data"> <%= agence[:civil_respons_insurance_name] %> </span> situé au <span class="data"> <%= agence[:civil_respons_insurance_address] %> </span> sous le numéro de police <span class="data"> <%= agence[:civil_respons_police_number] %> </span>, couvrant la zone géographique suivante : <span class="data"> <%= agence[:civil_respons_police_geo_zone] %> </span>. </h2></li>
 <br/>
 
-<h2><span class="data"> <%= @user.first_name %> <%= @user.last_name %> </span>,
-titulaire de l’attestation de collaborateur numéro <span class="data"> <%= @user.attes_collab_number %> </span>
-Délivrée le <span class="data"> <%= @user.attes_collab_number_date %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= @user.attes_collab_number_city %> </span> </h2>
+<h2><span class="data"> <%= user[:first_name] %> <%= user[:last_name] %> </span>,
+titulaire de l’attestation de collaborateur numéro <span class="data"> <%= user[:attes_collab_number] %> </span>
+Délivrée le <span class="data"> <%= user[:attes_collab_number_date] %> </span> par la chambre de commerce et de l’industrie de <span class="data"> <%= user[:attes_collab_number_city] %> </span> </h2>
 <ul>
-    <li><h2> Téléphone de l’agence : <span class="data"> <%= @agence.phone_number %> </span> </h2></li>
+    <li><h2> Téléphone de l’agence : <span class="data"> <%= agence[:phone_number] %> </span> </h2></li>
 
-    <li><h2>Fax de l’agence : <span class="data"> <%= @agence.fax %> </span>  </h2></li>
+    <li><h2>Fax de l’agence : <span class="data"> <%= agence[:fax] %> </span>  </h2></li>
 
-    <li><h2> E-mail de l’agence : <span class="data"> <%= @agence.email %> </span>  </h2></li>
+    <li><h2> E-mail de l’agence : <span class="data"> <%= agence[:email] %> </span>  </h2></li>
 </ul>
   <br/>
 
@@ -65,28 +65,28 @@ Délivrée le <span class="data"> <%= @user.attes_collab_number_date %> </span> 
 
 <h2>Nous soussignés :</h2>
 
-<% if @owner.is_business %>
+<% if owner[:is_business] %>
 
-  <li><h2> Nom de la société : <span class="data"> <%= @owner.company_name %>  </span></h2></li>
-  <li><h2> SIRET : <span class="data"> <%= @owner.siret_number %> </span></h2></li>
-  <li><h2> RCS : <span class="data"> <%= @owner.rcs_number %> </span></h2></li>
-  <li><h2> Siège social : <span class="data"> <%= @owner.hq_address %> </span></h2></li>
-  <li><h2> Réprésentant : <span class="data"><%= @owner.last_name %><%= @owner.first_name %></span></h2></li>
-  <li><h2> Né (e) le : <span class="data"><%= @owner.birth_date %></span></h2></li>
-  <li><h2> À : <span class="data"><%= @owner.birth_place %></span></h2></li>
-  <li><h2> Adresse : <span class="data"><%= @owner.address %></span></h2></li>
+  <li><h2> Nom de la société : <span class="data"> <%= owner[:company_name] %>  </span></h2></li>
+  <li><h2> SIRET : <span class="data"> <%= owner[:siret_number] %> </span></h2></li>
+  <li><h2> RCS : <span class="data"> <%= owner[:rcs_number] %> </span></h2></li>
+  <li><h2> Siège social : <span class="data"> <%= owner[:hq_address] %> </span></h2></li>
+  <li><h2> Réprésentant : <span class="data"><%= owner[:last_name] %><%= owner[:first_name] %></span></h2></li>
+  <li><h2> Né (e) le : <span class="data"><%= owner[:birth_date] %></span></h2></li>
+  <li><h2> À : <span class="data"><%= owner[:birth_place] %></span></h2></li>
+  <li><h2> Adresse : <span class="data"><%= owner[:address] %></span></h2></li>
 
 <% else %>
 
 <uL>
   <li><h2>  Mandant N°1 : </h2></li>
-  <li><h2>  Nom : <span class="data"><%= @owner.last_name %></span></h2></li>
-  <li><h2>  Prénom : <span class="data"> <%= @owner.first_name %></span></h2></li>
-  <li><h2> Tél : <span class="data"><%= @owner.phone_number %> </span></h2></li>
+  <li><h2>  Nom : <span class="data"><%= owner[:last_name] %></span></h2></li>
+  <li><h2>  Prénom : <span class="data"> <%= owner[:first_name] %></span></h2></li>
+  <li><h2> Tél : <span class="data"><%= owner[:phone_number] %> </span></h2></li>
 </h2>
 *  (vous avez la possibilité de vous inscrire sur www.bloctel.gouv.fr pour vous opposer à tout démarchage téléphonique conformément à l’article L223-1 du Code de la Consommation).
-  <li><h2> E-mail : <span class="data"> <%= @owner.email %></span></h2></li>
-  <li><h2> Adresse : <span class="data"> <%= @owner.address %>  </span></h2></li>
+  <li><h2> E-mail : <span class="data"> <%= owner[:email] %></span></h2></li>
+  <li><h2> Adresse : <span class="data"> <%= owner[:address] %>  </span></h2></li>
 <br/>
   <li><h2> Mandant N°2 :</h2></li>
 
@@ -105,11 +105,11 @@ Délivrée le <span class="data"> <%= @user.attes_collab_number_date %> </span> 
 
 <h1> Désignation : </h1>
 
-  <li><h2> Type de bien : <span class="data"> <%= @house.house_type %> </span></h2></li>
+  <li><h2> Type de bien : <span class="data"> <%= house[:house_type] %> </span></h2></li>
 
-  <li><h2> Adresse du bien : <span class="data"> <%= @house.address %> </span></h2></li>
+  <li><h2> Adresse du bien : <span class="data"> <%= house[:address] %> </span></h2></li>
 
-  <li><h2> Bien à usage : <span class="data"> <%= @house.usage_type %> </span></h2></li>
+  <li><h2> Bien à usage : <span class="data"> <%= house[:usage_type] %> </span></h2></li>
 
 <h2> Dont nous sommes devenus propriétaires par acte authentique chez Maitre “NOM DU NOTAIRE DU VENDEUR“ </h2>
 
@@ -121,21 +121,21 @@ Délivrée le <span class="data"> <%= @user.attes_collab_number_date %> </span> 
 
 Si le(s) bien(s) objet des présentes ne sont pas loués, le mandant déclare que ce(s) bien(s) seront, le jour de la signature de l’acte authentique de vente, libres de toute location ou occupation.
 Si le(s) bien(s) objet des présentes sont loués, ils le seront suivant l'état locatif ci-annexé.
-  <li><h2> Présence de détecteurs de fumée : <span class="data"> <%= @house.smoke_detector_presence ? "Oui" : "Non" %> </span> </h2></li>
-  <li><h2> Nombre de pièces : <span class="data"> <%= @house.nb_rooms %> </span></h2></li>
-  <li><h2> Nombre de chambre (s) : <span class="data"> <%= @house.nb_bedrooms %> </span></h2></li>
-  <li><h2> Nombre de séjour (s) / salon (s) : <span class="data"> <%= @house.nb_diningrooms %> </span></h2></li>
-  <li><h2> Nombre de salle (s) à manger : <span class="data"> <%= @house.nb_livingrooms %> </span></h2></li>
-  <li><h2> Cuisine équipée : <span class="data"> <%= @house.equiped_kitchen %> </span></h2></li>
-  <li><h2> Nombre de salle (s) d’eau (douche) : <span class="data"> <%= @house.nb_bathtubs %> </span></h2></li>
-  <li><h2> Nombre de salle (s) de bain (baignoire) : <span class="data"> <%= @house.nb_bathrooms %> </span></h2></li>
+  <li><h2> Présence de détecteurs de fumée : <span class="data"> <%= house[:smoke_detector_presence] ? "Oui" : "Non" %> </span> </h2></li>
+  <li><h2> Nombre de pièces : <span class="data"> <%= house[:nb_rooms] %> </span></h2></li>
+  <li><h2> Nombre de chambre (s) : <span class="data"> <%= house[:nb_bedrooms] %> </span></h2></li>
+  <li><h2> Nombre de séjour (s) / salon (s) : <span class="data"> <%= house[:nb_diningrooms] %> </span></h2></li>
+  <li><h2> Nombre de salle (s) à manger : <span class="data"> <%= house[:nb_livingrooms] %> </span></h2></li>
+  <li><h2> Cuisine équipée : <span class="data"> <%= house[:equiped_kitchen] %> </span></h2></li>
+  <li><h2> Nombre de salle (s) d’eau (douche) : <span class="data"> <%= house[:nb_bathtubs] %> </span></h2></li>
+  <li><h2> Nombre de salle (s) de bain (baignoire) : <span class="data"> <%= house[:nb_bathrooms] %> </span></h2></li>
   <li><h2> WC Séparé :  Oui / Non</h2></li>
-  <li><h2> Terrasse (s) : <span class="data"> <%= @house.nb_terraces %> </span></h2></li>
-  <li><h2> Balcon (s) : <span class="data"> <%= @house.nb_balconies %> </span></h2></li>
+  <li><h2> Terrasse (s) : <span class="data"> <%= house[:nb_terraces] %> </span></h2></li>
+  <li><h2> Balcon (s) : <span class="data"> <%= house[:nb_balconies] %> </span></h2></li>
 
-  <li><h2> Surface habitable d’environ : <span class="data"> <%= @house.surface_living %> </span> M2</h2></li>
-  <li><h2> Si copropriété, Surface Carrez : <span class="data"> <%= @house.surface_Carrez %> </span> M2</h2></li>
-  <li><h2> Surface du terrain : <span class="data"> <%= @house.surface_total %> </span> M2</h2></li>
+  <li><h2> Surface habitable d’environ : <span class="data"> <%= house[:surface_living] %> </span> M2</h2></li>
+  <li><h2> Si copropriété, Surface Carrez : <span class="data"> <%= house[:surface_Carrez] %> </span> M2</h2></li>
+  <li><h2> Surface du terrain : <span class="data"> <%= house[:surface_total] %> </span> M2</h2></li>
 
   <li><h2> Bien en Copropriété : Oui / Non</h2></li>
   <li><h2> Nombre de lot au sein de la copropriété : “NOMBRE“</h2></li>
@@ -143,16 +143,16 @@ Si le(s) bien(s) objet des présentes sont loués, ils le seront suivant l'état
   <li><h2> Procédure en cours dans la copropriété : Oui /  Non</h2></li>
   <li><h2> Informations particulières sur les lots et l’immeuble : “PHRASES“</h2></li>
 
-  <li><h2> DPE effectué : <span class="data"> <%= @house.dpe_done ? "Oui" : "Non" %> </span></h2></li>
-  <li><h2> Consommation énergétique : <span class="data"> <%= @house.energy_consumption %> </span> kWhEP/m2/an</h2></li>
-  <li><h2> Émission GES : <span class="data"> <%= @house.ges_emission %> </span> KgéqCO2/m2/an</h2></li>
+  <li><h2> DPE effectué : <span class="data"> <%= house[:dpe_done] ? "Oui" : "Non" %> </span></h2></li>
+  <li><h2> Consommation énergétique : <span class="data"> <%= house[:energy_consumption] %> </span> kWhEP/m2/an</h2></li>
+  <li><h2> Émission GES : <span class="data"> <%= house[:ges_emission] %> </span> KgéqCO2/m2/an</h2></li>
 
 
 <h2> ------------------------------------------------------------------- </h2>
 
 <h2>Prix de vente et rémunération du mandataire :
 
-<h2>Le prix du bien présenté à la vente HONORAIRES INCLUS, sauf accord ultérieur des parties et payable comptant le jour de la réitération de l’acte authentique, tant à l’aide de prêts que de fonds propres est de :<span class="data"> <%= @house.price_cents %> </span> TTC.</h2>
+<h2>Le prix du bien présenté à la vente HONORAIRES INCLUS, sauf accord ultérieur des parties et payable comptant le jour de la réitération de l’acte authentique, tant à l’aide de prêts que de fonds propres est de :<span class="data"> <%= house[:price_cents] %> </span> TTC.</h2>
 <h2>En cas de réalisation de l’opération avec un acheteur présenté par le mandataire ou un mandataire substitué ou dirigé vers lui, le mandataire aura droit à une rémunération à la charge de “OPTION“ (Il est précisé que le taux de TVA 20,00 % est inclus et qu’il est susceptible de modification conformément à la règlementation fiscale), soit un montant de : “PRIX“ TTC.</h2>
 <h2>Les honoraires prévus au titre de la rémunération du mandataire seront exigibles intégralement le jour où l’opération sera effectivement conclue et réitérée par acte authentique conformément à l'article 74 du décret n° 72-678 du 20 juillet 1972. En cas d’exercice d’un droit de substitution ou de préemption, la rémunération sera due par le substitué ou le préempteur.</h2>
 <h2>Au regard du prix du bien présenté à la vente HONORAIRES INCLUS et du montant des HONORAIRES prévus au présent mandat, le prix de vente NET VENDEUR du bien sera de : “PRIX“ TTC.</h2>

@@ -101,5 +101,7 @@ mandat = DocumentType.create({
 })
 
 avenant_prix = DocumentType.create({
-  name: "Avenant au mandat de vente -> Prix"
+  name: "Avenant au mandat de vente -> Prix",
+  data_type_changed: "price"
+
 })
