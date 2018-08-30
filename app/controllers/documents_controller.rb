@@ -35,7 +35,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "#{@house.address} - #{@document.document_type_id} - #{@document.created_at}",   # Excluding ".pdf" extension.
+        render pdf: "#{@house.address} - #{@document.created_at}",   # Excluding ".pdf" extension.
                template: "documents/show.pdf.erb",
                locals: {document: @document, agence: @agence, user: @user, owner: @owner}
       end
