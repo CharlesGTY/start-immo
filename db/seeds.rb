@@ -99,3 +99,7 @@ end
 mandat = DocumentType.create({
   name: "Mandat de vente"
 })
+
+avenant_prix = DocumentType.create({
+  name: "Avenant au mandat de vente -> Prix"
+})
