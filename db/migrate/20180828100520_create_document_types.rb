@@ -3,6 +3,7 @@ class CreateDocumentTypes < ActiveRecord::Migration[5.2]
     create_table :document_types do |t|
       t.string :name
       t.text :content
+      t.string :data_type_changed
 
       t.timestamps
     end

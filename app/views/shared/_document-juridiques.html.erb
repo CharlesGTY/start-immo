@@ -4,17 +4,24 @@
     <% @house.documents.each do |document| %>
       <li>
       <div class="pdf-link">
-        <%= link_to "<i class='far fa-file-pdf'></i>".html_safe ,
+        <%= link_to "<i class='far fa-file-pdf fa-2x' data-toggle='tooltip' data-placement='bottom' title='télécharger'></i>".html_safe ,
          house_document_path(@house,document, format: 'pdf') %>
       </div>
       <div class="doc-descr">
-      <p><%= document.document_type.name %> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
-        </p>
+      <strong><%= document.document_type.name %></strong> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
       </div>
-      <div class="doc-status">
-        <p>Status <br> <%= document.status %> </p>
+      <div class="doc-time-status">
+        <% if  document.updated_at  %>
+        <i class='fas fa-hourglass-half fa-2x icon-green ' data-toggle="tooltip" data-placement="bottom" title="3 jours depuis la demande de signature"></i>
+        <% else %>
+        <% end %>
       </div>
-
+      <div class="doc-signature-status">
+        <% if document.status == "attente signature agent" %>
+        <i class='fas fa-pen-fancy fa-2x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="En attente de signature de l'agent"></i>
+        <% else %>
+        <% end %>
+      </div>
       </li>
     <% end %>
   </ul>
@@ -22,7 +29,8 @@
   <div class="text-center">
     <%= simple_form_for [@house, @document] do |f| %>
       <%= f.association :document_type %>
-      <%= f.button :submit, value: "Créer document"%>
+      <%= f.button :submit, value: "Créer votre document"%>
+
     <% end %>
   </div>
 </div>
