@@ -4,7 +4,7 @@
     <% @house.documents.each do |document| %>
       <li>
       <div class="pdf-link">
-        <%= link_to "<i class='far fa-file-pdf fa-2x' data-toggle='tooltip' data-placement='bottom' title='télécharger'></i>".html_safe ,
+        <%= link_to "<i class='far fa-file-pdf fa-2x' data-toggle='tooltip' data-placement='bottom' title='Télécharger'></i>".html_safe ,
          house_document_path(@house,document, format: 'pdf') %>
       </div>
       <div class="doc-descr">
@@ -18,7 +18,7 @@
       </div>
       <div class="doc-signature-status">
         <% if document.status == "attente signature agent" %>
-        <i class='fas fa-pen-fancy fa-2x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="En attente de signature de l'agent"></i>
+        <i class='fas fa-pen-fancy fa-2x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="agent"></i>
         <% else %>
         <% end %>
       </div>
