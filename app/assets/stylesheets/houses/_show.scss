@@ -1,6 +1,6 @@
-  .container {
-    width:90% !important;
-  }
+.container {
+  width:90% !important;
+}
 
 .white-back {
   p {
@@ -11,94 +11,94 @@
   }
 
 }
-  .content-right {
-      h3 {
-      color: $white;
-      background-color: $blue;
-      font-size: 24px;
-      text-align:center;
-      padding: 10px;
-      border-radius:3px;
-      margin: 0px;
-    }
-    // background: white;
-    ul {
-      display: flex-column;
-      font-size: 16px;
-    }
-    li {
-      display:flex;
-      justify-content:space-around;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    a {
-
-    }
-    .pdf-link {
-      width:15%;
-    }
-  .pdf-link i{
-     color :#104F6A;
-    }
-
-
-    .doc-descr {
-      width:55%;
-      font-size: 10px
-    }
-    .doc-signature-status {
-      width:15%
-    }
-    .doc-time-status {
-      width:15%
-    }
-
-    hr {
-      display: block;
-       height: 2px;
-       border-top: 2px solid $blue;
-       // margin: 1em 0;
-       // padding: 0;
-    }
-
-  }
-
-  .icon-red{
-    color: red;
-  }
-
-    .icon-green{
-    color: green;
-  }
-
-  .row{
+.content-right {
+    h3 {
+    color: $white;
+    background-color: $blue;
+    font-size: 24px;
+    text-align:center;
     padding: 10px;
+    border-radius:3px;
+    margin: 0px;
+  }
+  // background: white;
+  ul {
+    display: flex-column;
+    font-size: 16px;
+  }
+  li {
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 10px 5px;
+  }
+  a {
+
+  }
+  .pdf-link {
+    width:15%;
+  }
+  .pdf-link i{
+   color: #104F6A;
   }
 
-  .wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
+
+  .doc-descr {
+    width:55%;
+    font-size: 10px
+  }
+  .doc-signature-status {
+    width:15%;
+  }
+  .doc-time-status {
+    width:15%;
   }
 
-  .wrap-inside {
-    padding: 0 10px;
+  hr {
+    display: block;
+     height: 2px;
+     border-top: 2px solid $blue;
+     // margin: 1em 0;
+     // padding: 0;
   }
 
-  .empty-text {
-    border: 1px solid black;
-    padding: 0px 5px;
-    color: gray
-  }
+}
 
-  .white-back {
-    background: $white;
-    padding: 5px;
-    margin: 10px 0px;
-    border-radius: 3px;
-  }
+.icon-red{
+  color: red;
+}
+
+  .icon-green{
+  color: green;
+}
+
+.row{
+  padding: 10px;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.wrap-inside {
+  padding: 0 10px;
+}
+
+.empty-text {
+  border: 1px solid black;
+  padding: 0px 5px;
+  color: gray
+}
+
+.white-back {
+  background: $white;
+  padding: 5px;
+  margin: 10px 0px;
+  border-radius: 3px;
+}
 
 .background-blue {
   background: $blue;
