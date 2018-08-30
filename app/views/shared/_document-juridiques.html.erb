@@ -1,0 +1,28 @@
+<div class="white-back">
+  <h3 class="background-blue">Document juridiques</h3>
+  <ul>
+    <% @house.documents.each do |document| %>
+      <li>
+      <div class="pdf-link">
+        <%= link_to "<i class='far fa-file-pdf'></i>".html_safe ,
+         house_document_path(@house,document, format: 'pdf') %>
+      </div>
+      <div class="doc-descr">
+      <p><%= document.document_type.name %> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
+        </p>
+      </div>
+      <div class="doc-status">
+        <p>Status <br> <%= document.status %> </p>
+      </div>
+
+      </li>
+    <% end %>
+  </ul>
+  <hr>
+  <div class="text-center">
+    <%= simple_form_for [@house, @document] do |f| %>
+      <%= f.association :document_type %>
+      <%= f.button :submit, value: "Créer document"%>
+    <% end %>
+  </div>
+</div>
