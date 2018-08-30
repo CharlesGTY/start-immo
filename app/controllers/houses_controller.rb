@@ -9,6 +9,7 @@ class HousesController < ApplicationController
   end
 
   def create
+    raise
     @house = House.new(house_params)
     if Owner.find_by(owner_params).nil?
       @owner = Owner.new(owner_params)

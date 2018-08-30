@@ -1,19 +1,9 @@
 <%= simple_form_for [@house] do |f| %>
-<h4>Désignation du bien</h4>
+  <h4>Désignation du bien</h4>
 
-  <%= f.input :house_type, label: 'Type de bien', input_html: { :class => 'hidden' } %>
-  <div>
-    <% %w(Maison Appartement Garage Terrain Immeuble).each do |item| %>
-    <div class="chip"><i class="material-icons"> <%= item %> </i></div>
-    <% end %>
-  </div>
   <%= f.input :address, label: 'Adresse du bien'%>
-  <%= f.input :usage_type, label: 'Bien à usage', input_html: { :class => 'hidden' } %>
-  <div>
-    <% %w(Habitation Professionelle Mixte).each do |item| %>
-    <div class="chip"><i class="material-icons"> <%= item %> </i></div>
-    <% end %>
-  </div>
+  <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+  <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionel Mixte), as: :radio_buttons %>
 
   <h4>Propriétaires</h4>
     <%= f.simple_fields_for :owner do |o| %>

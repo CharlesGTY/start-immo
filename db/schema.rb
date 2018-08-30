@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_100733) do
+ActiveRecord::Schema.define(version: 2018_08_30_120755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,18 @@ ActiveRecord::Schema.define(version: 2018_08_28_100733) do
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
     t.string "photo"
+    t.boolean "tenant"
+    t.integer "construction_date"
+    t.boolean "condo"
+    t.integer "number_of_lot"
+    t.boolean "current_procedure"
+    t.text "particular_information"
+    t.float "surface_terrace"
+    t.integer "charges_cents", default: 0, null: false
+    t.integer "property_taxes_cents", default: 0, null: false
+    t.integer "agence_fee_cents", default: 0, null: false
+    t.integer "net_price_seller_cents", default: 0, null: false
+    t.integer "annual_charges_cents", default: 0, null: false
     t.index ["owner_id"], name: "index_houses_on_owner_id"
     t.index ["user_id"], name: "index_houses_on_user_id"
   end

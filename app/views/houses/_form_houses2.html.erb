@@ -17,11 +17,18 @@
     </div>
   </div>
   <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
+  <div class="switch">
+    <label>
+      Non
+      <input type="checkbox">
+      <span class="lever"></span>
+      Oui
+    </label>
+  </div>
 
   <h4>Extérieur du bien</h4>
-  <%= f.input :created_at, label: 'Année de construction à verifier'%>
+  <%= f.input :construction_date, label: 'Année de construction'%>
   <%= f.input :surface_total, label: 'Surface du terrain'%>
-  <%= f.input :nb_balconies, label: 'Terrasse à verifier'%>
   <%= f.input :nb_balconies, label: 'Balcon'%>
 
   <%= f.submit 'save' %>

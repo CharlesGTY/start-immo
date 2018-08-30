@@ -9,3 +9,37 @@
 .material-icons:hover {
   cursor: pointer;
 }
+
+.radio_buttons {
+  display: flex;
+}
+
+
+.collection_radio_buttons {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+
+  &:hover{
+    background-color: rgba(200,200,200, 0.5);
+    cursor: pointer;
+  }
+
+}
+
+input[type="radio"]:checked+label {
+  background-color: rgba(200,200,200, 0.7);
+}
+
+fieldset {
+  padding-left: 0px !important;
+}
+
+legend {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #9e9e9e !important;
+  border: 0px;
+  margin-bottom: 0px;
+}
