@@ -43,3 +43,54 @@ legend {
   border: 0px;
   margin-bottom: 0px;
 }
+
+.item-circle {
+  border-radius: 100%;
+  color: grey;
+  border: 2px solid grey;
+  font-size: 10px;
+  width:30px;
+  height:30px;
+  margin: 0 auto;
+}
+
+.boxItem {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 1em;
+  margin-right: 25em;
+  position: relative;
+}
+.boxItem:before,
+.boxItem:after
+{
+  content:'';
+  width:25em;
+  border-bottom:2px solid grey;
+  position:absolute;
+  top:50%;
+
+}
+:after {
+  left:100%;
+}
+:before {
+  right:100%;
+}
+.boxItem:first-of-type:before,
+.boxItem:last-of-type:after {
+  display:none;
+}
+.boxContainer {
+  white-space:nowrap;
+  text-align:center;
+}
+
+.step-done {
+  background-color: $green;
+}
+
+.step-active {
+  background: rgba(200,200, 200, 0.7);
+}
+
