@@ -13,24 +13,6 @@
       <%= o.input :email, label: 'email'%>
       <%= o.input :phone_number, label: 'Téléphone'%>
     <% end %>
-  <%= f.submit 'save' %>
+  <%= hidden_field_tag(:form, "1") %>
+  <%= f.submit 'Continuer', class: "btn btn-primary"%>
 <% end %>
-
-
-<script>
-  const remove_background = (div) => {
-    div.querySelectorAll(".material-icons").forEach((el) => {
-      el.parentNode.classList.remove("red-background");
-    })
-  }
-
-  let element
-
-  document.querySelectorAll(".material-icons").forEach((el) => {
-    el.addEventListener("click", (ev) => {
-      ev.target.parentNode.parentNode.previousElementSibling.querySelector(".form-control").value = ev.target.innerText;
-      remove_background(ev.target.parentNode.parentNode);
-      ev.target.parentNode.classList.toggle("red-background");
-    })
-  })
-</script>

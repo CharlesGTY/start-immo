@@ -9,7 +9,7 @@ class HousesController < ApplicationController
   end
 
   def create
-    raise
+    #create new house
     @house = House.new(house_params)
     if Owner.find_by(owner_params).nil?
       @owner = Owner.new(owner_params)
@@ -17,14 +17,23 @@ class HousesController < ApplicationController
       @owner = Owner.find_by(owner_params)
     end
     @house.owner = @owner
+    @owner.save
     @house.user = current_user
     authorize @house
-    @owner.save
     if @house.save
-      redirect_to house_path(@house)
+      @form_number = params[:form].to_i + 1
+      redirect_to new_house_path
     else
       render :new
     end
+
+    #update house
+
+
+
+
+
+
   end
 
   def index
