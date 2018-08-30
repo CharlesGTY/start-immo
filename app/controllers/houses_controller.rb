@@ -13,13 +13,14 @@ class HousesController < ApplicationController
     if Owner.find_by(owner_params).nil?
       @owner = Owner.new(owner_params)
     else
-      Owner.find_by(owner_params)
+      @owner = Owner.find_by(owner_params)
     end
     @house.owner = @owner
+    @owner.save
     @house.user = current_user
     authorize @house
-    @owner.save
     if @house.save
+      @form_number = params[:form].to_i + 1
       redirect_to house_path(@house)
     else
       render :new
