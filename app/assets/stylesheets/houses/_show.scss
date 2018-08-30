@@ -23,7 +23,6 @@
     }
     // background: white;
     ul {
-      padding:10px;
       display: flex-column;
       font-size: 16px;
     }
@@ -31,26 +30,46 @@
       display:flex;
       justify-content:space-around;
       align-items: center;
+      margin-bottom: 10px;
     }
     a {
 
     }
     .pdf-link {
-      width:5%;
+      width:15%;
     }
+  .pdf-link i{
+     color :#104F6A;
+    }
+
+
     .doc-descr {
-      width:40%
+      width:55%;
+      font-size: 10px
     }
-    .doc-status {
-      width:40%
+    .doc-signature-status {
+      width:15%
     }
+    .doc-time-status {
+      width:15%
+    }
+
     hr {
       display: block;
        height: 2px;
        border-top: 2px solid $blue;
-       margin: 1em 0;
-       padding: 0;
+       // margin: 1em 0;
+       // padding: 0;
     }
+
+  }
+
+  .icon-red{
+    color: red;
+  }
+
+    .icon-green{
+    color: green;
   }
 
   .row{
