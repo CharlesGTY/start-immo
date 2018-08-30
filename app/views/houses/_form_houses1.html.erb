@@ -1,8 +1,19 @@
 <%= simple_form_for [@house] do |f| %>
 <h4>Désignation du bien</h4>
-  <%= f.input :house_type, label: 'Type de bien'%>
+
+  <%= f.input :house_type, label: 'Type de bien', input_html: { :class => 'hidden' } %>
+  <div>
+    <% %w(Maison Appartement Garage Terrain Immeuble).each do |item| %>
+    <div class="chip"><i class="material-icons"> <%= item %> </i></div>
+    <% end %>
+  </div>
   <%= f.input :address, label: 'Adresse du bien'%>
-  <%= f.input :usage_type, label: 'Bien à usage'%>
+  <%= f.input :usage_type, label: 'Bien à usage', input_html: { :class => 'hidden' } %>
+  <div>
+    <% %w(Habitation Professionelle Mixte).each do |item| %>
+    <div class="chip"><i class="material-icons"> <%= item %> </i></div>
+    <% end %>
+  </div>
 
   <h4>Propriétaires</h4>
     <%= f.simple_fields_for :owner do |o| %>
@@ -16,3 +27,20 @@
 <% end %>
 
 
+<script>
+  const remove_background = (div) => {
+    div.querySelectorAll(".material-icons").forEach((el) => {
+      el.parentNode.classList.remove("red-background");
+    })
+  }
+
+  let element
+
+  document.querySelectorAll(".material-icons").forEach((el) => {
+    el.addEventListener("click", (ev) => {
+      ev.target.parentNode.parentNode.previousElementSibling.querySelector(".form-control").value = ev.target.innerText;
+      remove_background(ev.target.parentNode.parentNode);
+      ev.target.parentNode.classList.toggle("red-background");
+    })
+  })
+</script>
