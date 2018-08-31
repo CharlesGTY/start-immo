@@ -8,7 +8,7 @@
   border-radius: 5px;
   color: $blue;
   transition: all .1s ease-in-out;
-  margin: 5px 0px;
+  margin-top: 10px;
 
   &:hover {
     transform: scale(1.01);
@@ -34,10 +34,12 @@
 .message-name {
   padding-left: 10px;
   font-size: 13px;
+  width: 400px;
 }
 .message-body {
   padding-left: 10px;
   font-size: 13px;
+  width: 100px;
 }
 .message-name h3 {
   font-size: 20px;
@@ -55,12 +57,14 @@
 
 .logo-search-bar i {
   color: $white;
-  margin-right: 10px
+  // margin-right: 10px
+  margin-left: 10px;
 }
 
-.search-bar {
-  min-width: 200px;
-  color: $white !important;
+.search-bar-houses {
+  min-width: 300px;
+  color: $white;
+  padding-bottom: 5px;
 }
 
 .title-search-bar {
