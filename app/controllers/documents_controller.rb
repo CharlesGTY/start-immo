@@ -28,19 +28,20 @@ class DocumentsController < ApplicationController
     o = data[:owner]
     a = data[:agence]
     authorize @document
-    #template = "document/show.pdf.erb"
-    #case condition
-    #  when valeur then template = "document/show.pdf.erb"
-    #  when valeur then template = "document/show.pdf.erb"
+    template = "documents/show_mandat.pdf.erb"
+    case @document.document_type.name
+      when "Mandat de vente" then template = "documents/show_mandat.pdf.erb"
+      when "Avenant au mandat de vente -> Prix" then template = "documents/show_avenant_prix.pdf.erb"
     #  when valeur then template = "document/show.pdf.erb"
     #  when valeur then template = "document/show.pdf.erb"
     #  else template = "document/show.pdf.erb"
     #end
+    end
     respond_to do |format|
       format.html
       format.pdf do
         render pdf: 'Hello',   # Excluding ".pdf" extension.
-               template: "documents/show.pdf.erb",
+               template: template,
                locals: {document: @document, house: h, agence: a, user: u, owner: o}
       end
     end
@@ -62,7 +63,7 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require('document').permit(:data, :status, :document_type)
+    params.require('document').permit(:data, :status, :document_type, :document_ref)
   end
 
   def store_hash(house, agence, owner, user)
