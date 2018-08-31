@@ -76,14 +76,14 @@ legend {
   display: inline-block;
   border: 1px solid black;
   padding: 1em;
-  margin-right: 25em;
+  margin-right: 20em;
   position: relative;
 }
 .boxItem:before,
 .boxItem:after
 {
   content:'';
-  width:25em;
+  width:20em;
   border-bottom:2px solid grey;
   position:absolute;
   top:50%;
