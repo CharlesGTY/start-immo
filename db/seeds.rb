@@ -28,6 +28,31 @@ civil_respons_police_number: "010101011",
 civil_respons_police_geo_zone: "France"
 })
 
+agence = Agence.create({
+juridic_form: "SARL",
+social_denomination: "Immo agence SARL",
+enseigne_name: "Immo Super",
+email: "contact@immo.com",
+phone_number: "0101010101",
+fax: "0101010101",
+address: "16 Villa Gaudelet",
+city: "Paris",
+director_first_name: "Charles",
+director_last_name: "Gotty",
+director_card_number: "010101",
+director_card_date: "01/10/16",
+director_card_city: "Paris",
+vat_number: "010101",
+siren_number: "010101",
+insurance_number: "010101",
+social_capital: "100 000",
+professional_card_mention: "Gestion",
+civil_respons_insurance_name: "AXA",
+civil_respons_insurance_address: "94 Boulevard Beaumarchais",
+civil_respons_police_number: "010101011",
+civil_respons_police_geo_zone: "France"
+})
+
 email = %w"julien@start-immo.fr charles@start-immo.fr mateo@start-immo.fr nico@start-immo.fr"
 first_name = %w"Julien Charles Mateo Nico"
 last_name = %w"Mottet Gotty Ceron Meyer"
