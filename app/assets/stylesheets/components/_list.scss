@@ -54,12 +54,14 @@
 
 .logo-search-bar i {
   color: $white;
-  margin-right: 10px
+  // margin-right: 10px
+  margin-left: 10px;
 }
 
-.search-bar {
-  min-width: 200px;
-  color: $white !important;
+.search-bar-houses {
+  min-width: 300px;
+  color: $white;
+  padding-bottom: 5px;
 }
 
 .title-search-bar {

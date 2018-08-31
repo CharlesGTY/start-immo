@@ -1,16 +1,16 @@
 <div class="row margin-list">
   <div class="title-search-bar col-sm-10 col-sm-offset-1">
     <h5 id="list-title">Liste des biens </h5>
-    <div class="logo-and-search-bar z-depth-2" id="navbar-fixed">
+    <div class="logo-and-search-bar z-depth-2 fa-2x" id="navbar-fixed">
       <div class="flex-btn-search-bar">
         <div class="logo-search-bar">
           <i class="fas fa-search"></i>
         </div>
-        <div class="search-bar">
+        <div class="search-bar-houses">
           <%= form_tag houses_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
-              placeholder: "Adresse et/ou Proprietaire" %>
+              placeholder: "Adresse et / ou Proprietaire" %>
           <% end %>
         </div>
       </div>
