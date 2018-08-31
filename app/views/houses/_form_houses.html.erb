@@ -9,25 +9,35 @@
 
   <div class="step" id="step_1">
     <h4>Désignation du bien</h4>
-    <%= f.input :address, label: 'Adresse du bien'%>
-    <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
-    <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionel Mixte), as: :radio_buttons %>
+    <div class="row no-padded">
+      <%= f.input :address, label: 'Adresse du bien'%>
+      <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+      <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+    </div>
 
     <h4>Propriétaires</h4>
       <%= f.simple_fields_for :owner do |o| %>
-        <%= o.input :last_name, label: 'Nom'%>
-        <%= o.input :first_name, label: 'Prénom'%>
-        <%= o.input :address, label: 'Adresse'%>
-        <%= o.input :email, label: 'email'%>
-        <%= o.input :phone_number, label: 'Téléphone'%>
+        <div class="row no-padded">
+          <div class="col-xs-6 no-padded">
+            <%= o.input :last_name, label: 'Nom'%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :first_name, label: 'Prénom'%>
+          </div>
+          <%= o.input :address, label: 'Adresse'%>
+          <%= o.input :email, label: 'email'%>
+          <%= o.input :phone_number, label: 'Téléphone'%>
+        </div>
       <% end %>
       <div class="button-next btn-inline" id="button-1">Continuer</div>
   </div>
 
   <div class="step" id="step_2" style="display: none;" >
       <h4>Intérieur du bien</h4>
-      <%= f.input :surface_living, label: 'Surface habitable d environ' %>
       <div class="row">
+        <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+      </div>
+      <div class="row no-padded">
         <div class="col-xs-3">
           <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
         </div>
@@ -52,19 +62,33 @@
       </div>
 
       <h4>Extérieur du bien</h4>
-      <%= f.input :construction_date, label: 'Année de construction'%>
-      <%= f.input :surface_total, label: 'Surface du terrain'%>
-      <%= f.input :nb_balconies, label: 'Balcon'%>
+      <div class="col-xs-4">
+        <%= f.input :construction_date, label: 'Année de construction'%>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :surface_total, label: 'Surface du terrain'%>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :nb_balconies, label: 'Balcon'%>
+      </div>
       <div class="button-back btn-inline" id="button-back-2">Retour</div>
       <div class="button-next btn-inline" id="button-2">Continuer</div>
   </div>
 
   <div class="step" id="step_3" style="display: none;" >
     <h4>Aspects financiers</h4>
-    <%= f.input :price_cents, label: 'Prix TTC'%>
-    <%= f.input :net_price_seller_cents, label: 'Prix net vendeur'%>
-    <%= f.input :agence_fee_cents, label: 'Honoraires TTC'%>
-    <%= f.input :annual_charges_cents, label: 'Charges'%>
+    <div class="col-xs-6">
+      <%= f.input :price_cents, label: 'Prix TTC'%>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :net_price_seller_cents, label: 'Prix net vendeur'%>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :agence_fee_cents, label: 'Honoraires TTC'%>
+    </div>
+    <div class="col-xs-6">
+      <%= f.input :annual_charges_cents, label: 'Charges'%>
+    </div>
     <div class="button-back btn-inline" id="button-back-3">Retour</div>
     <%= f.submit 'Créer le bien', class: "btn btn-primary btn-inline" %>
   </div>
