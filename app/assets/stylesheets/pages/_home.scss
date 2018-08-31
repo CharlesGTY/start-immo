@@ -138,6 +138,26 @@
   margin-top: 20px;
 }
 
+.container-values{
+  min-height: 400px;
+  text-align: center;
+}
+
+.card-values{
+  text-align: center;
+  margin : 0px 15px;
+}
+
+.icon-g{
+  color: rgb(260,260,260);
+  background-color: #2BBBAD;
+}
+
+.card-values p{
+  margin-top: 30px;
+  font-size: 14px;
+}
+
 .text-content h2{
   font-size: 32px;
 }
@@ -149,7 +169,7 @@
 
 .category .fa, .far, .fas {
   font-weight: 900;
-  background-color: #2bbbad;
+  // background-color: #2bbbad;
   width: 60px;
   height: 60px;
   border-radius: 50px;
