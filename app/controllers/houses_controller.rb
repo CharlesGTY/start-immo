@@ -41,6 +41,10 @@ class HousesController < ApplicationController
   def show
     @document = Document.new
     authorize @house
+    @markers = {
+      lat: @house.latitude,
+      lng: @house.longitude
+    }
   end
 
   def house_selector
