@@ -73,7 +73,7 @@ owner_two = Owner.create( {
     owner: Owner.all.sample,
     user: User.all.sample,
     price: [100_000, 200_000, 300_000, 400_000].sample,
-    address: ["5 rue des bobos","2 rue gambetta", "20 rue menilmontant", "16 calle de la noche"].sample,
+    address: ["16 Villa Gaudelet, Paris","2 rue Gambetta, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris"].sample,
     description: "Belle maison",
     house_type: %w"Maison Appartement".sample,
     smoke_detector_presence: true,

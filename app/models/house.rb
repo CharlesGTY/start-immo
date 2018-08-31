@@ -5,6 +5,9 @@ class House < ApplicationRecord
   monetize :price_cents
   mount_uploader :photo, PhotoUploader
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   include PgSearch
     pg_search_scope :global_search,
       against: [ :address ],

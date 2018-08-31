@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_120755) do
+ActiveRecord::Schema.define(version: 2018_08_31_111213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_120755) do
   create_table "document_types", force: :cascade do |t|
     t.string "name"
     t.text "content"
+    t.string "data_type_changed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,8 +53,9 @@ ActiveRecord::Schema.define(version: 2018_08_30_120755) do
   create_table "documents", force: :cascade do |t|
     t.bigint "house_id"
     t.bigint "document_type_id"
-    t.string "status", default: "attente_signature_agent"
-    t.text "data"
+    t.string "status", default: "attente signature agent"
+    t.jsonb "data", default: "{}", null: false
+    t.integer "document_ref"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["document_type_id"], name: "index_documents_on_document_type_id"
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 2018_08_30_120755) do
     t.integer "agence_fee_cents", default: 0, null: false
     t.integer "net_price_seller_cents", default: 0, null: false
     t.integer "annual_charges_cents", default: 0, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["owner_id"], name: "index_houses_on_owner_id"
     t.index ["user_id"], name: "index_houses_on_user_id"
   end
