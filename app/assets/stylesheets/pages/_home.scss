@@ -139,7 +139,7 @@
 }
 
 .container-values{
-  min-height: 400px;
+  min-height: 350px;
   text-align: center;
 }
 
@@ -174,4 +174,16 @@
   width: 60px;
   height: 60px;
   border-radius: 50px;
+}
+
+.circle-green{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #26a69a;
+  margin: auto;
+}
+
+.text-white{
+  color: white;
 }
