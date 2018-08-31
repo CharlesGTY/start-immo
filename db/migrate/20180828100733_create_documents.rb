@@ -5,6 +5,7 @@ class CreateDocuments < ActiveRecord::Migration[5.2]
       t.references :document_type, foreign_key: true
       t.string :status, default: 'attente signature agent'
       t.jsonb :data, null: false, default: '{}'
+      t.integer :document_ref
 
       t.timestamps
     end

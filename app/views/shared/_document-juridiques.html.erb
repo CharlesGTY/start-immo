@@ -8,7 +8,7 @@
          house_document_path(@house,document, format: 'pdf'), target: "_blank" %>
       </div>
       <div class="doc-descr">
-      <strong><%= document.document_type.name %></strong> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
+      <strong><%= document.document_type.name %></strong> - <%= document.id %> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
       </div>
       <div class="doc-time-status">
         <i class='fas fa-hourglass-half fa-1x icon-green' data-toggle="tooltip" data-placement="bottom" title="3 jours depuis la demande de signature"></i>
