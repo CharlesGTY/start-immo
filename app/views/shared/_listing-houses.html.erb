@@ -21,29 +21,51 @@
     <% @houses.each do |house| %>
       <%= link_to house_path(house), class:"message-hover" do %>
         <div class="message z-depth-3">
-          <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
           <div class="message-name">
-            <h3> <%= house.user.first_name %> <%= house.user.last_name %> </h3>
-            <p>10/07/17</p>
+            <h5><%= house.address %></h5>
+            <p>
+              Prop:
+              <%= house.owner.first_name %>
+              <%= house.owner.last_name %>
+            </p>
           </div>
           <div class="message-body">
-            <p><strong><%= house.house_type %></strong></p>
-            <p>
-              <%= house.address %>
-            </p>
+            <p><strong>
+              <% case house.house_type %>
+                <% when "Maison" then %>
+                  <i class='fas fa-home fa-2x' data-toggle="tooltip" data-placement="bottom" title="Maison"></i>
+                <% when "Appartement" then %>
+                  <i class='fas fa-building fa-2x' data-toggle="tooltip" data-placement="bottom" title="Appartement"></i>
+              <% end %>
+            </strong></p>
           </div>
           <div class="message-type">
-            <p>
-              <%= house.owner.first_name %> <%= house.owner.last_name %>
-            </p>
+            <h6 class="price"><%= house.price.to_i %>€</h6>
           </div>
+
           <div class="message-status">
-            <p class="status pending">Pending</p>
-            <p class="price"><%= house.price %>€</p>
+              <% clock =
+          [["red", "Urgent"],
+            ["green", "Nouveau bien"],
+            ["orange", "En_cours"]
+          ].sample %>
+          <% case clock[0] %>
+          <% when "red" %>
+           <i class="fas fa-clock fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+          <% when "green" %>
+           <i class="fas fa-clock fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+          <% when "orange" %>
+           <i class="fas fa-clock fa-2x icon-warning" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+           <% end %>
           </div>
           <div class="message-date">
-            <p class="date pending">Created at</p>
-            <p class="price"><%= house.created_at.strftime("%d/%m/%Y") %></p>
+                      <% imagge =
+          [["https://kitt.lewagon.com/placeholder/users/CharlesGTY", "Charles"],
+            ["https://kitt.lewagon.com/placeholder/users/MateoDDB", "Mateo"],
+            ["https://kitt.lewagon.com/placeholder/users/timotte1984", "Julien"],
+            ["https://kitt.lewagon.com/placeholder/users/nicmey", "Nico"]
+          ].sample %>
+          <img class="avatar-large" src=<%= imagge[0] %> data-toggle="tooltip" data-placement="bottom" title= <%= imagge[1] %>>
           </div>
         </div>
       <% end %>

@@ -28,7 +28,7 @@ civil_respons_police_number: "010101011",
 civil_respons_police_geo_zone: "France"
 })
 
-agence = Agence.create({
+agence2 = Agence.create({
 juridic_form: "SARL",
 social_denomination: "Immo agence SARL",
 enseigne_name: "Immo Super",

@@ -8,6 +8,7 @@
   border-radius: 5px;
   color: $blue;
   transition: all .1s ease-in-out;
+  margin-top: 10px;
 
   &:hover {
     transform: scale(1.01);
@@ -33,10 +34,12 @@
 .message-name {
   padding-left: 10px;
   font-size: 13px;
+  width: 400px;
 }
 .message-body {
   padding-left: 10px;
   font-size: 13px;
+  width: 100px;
 }
 .message-name h3 {
   font-size: 20px;
