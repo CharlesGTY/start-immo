@@ -4,7 +4,12 @@
   <div class="banner-content">
     <h1>START IMMO</h1>
     <p>Gérer vos transactions immobilières en ligne</p>
-    <a class="btn btn-primary">Tester la solution</a>
+
+    <% if current_user %>
+      <%= link_to "Tester la solution", houses_path , class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Tester la solution", user_session_path , class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 
@@ -15,7 +20,7 @@
       <h3>Gérer vos transactions immobilières en ligne</h3>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_url('test.jpg') %>);">
+      <div class="card-list">
         <div class="card-category">
           <i class="fas fa-file-contract"></i>
         </div>
@@ -28,7 +33,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_url('test.jpg') %>);">
+      <div class="card-list">
         <div class="card-category">
           <i class="far fa-check-circle"></i>
         </div>
@@ -41,7 +46,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_url('test.jpg') %>);">
+      <div class="card-list">
         <div class="card-category">
           <i class="fas fa-chart-line"></i>
         </div>

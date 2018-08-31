@@ -23,12 +23,20 @@
 }
 
 .card {
-  height: 200px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 220px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-list p {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card-sub {
@@ -44,20 +52,21 @@
   position: absolute;
 }
 .card-category {
-  position: absolute;
-  top: 35px;
   text-align: center;
   width: 100%;
   font-size: 30px;
+  display: block;
+  margin-top: 30px;
 }
 .card-description {
   position: absolute;
-  top: 50px;
+  top: 70px;
   text-align: center;
   width: 100%;
 }
 .card-description h2 {
   font-size: 24px;
+  color: #333;
 }
 .card-description p {
   font-size: 14px;
@@ -67,10 +76,14 @@
 
 .card-phrase{
   position: absolute;
-  bottom: 10px;
+  top: 150px;
   text-align: center;
   width: 100%;
   font-size: 15px;
+}
+
+.card-phrase{
+  color: #333;
 }
 
 .card-link {
@@ -129,4 +142,15 @@
   font-size: 32px;
 }
 
+.fa, .far, .fas {
+    font-weight: 900;
+    padding-top: 15px;
+}
 
+.category .fa, .far, .fas {
+  font-weight: 900;
+  background-color: #2bbbad;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
