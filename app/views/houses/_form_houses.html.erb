@@ -60,14 +60,11 @@
   </div>
 
   <div class="step" id="step_3" style="display: none;" >
-    <h4>Intérieur du bien</h4>
-    <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
-    <%= f.input :nb_bedrooms, label: 'Chambre'%>
-    <%= f.input :nb_livingrooms, label: 'Séjour'%>
-    <%= f.input :nb_diningrooms, label: 'Salle de bain à verifier'%>
-    <%= f.input :nb_diningrooms, label: 'Cuisine'%>
-    <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
-    <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+    <h4>Aspects financiers</h4>
+    <%= f.input :price_cents, label: 'Prix TTC'%>
+    <%= f.input :net_price_seller_cents, label: 'Prix net vendeur'%>
+    <%= f.input :agence_fee_cents, label: 'Honoraires TTC'%>
+    <%= f.input :annual_charges_cents, label: 'Charges'%>
     <div class="button-back btn-inline" id="button-back-3">Retour</div>
     <%= f.submit 'Créer le bien', class: "btn btn-primary btn-inline" %>
   </div>
