@@ -9,25 +9,35 @@
 
   <div class="step" id="step_1">
     <h4>Désignation du bien</h4>
-    <%= f.input :address, label: 'Adresse du bien'%>
-    <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
-    <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+    <div class="row no-padded">
+      <%= f.input :address, label: 'Adresse du bien'%>
+      <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+      <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+    </div>
 
     <h4>Propriétaires</h4>
       <%= f.simple_fields_for :owner do |o| %>
-        <%= o.input :last_name, label: 'Nom'%>
-        <%= o.input :first_name, label: 'Prénom'%>
-        <%= o.input :address, label: 'Adresse'%>
-        <%= o.input :email, label: 'email'%>
-        <%= o.input :phone_number, label: 'Téléphone'%>
+        <div class="row no-padded">
+          <div class="col-xs-6 no-padded">
+            <%= o.input :last_name, label: 'Nom'%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :first_name, label: 'Prénom'%>
+          </div>
+          <%= o.input :address, label: 'Adresse'%>
+          <%= o.input :email, label: 'email'%>
+          <%= o.input :phone_number, label: 'Téléphone'%>
+        </div>
       <% end %>
       <div class="button-next btn-inline" id="button-1">Continuer</div>
   </div>
 
   <div class="step" id="step_2" style="display: none;" >
       <h4>Intérieur du bien</h4>
-      <%= f.input :surface_living, label: 'Surface habitable d environ' %>
       <div class="row">
+        <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+      </div>
+      <div class="row no-padded">
         <div class="col-xs-3">
           <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
         </div>
