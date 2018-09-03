@@ -1,28 +1,8 @@
 <!-- show.html.erb -->
-<div class="wrapper">
-  <div class="content-top z-depth-1" style="background-image: linear-gradient(-225deg, rgba(0,50,50,0.6) 0%, rgba(0,66,61,0.3) 10%), url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-    <div class="house-description-show">
-      <img class="avatar-large avatar-border" src="https://kitt.lewagon.com/placeholder/users/MateoDDB">
-    </div>
-    <div class="house-description-show text-center">
-      <i class="fas fa-home"></i>
-      <p><%= @house.house_type %></p>
-    </div>
-    <div class="house-description-show text-center">
-      <i class="fas fa-map-marker-alt"></i>
-      <p><%= @house.address %></p>
-    </div>
-    <div class="house-description-show text-center">
-      <i class="fas fa-euro-sign"></i>
-      <p> <%= @house.price.to_i %>€</p>
-    </div>
-    <div class="house-description-show text-center">
-      <i class="fas fa-calendar-alt"></i>
-      <p><%= @house.created_at.strftime("%d/%m/%Y") %></p>
-    </div>
-  </div>
-  <div class="container" id="show-house">
-    <div class="row">
+<%= render 'shared/banner-show' %>
+<div class="show-margin">
+  <div id="show-house">
+    <div class="row reset-boot" id="link-information">
         <div class="col-md-9 col-lg-9">
           <%= render 'shared/house-information' %>
         </div>

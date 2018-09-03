@@ -1,0 +1,49 @@
+<%= render 'shared/banner-show' %>
+<div class="show-margin">
+  <div class="row reset-boot" id="link-historique">
+    <div class="col-md-9 col-lg-9">
+      <div class="white-back z-depth-1">
+        <ul class="list-inline text-center ul-link-show">
+          <li>
+            <%= link_to "Informations", house_path(anchor: "link-information"), class:"link-show"  %>
+          </li>
+          <li>
+            <span class="tab-nav">|</span>
+          </li>
+          <li>
+            <%= link_to "Historique", house_doc_path,  class:"link-show"  %>
+          </li>
+        </ul>
+      </div>
+      <div class="container-show">
+        <div class="line">
+          <% @documents.each do |document| %>
+            <p class="p-show-doc">
+              <i class="far fa-file-alt"></i>
+              <span class="show-doc-name">
+                <%= document.document_type.name %>
+              </span>
+              <br>
+              <i class="fas fa-pen-square"></i>
+              <span class="show-doc-status">
+                <%= document.status.capitalize %>
+              </span class="show-doc-types-changed">
+              <br>
+              <%= document.document_type.data_type_changed %>
+              <i class="far fa-calendar-alt"></i>
+              <span class="show-doc-time">
+                Crée le : <%= document.document_type.created_at.strftime("%d/%m/%Y") %>
+              </span>
+              <span class="show-doc-time">
+                Modifié le : <%= document.document_type.updated_at.strftime("%d/%m/%Y") %>
+              </span>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-lg-3 content-right">
+      <%= render 'shared/document-juridiques' %>
+    </div>
+  </div>
+</div>
