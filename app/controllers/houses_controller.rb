@@ -85,7 +85,19 @@ class HousesController < ApplicationController
       :surface_total,
       :dpe_done,
       :energy_consumption,
-      :ges_emission
+      :ges_emission,
+      :price_cents,
+      :charges_cents,
+      :property_taxes_cents,
+      :agence_fee_cents,
+      :net_price_seller_cents,
+      :annual_charges_cents,
+      :price,
+      :charges,
+      :property_taxes,
+      :agence_fee,
+      :net_price_seller,
+      :annual_charges
     )
   end
 
