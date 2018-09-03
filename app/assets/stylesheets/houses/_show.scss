@@ -139,8 +139,20 @@
 .title-icon {
   display: flex;
   align-items: center;
+  p {
+    margin-right: 15px;
+  }
   i {
     font-size: 25px;
     color: $light-blue;
   }
+}
+
+.flex-banner-map {
+  display: flex;
+}
+
+.reset-boot {
+  padding: 0 !important;
+  margin: 0 !important;
 }

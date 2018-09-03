@@ -1,5 +1,5 @@
 class HousesController < ApplicationController
-  before_action :house_selector, only: [:show]
+  before_action :house_selector, only: [:show, :show_doc]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
@@ -49,11 +49,21 @@ class HousesController < ApplicationController
 
   def show
     @document = Document.new
-    authorize @house
     @markers = {
       lat: @house.latitude,
       lng: @house.longitude
     }
+    authorize @house
+  end
+
+  def show_doc
+    @documents = @house.documents
+    @document = Document.new
+    @markers = {
+      lat: @house.latitude,
+      lng: @house.longitude
+    }
+    authorize @house
   end
 
   def house_selector
