@@ -5,6 +5,15 @@ class HousesController < ApplicationController
   def new
     @house = House.new
     @owner = Owner.new
+    @owners = Owner.all.map do |owner|
+      {
+        first_name: owner.first_name,
+        last_name: owner.last_name,
+        email: owner.email,
+        phone_number: owner.phone_number,
+        address: owner.address
+      }
+    end
     authorize @house
   end
 
