@@ -39,7 +39,9 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: $white;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: .05em;
 }
 .navbar-wagon-link:hover {
   color: white;
@@ -75,4 +77,11 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.btn-navbar{
+  margin-right: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: bold;
 }
