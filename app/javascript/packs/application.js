@@ -1,6 +1,7 @@
 import "bootstrap";
 import "../components/navbar-fixed.js";
 import "../components/tooltip";
+import "../maps/autocomplete.js";
 
 const mapElement = document.getElementById('mapid');
 const markers = JSON.parse(mapElement.dataset.markers);
@@ -15,3 +16,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var marker = L.marker([markers.lat, markers.lng]).addTo(mymap);
 
+autocomplete();
