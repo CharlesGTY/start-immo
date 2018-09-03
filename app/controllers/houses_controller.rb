@@ -45,6 +45,9 @@ class HousesController < ApplicationController
       @houses = policy_scope(House).order(created_at: :desc)
       authorize @houses
     end
+    if !current_user
+      redirect_to new_user_session_path
+    end
   end
 
   def show
