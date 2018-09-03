@@ -39,6 +39,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to "NOUS CONTACTER", houses_path , class: "btn btn-primary btn-navbar" %>
       <%= link_to t(".sign_in", default: "connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
