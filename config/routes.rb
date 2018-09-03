@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :documents, only: [:create, :index, :show]
   end
   resources :owners, only: [:create, :new]
+  get 'houses/:id/doc', to: 'houses#show_doc', as: :house_doc
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
