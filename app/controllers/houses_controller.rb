@@ -5,6 +5,15 @@ class HousesController < ApplicationController
   def new
     @house = House.new
     @owner = Owner.new
+    @owners = Owner.all.map do |owner|
+      {
+        first_name: owner.first_name,
+        last_name: owner.last_name,
+        email: owner.email,
+        phone_number: owner.phone_number,
+        address: owner.address
+      }
+    end
     authorize @house
   end
 
@@ -86,7 +95,19 @@ class HousesController < ApplicationController
       :surface_total,
       :dpe_done,
       :energy_consumption,
-      :ges_emission
+      :ges_emission,
+      :price_cents,
+      :charges_cents,
+      :property_taxes_cents,
+      :agence_fee_cents,
+      :net_price_seller_cents,
+      :annual_charges_cents,
+      :price,
+      :charges,
+      :property_taxes,
+      :agence_fee,
+      :net_price_seller,
+      :annual_charges
     )
   end
 
