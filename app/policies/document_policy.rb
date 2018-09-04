@@ -17,6 +17,10 @@ class DocumentPolicy < ApplicationPolicy
       return true
     end
 
+    def esign?
+      return true
+    end
+
     # def edit?
     #  record.user == user
     # end

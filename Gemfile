@@ -40,3 +40,4 @@ gem 'carrierwave', '~> 1.2'
 gem "pundit"
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'docusign_rest'
