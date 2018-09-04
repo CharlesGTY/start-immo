@@ -7,10 +7,30 @@
         <%= f.input :address, label: 'Adresse du bien', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
       </div>
       <div class="type-bien col-xs-12">
-        <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+        <% maison =  %>
+        <%= f.input :house_type, label: "Type du bien", collection: ["🏠 maison", "
+        🏢 appartement", "🚗 garage"], as: :radio_buttons %>
       </div>
       <div class="usage-bien col-xs-12">
-        <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+        <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Professionnel Mixte), as: :radio_buttons %>
+      </div>
+      <div class="usage-bien col-xs-12">
+        <fieldset class="form-group radio_buttons optional house_usage_type">
+          <legend class="col-form-label pt-0">Bien à usage</legend><input type="hidden" name="house[usage_type]" value="">
+            <div class="row">
+              <div class="col-xs-4">
+                <input class="form-check-input radio_buttons optional" type="radio" value="Domestique" name="house[usage_type]" id="house_usage_type_domestique"><label for="house_usage_type_domestique"><i class="fas fa-home"></i>Domestique</label>
+              </div>
+              <div class="col-xs-4">
+                <input class="form-check-input radio_buttons optional" type="radio" value="Domestique" name="house[usage_type]" id="house_usage_type_domestique"><label for="house_usage_type_domestique"><i class="fas fa-home"></i>Domestique</label>
+              </div>
+              <div class="col-xs-4">
+                <input class="form-check-input radio_buttons optional" type="radio" value="Domestique" name="house[usage_type]" id="house_usage_type_domestique"><label for="house_usage_type_domestique"><i class="fas fa-home"></i>Domestique</label>
+              </div>
+            </div>
+          <input class="form-check-input radio_buttons optional" type="radio" value="Profesionnel" name="house[usage_type]" id="house_usage_type_profesionnel"><label for="house_usage_type_profesionnel"><i class="fas fa-building"></i>Professionnel</label>
+          <input class="form-check-input radio_buttons optional" type="radio" value="Mixte" name="house[usage_type]" id="house_usage_type_mixte"><label for="house_usage_type_mixte"><span><i class="fas fa-hotel"></i>Mixte</span></label>
+        </fieldset>
       </div>
     </div>
      <div class="button-next btn-inline" id="button-1">Continuer</div>
@@ -43,42 +63,44 @@
 
   <div class="step" id="step_3" style="display: none;" >
       <h4>Intérieur du bien</h4>
-      <div class="row">
-        <%= f.input :surface_living, label: 'Surface habitable d environ' %>
+      <div class="row no-padded space-row">
+        <%= f.input :surface_living, label: 'Surface habitable d environ', input_html: { class: 'small-field'}, label_html: { class: 'big-label' } %>
       </div>
-      <div class="row no-padded">
-        <div class="col-xs-3">
-          <%= f.input :nb_rooms, label: 'Nombre de pièces'%>
+      <div class="row no-padded space-row">
+        <div class="col-xs-2">
+          <%= f.input :nb_rooms, label: 'Pièces', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
         </div>
-        <div class="col-xs-3">
-          <%= f.input :nb_bedrooms, label: 'Chambre'%>
+        <div class="col-xs-2">
+          <%= f.input :nb_bedrooms, label: 'Chambre', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
         </div>
-        <div class="col-xs-3">
-          <%= f.input :nb_livingrooms, label: 'Séjour'%>
+        <div class="col-xs-2">
+          <%= f.input :nb_livingrooms, label: 'Séjour', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
         </div>
-        <div class="col-xs-3">
-          <%= f.input :nb_diningrooms, label: 'Cuisine'%>
+        <div class="col-xs-2">
+          <%= f.input :nb_diningrooms, label: 'Cuisine', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
         </div>
-      </div>
-      <%= f.input :equiped_kitchen, label: 'Cuisine équipée'%>
-      <div class="switch">
-        <label>
-          Non
-          <input type="checkbox">
-          <span class="lever"></span>
-          Oui
-        </label>
+        <div class="col-xs-4">
+          <%= f.input :equiped_kitchen, label: 'Cuisine équipée', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          <div class="switch">
+            <label>
+              Non
+              <input type="checkbox">
+              <span class="lever"></span>
+              Oui
+            </label>
+          </div>
+        </div>
       </div>
 
       <h4>Extérieur du bien</h4>
-      <div class="col-xs-4">
-        <%= f.input :construction_date, label: 'Année de construction'%>
+      <div class="col-xs-5">
+        <%= f.input :construction_date, label: 'Année de construction', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
       </div>
       <div class="col-xs-4">
-        <%= f.input :surface_total, label: 'Surface du terrain'%>
+        <%= f.input :surface_total, label: 'Surface du terrain', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
       </div>
-      <div class="col-xs-4">
-        <%= f.input :nb_balconies, label: 'Balcon'%>
+      <div class="col-xs-3">
+        <%= f.input :nb_balconies, label: 'Balcon', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
       </div>
       <div class="button-back btn-inline" id="button-back-3">Retour</div>
       <div class="button-next btn-inline" id="button-3">Continuer</div>
@@ -87,16 +109,16 @@
   <div class="step" id="step_4" style="display: none;" >
     <h4>Aspects financiers</h4>
     <div class="col-xs-6">
-      <%= f.input :price, label: 'Prix TTC'%>
+      <%= f.input :price, label: 'Prix TTC', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="col-xs-6">
-      <%= f.input :net_price_seller, label: 'Prix net vendeur'%>
+      <%= f.input :net_price_seller, label: 'Prix net vendeur', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="col-xs-6">
-      <%= f.input :agence_fee, label: 'Honoraires TTC'%>
+      <%= f.input :agence_fee, label: 'Honoraires TTC', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="col-xs-6">
-      <%= f.input :annual_charges, label: 'Charges'%>
+      <%= f.input :annual_charges, label: 'Charges', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="button-back btn-inline" id="button-back-4">Retour</div>
     <%= f.submit 'Créer le bien', class: "btn btn-primary btn-inline" %>
