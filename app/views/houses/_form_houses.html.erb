@@ -1,32 +1,46 @@
-<h5>Etape <span id="step_count">1</span> sur 3</h5>
-<div class="boxContainer">
-<div class="boxItem text-center item-circle step-active"></div>
-<div class="boxItem text-center item-circle"></div>
-<div class="boxItem text-center item-circle"></div>
+<div class="step-route">
+  <h5>Etape <span id="step_count">1</span> sur 3</h5>
+  <div class="boxContainer">
+  <div class="boxItem text-center item-circle step-active"></div>
+  <div class="boxItem text-center item-circle"></div>
+  <div class="boxItem text-center item-circle"></div>
+  </div>
 </div>
 
 <%= simple_form_for [@house], html: { autocomplete: 'off' } do |f| %>
 
   <div class="step" id="step_1">
     <h4>Désignation du bien</h4>
-    <div class="row no-padded">
-      <%= f.input :address, label: 'Adresse du bien'%>
-      <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
-      <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+    <div class="row no-padded space-row">
+      <div>
+        <%= f.input :address, label: 'Adresse du bien', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+      </div>
+      <div class="type-bien col-xs-6 no-padded">
+        <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
+      </div>
+      <div class="usage-bien col-xs-6 no-padded">
+        <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
+      </div>
     </div>
 
     <h4>Propriétaires</h4>
       <%= f.simple_fields_for :owner do |o| %>
-        <div class="row no-padded" id="owner-data" data-owners="<%= @owners.to_json %>">
+        <div class="row no-padded space-row" id="owner-data" data-owners="<%= @owners.to_json %>">
           <div class="col-xs-6 no-padded autocomplete">
-            <%= o.input :last_name, label: 'Nom'%>
+            <%= o.input :last_name, label: 'Nom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
           </div>
           <div class="col-xs-6 no-padded">
-            <%= o.input :first_name, label: 'Prénom'%>
+            <%= o.input :first_name, label: 'Prénom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
           </div>
-          <%= o.input :address, label: 'Adresse'%>
-          <%= o.input :email, label: 'email'%>
-          <%= o.input :phone_number, label: 'Téléphone'%>
+          <div class="col-xs-12 no-padded">
+            <%= o.input :address, label: 'Adresse', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :email, label: 'email', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :phone_number, label: 'Téléphone', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
         </div>
       <% end %>
       <div class="button-next btn-inline" id="button-1">Continuer</div>

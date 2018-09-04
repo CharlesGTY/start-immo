@@ -18,11 +18,13 @@
 .collection_radio_buttons {
   border: 1px solid grey;
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px 10px;
+  margin-top : 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
 
   &:hover{
-    background-color: rgba(200,200,200, 0.5);
+    background-color: rgba(38, 166, 154, 0.7);
     cursor: pointer;
   }
 
@@ -61,6 +63,7 @@ legend {
   color: #9e9e9e !important;
   border: 0px;
   margin-bottom: 0px;
+  font-size: 15px;
 }
 
 .item-circle {
@@ -68,8 +71,8 @@ legend {
   color: grey;
   border: 2px solid grey;
   font-size: 10px;
-  width:30px;
-  height:30px;
+  width:20px;
+  height:20px;
   margin: 0 auto;
 }
 
@@ -120,12 +123,53 @@ legend {
 
 #new_house {
   legend, label {
-    color: black !important;
-    font-size: 12px !important;
+    color: #484848 !important;
+    // font-size: 12px !important;
   }
-
 }
 
+.step h4{
+  font-size: 28px;
+  font-weight: 800;
+  color: #484848;
+  margin-top: 10px !important;
+  margin-bottom: 0px !important;
+}
+
+.step-route h5{
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 0px !important;
+}
+
+#new_house fieldset {
+  display: table;
+}
+
+.form-check {
+    display: inline;
+}
+
+.space-row{
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.form-group {
+    margin-bottom: 0px !important;
+}
+
+// #owner-data input[type=text] {
+//   width: 100%;
+//   height: 25px;
+// }
+.small-field{
+  height: 25px !important;
+}
+
+.big-label{
+  font-size: 15px !important;
+}
 
 #owner-data {
 
