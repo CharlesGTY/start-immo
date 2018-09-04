@@ -53,6 +53,9 @@ class HousesController < ApplicationController
             lng: house.longitude,
             id: house.id
         }
+      end
+    if !current_user
+      redirect_to new_user_session_path
     end
   end
 
