@@ -4,29 +4,31 @@
 }
 .line{
   padding: 5px 0 5px 30px;
-  border-left: 3px solid $green;
+  border-left: 4px solid $blue;
   i {
     font-size: 24px;
   }
+  p {
+    margin-bottom: 0px !important;
+  }
   .far.fa-file-alt {
-    color: $blue;
+    color: $white;
   }
 
   .fas.fa-pen-square {
     color: #FF0000;
   }
   .far.fa-calendar-alt {
-    color: $green;
+    color: $grey;
   }
 }
 .p-show-doc{
   text-align: center;
-  padding: 10px;
-  border:1px solid $green;
-  color: #03254a;
+  border:1px solid $blue;
+  border-radius: 4px;
+  color: $blue;
   margin: 30px 0;
   position: relative;
-  line-height: 50px;
 }
 .p-show-doc:before{
   content: '';
@@ -37,7 +39,7 @@
   height: 10px;
   border: 3px solid #D2FAFB;
   border-radius: 50%;
-  background-color: $green;
+  background-color: $blue;
 }
 .p-show-doc:after{
   content: '';
@@ -49,12 +51,12 @@
   border-top: 8px solid transparent;
   border-left: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-right: 10px solid $green;
+  border-right: 10px solid $blue;
 }
 
 .show-doc-name {
-  font-size: 32px;
-  color: $blue;
+  font-size: 28px;
+  color: $white;
 }
 
 .show-doc-status {
@@ -67,7 +69,8 @@
 }
 
 .show-doc-time {
-  color: $green;
+  color: $grey;
+  font-size: 16px;
 }
 
 .show-doc-name, .show-time-status, .show-doc-types-changed, .show-doc-time {
@@ -76,4 +79,9 @@
 
 .show-margin {
   margin: 30px 0px !important;
+}
+
+.doc-type {
+  background: $blue;
+  color: $white;
 }
