@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.container{
+  max-width: 100% !important;
+}
+
 .banner {
   color: white;
   text-align: center;
@@ -128,7 +132,8 @@
 }
 
 .banner-bottom {
-  color: white;
+  color: #666666;
+  background-color: white;
   text-align: center;
   height: 250px;
   background-size: cover !important;
@@ -186,4 +191,8 @@
 
 .text-white{
   color: white;
+}
+
+.btn-banner{
+  font-weight: 700;
 }

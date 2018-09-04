@@ -1,30 +1,26 @@
-.boxes {
-  color: $blue;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.box-numb h2 {
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-}
-
-.box-numb p {
-  font-weight: bold;
-  font-size: 100px;
-  padding: 0;
-  line-height: 100px;
-}
-
 .box-numb {
   background-color: $white;
-  padding: 10px 10px 20px 10px;
-  // margin: 10px;
-  border-radius: 5px;
-  max-width: 200px;
-  transition: all .2s ease-in-out;
-  &:hover {
-    transform: scale(1.01);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 4px;
 }
+.box-numb p {
+  margin: 10px 0px !important;
+}
+
+.index-numb {
+  color: $green;
+  margin-left: 5px;
+  font-size: 24px;
+}
+
+.box-padding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.map-index {
+  // margin-top: 100px;
+}
+

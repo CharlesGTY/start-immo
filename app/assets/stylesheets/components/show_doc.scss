@@ -1,0 +1,79 @@
+.container-show{
+  width: 100%;
+  margin: 30px auto;
+}
+.line{
+  padding: 5px 0 5px 30px;
+  border-left: 3px solid $green;
+  i {
+    font-size: 24px;
+  }
+  .far.fa-file-alt {
+    color: $blue;
+  }
+
+  .fas.fa-pen-square {
+    color: #FF0000;
+  }
+  .far.fa-calendar-alt {
+    color: $green;
+  }
+}
+.p-show-doc{
+  text-align: center;
+  padding: 10px;
+  border:1px solid $green;
+  color: #03254a;
+  margin: 30px 0;
+  position: relative;
+  line-height: 50px;
+}
+.p-show-doc:before{
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #D2FAFB;
+  border-radius: 50%;
+  background-color: $green;
+}
+.p-show-doc:after{
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid $green;
+}
+
+.show-doc-name {
+  font-size: 32px;
+  color: $blue;
+}
+
+.show-doc-status {
+  font-size: 24px;
+  color: #FF0000;
+}
+
+.show-doc-types-changed {
+
+}
+
+.show-doc-time {
+  color: $green;
+}
+
+.show-doc-name, .show-time-status, .show-doc-types-changed, .show-doc-time {
+  margin: 0px 15px !important;
+}
+
+.show-margin {
+  margin: 30px 0px !important;
+}

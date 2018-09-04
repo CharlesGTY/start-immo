@@ -16,6 +16,10 @@ class HousePolicy < ApplicationPolicy
       return true
     end
 
+    def show_doc?
+      return true
+    end
+
     # def edit?
     #  record.user == user
     # end

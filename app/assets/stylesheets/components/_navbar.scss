@@ -39,7 +39,9 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: $white;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: .05em;
 }
 .navbar-wagon-link:hover {
   color: white;
@@ -54,7 +56,7 @@
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
+  font-weight: 600 !important;
   color: #999999 !important;
   font-size: 15px !important;
   line-height: 22px !important;
@@ -75,4 +77,16 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.btn-navbar{
+  margin-right: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.navbar-wagon-dropdown-menu i{
+  width: 30px;
+  height: 25px;
 }

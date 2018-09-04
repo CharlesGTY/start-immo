@@ -14,6 +14,10 @@ class ApplicationPolicy
     true
   end
 
+  def show_doc?
+    true
+  end
+
   def create?
     true
   end

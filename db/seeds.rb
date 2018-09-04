@@ -1,7 +1,7 @@
-Agence.destroy_all
-User.destroy_all
-Owner.destroy_all
 House.destroy_all
+User.destroy_all
+Agence.destroy_all
+Owner.destroy_all
 
 agence = Agence.create({
 juridic_form: "SARL",
@@ -71,35 +71,28 @@ last_name = %w"Mottet Gotty Ceron Meyer"
   })
 end
 
-owner_one  = Owner.create( {
-  first_name: "Boris",
-  last_name: "Paillard",
-  email: "boris@lewagon.fr",
-  phone_number: "0101010101",
-  address: "16 Villa Gaudelet",
-  birth_date: "01/01/01",
-  birth_place: "Paris",
-  is_business: false
-})
+names = ["Boris Paillard", "Seb Saunier", "Edward Schults", "Kevin Robert", "Brice Boulesteix", "Tanguy Foujols", "Benoit Morin", "Remi Mercier", "Elsa Szymczak", "Baptiste Boucher"]
 
-owner_two = Owner.create( {
-  first_name: "Seb",
-  last_name: "Saunier",
-  email: "seb@lewagon.fr",
-  phone_number: "0101010101",
-  address: "16 Villa Gaudelet",
-  birth_date: "01/01/01",
-  birth_place: "Paris",
-  is_business: false
-})
+10.times do |i|
+  Owner.create({
+    first_name: names[i].split[0],
+    last_name: names[i].split[1],
+    email: "#{names[i].split[0].downcase}@lewagon.fr",
+    phone_number: "0146125673",
+    address: "16 Villa Gaudelet",
+    birth_date: "01/01/01",
+    birth_place: "Paris",
+    is_business: false
+  })
+end
 
 10.times do |i|
   House.create({
-    owner: Owner.all.sample,
+    owner: Owner.all[i],
     user: User.all.sample,
     price: [100_000, 200_000, 300_000, 400_000].sample,
-    address: ["16 Villa Gaudelet, Paris","2 rue Gambetta, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris"].sample,
-    description: "Belle maison",
+    address: ["5 Rue Riquet, Paris", "34 Rue Legendre, Paris", "15 Rue de Rochechouart, Paris", "12 rue Mademoiselle, Paris","328 Rue de Vaugirard, Paris","122 Boulevard Murat, Paris","14 Rue Crespin du Gast, Paris","1 Port de la Rapée, Paris", "16 Villa Gaudelet, Paris","2 rue Houdart, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris"][i],
+    description: "A vendre",
     house_type: %w"Maison Appartement".sample,
     smoke_detector_presence: true,
     nb_rooms: rand(1..4),
@@ -117,7 +110,8 @@ owner_two = Owner.create( {
     surface_total: rand(50..150),
     dpe_done: true,
     energy_consumption: 100,
-    ges_emission: 100
+    ges_emission: 100,
+    photo: File.open("photo#{rand(1..5)}.jpeg")
   })
 end
 

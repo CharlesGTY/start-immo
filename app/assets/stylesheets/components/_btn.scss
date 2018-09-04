@@ -1,6 +1,7 @@
 .btn-search-bar {
-  padding: 5px;
-  font-size: 12px;
+  padding: 5px 10px;
+  margin-right: 20px;
+  font-size: 15px;
   border: 1px solid $white;
   border-radius: 4px;
   transition: all .2s ease-in-out;
@@ -16,4 +17,24 @@
   &:hover {
     text-decoration: none;
   }
+}
+
+.link-show {
+  color: $green;
+  padding: 5px;
+  font-size: 24px;
+  transition: 0.5s ease;
+  &:hover {
+    text-decoration: none;
+    color: $blue;
+  }
+}
+
+.tab-nav {
+  color: $green;
+  font-size: 24px;
+}
+
+.ul-link-show {
+  margin: 0 !important;
 }

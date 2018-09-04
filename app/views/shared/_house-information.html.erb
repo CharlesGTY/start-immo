@@ -1,4 +1,17 @@
 <div class="white-back z-depth-3">
+  <ul class="list-inline text-center ul-link-show">
+    <li>
+      <%= link_to "Informations", house_path, class:"link-show"  %>
+    </li>
+    <li>
+      <span class="tab-nav">|</span>
+    </li>
+    <li>
+      <%= link_to "Historique", house_doc_path(anchor: "link-historique"),  class:"link-show"  %>
+    </li>
+  </ul>
+</div>
+<div class="white-back z-depth-3">
   <div class="title-icon">
     <p>Propriétaire</p>
     <i class="fas fa-male"></i>
@@ -10,7 +23,6 @@
     <div class="wrap-inside"><%= @house.owner.phone_number%></div>
   </div>
 </div>
-
 <div class="white-back z-depth-3">
   <div class="title-icon">
     <p>Intérieur du bien</p>
@@ -97,12 +109,11 @@
     <i class="fas fa-euro-sign"></i>
   </div>
   <div class="wrap">
-    <div class="wrap-inside">Prix TTC : 120 000€</div>
-    <div class="wrap-inside">Prix net vendeur : 110 000€</div>
+    <div class="wrap-inside">Prix TTC <%= humanized_money_with_symbol(@house.price) %>€</div>
+    <div class="wrap-inside">Prix net vendeur : <%= humanized_money_with_symbol(@house.net_price_seller) %>€</div>
   </div>
   <div class ="wrap">
     <div class="wrap-inside">Charges : acquereur</div>
-    <div class="wrap-inside">Honnoraires TTC : 10 000€</div>
+    <div class="wrap-inside">Honnoraires TTC : <%= humanized_money_with_symbol(@house.agence_fee) %>€</div>
   </div>
 </div>
-<div id="mapid" class="z-depth-3" data-markers=" <%= @markers.to_json %> "></div>
