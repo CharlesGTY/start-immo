@@ -91,7 +91,7 @@ end
     owner: Owner.all[i],
     user: User.all.sample,
     price: [100_000, 200_000, 300_000, 400_000].sample,
-    address: ["5 Rue Riquet, Paris", "34 Rue Legendre, Paris", "15 Rue de Rochechouart, Paris", "12 rue Abbé Groult, Paris","328 Rue de Vaugirard, Paris","122 Boulevard Murat, Paris","14 Rue Crespin du Gast, Paris","1 Port de la Rapée, Paris", "16 Villa Gaudelet, Paris","2 rue Gambetta, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris"][i],
+    address: ["5 Rue Riquet, Paris", "34 Rue Legendre, Paris", "15 Rue de Rochechouart, Paris", "12 rue Mademoiselle, Paris","328 Rue de Vaugirard, Paris","122 Boulevard Murat, Paris","14 Rue Crespin du Gast, Paris","1 Port de la Rapée, Paris", "16 Villa Gaudelet, Paris","2 rue Houdart, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris"][i],
     description: "A vendre",
     house_type: %w"Maison Appartement".sample,
     smoke_detector_presence: true,
