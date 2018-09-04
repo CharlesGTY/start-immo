@@ -45,6 +45,15 @@ class HousesController < ApplicationController
       @houses = policy_scope(House).order(created_at: :desc)
       authorize @houses
     end
+      @houses = @houses.select {|house| house.latitude.present? }
+      @markers = []
+      @houses.each do |house|
+        @markers << {
+            lat: house.latitude,
+            lng: house.longitude,
+            id: house.id
+        }
+      end
     if !current_user
       redirect_to new_user_session_path
     end
@@ -52,7 +61,8 @@ class HousesController < ApplicationController
 
   def show
     @document = Document.new
-    @markers = {
+    @markers = []
+    @markers << {
       lat: @house.latitude,
       lng: @house.longitude
     }
@@ -62,7 +72,8 @@ class HousesController < ApplicationController
   def show_doc
     @documents = @house.documents
     @document = Document.new
-    @markers = {
+    @markers = []
+    @markers << {
       lat: @house.latitude,
       lng: @house.longitude
     }
