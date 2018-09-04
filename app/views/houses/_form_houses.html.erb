@@ -10,8 +10,6 @@
   <div class="step" id="step_1">
     <h4>Désignation du bien</h4>
     <div class="row no-padded">
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :address, label: 'Adresse du bien'%>
       <%= f.input :house_type, label: "Type du bien", collection: %w(Appartement Maison Garage), as: :radio_buttons %>
       <%= f.input :usage_type, label: "Bien à usage", collection: %w(Domestique Profesionnel Mixte), as: :radio_buttons %>
