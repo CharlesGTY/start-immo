@@ -1,7 +1,7 @@
-Agence.destroy_all
-User.destroy_all
-Owner.destroy_all
 House.destroy_all
+User.destroy_all
+Agence.destroy_all
+Owner.destroy_all
 
 agence = Agence.create({
 juridic_form: "SARL",
@@ -110,7 +110,8 @@ end
     surface_total: rand(50..150),
     dpe_done: true,
     energy_consumption: 100,
-    ges_emission: 100
+    ges_emission: 100,
+    photo: File.open("photo#{rand(1..5)}.jpeg")
   })
 end
 
