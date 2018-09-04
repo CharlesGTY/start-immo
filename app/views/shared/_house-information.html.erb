@@ -13,20 +13,20 @@
 </div>
 <div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Propriétaire</p>
     <i class="fas fa-male"></i>
+    <p>Propriétaire</p>
   </div>
   <div class="wrap">
-    <div class="wrap-inside"><%= @house.owner.first_name %></div>
-    <div class="wrap-inside"><%= @house.owner.last_name %></div>
+    <div class="wrap-name">
+      <div class="wrap-inside"><%= @house.owner.first_name %></div>
+      <div class="wrap-inside"><%= @house.owner.last_name %></div>
+    </div>
     <div class="wrap-inside"><%= @house.owner.email %></div>
     <div class="wrap-inside"><%= @house.owner.phone_number%></div>
   </div>
-</div>
-<div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Intérieur du bien</p>
     <i class="fas fa-home"></i>
+    <p>Intérieur du bien</p>
   </div>
   <div class="wrap">
     <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
@@ -40,12 +40,10 @@
     <div class="wrap-inside"><%= @house.nb_bathrooms%> salles de bain</div>
     <div class="wrap-inside"><%= @house.equiped_kitchen ? "Cuisine équipée" : "Cuisine non équipée" %></div>
   </div>
-</div>
 
-<div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Extérieur du bien</p>
     <i class="fas fa-leaf"></i>
+    <p>Extérieur du bien</p>
   </div>
   <div class="wrap">
     <div class="wrap-inside">Total: <%= @house.surface_total%> m2</div>
@@ -59,12 +57,10 @@
     <div class="wrap-inside"><%= @house.nb_bathrooms%> salles de bain</div>
     <div class="wrap-inside"><%= @house.equiped_kitchen ? "Cuisine équipée" : "Cuisine non équipée" %></div>
   </div>
-</div>
 
-<div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Copopriété</p>
     <i class="fas fa-users"></i>
+    <p>Copopriété</p>
   </div>
   <div class="wrap">
     <div class="wrap-inside">Bien en copropriété : Oui</div>
@@ -78,35 +74,29 @@
   <div class ="wrap">
     <div class="wrap-inside">Informations particulières : Belle maison</div>
   </div>
-</div>
 
-<div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Aspects financiers</p>
     <i class="fas fa-money-bill"></i>
+    <p>Aspects financiers</p>
   </div>
   <div class="wrap">
     <div class="wrap-inside">Charges : éléctricité + eau</div>
-    <div class="wrap-inside">Taxe fonicère : 480€</div>
+    <div class="wrap-inside">Taxe foncière : 480€</div>
   </div>
-</div>
 
-<div class="white-back z-depth-3">
   <div class="title-icon">
+    <i class="fas fa-envira"></i>
     <p>Diagnostique énergitique</p>
-    <i class="fab fa-envira"></i>
   </div>
   <div class="wrap">
     <div class="wrap-inside">DPE effectué : oui</div>
     <div class="wrap-inside">Consommation : 574 Kwh/m2/an</div>
     <div class="wrap-inside">Emission GES : 7kg co2/m2/an</div>
   </div>
-</div>
 
-<div class="white-back z-depth-3">
   <div class="title-icon">
-    <p>Prix de vente et rémunération</p>
     <i class="fas fa-euro-sign"></i>
+    <p>Prix de vente et rémunération</p>
   </div>
   <div class="wrap">
     <div class="wrap-inside">Prix TTC <%= humanized_money_with_symbol(@house.price) %>€</div>
