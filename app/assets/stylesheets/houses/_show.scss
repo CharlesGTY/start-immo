@@ -32,9 +32,7 @@
     align-items: center;
     margin: 10px 5px;
   }
-  a {
 
-  }
   .pdf-link {
     width:15%;
   }
@@ -118,9 +116,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 0px 0px;
   margin: 0px;
-  padding: 20px;
+  padding: 0px;
   border-radius: 1px;
   background-size: cover !important;
   height: 60vh;
@@ -133,12 +131,15 @@
 .house-description-show{
   border-radius: 4px;
   i, p {
+    font-size: 24px;
     color: $white;
-    margin: 5px;
+    margin: 0px 10px 15px 0px ;
+    text-shadow: $blue 1px 0 10px;
   }
 }
 .avatar-border {
   border: 1px solid $blue;
+  margin: 0px 0px 10px 10px;
 }
 
 .title-icon {
