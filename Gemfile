@@ -41,3 +41,5 @@ gem "pundit"
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'docusign_rest'
+gem 'sweetify'
+gem 'spinners'
