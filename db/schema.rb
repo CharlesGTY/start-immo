@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_111213) do
+ActiveRecord::Schema.define(version: 2018_09_03_155239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,11 +53,12 @@ ActiveRecord::Schema.define(version: 2018_08_31_111213) do
   create_table "documents", force: :cascade do |t|
     t.bigint "house_id"
     t.bigint "document_type_id"
-    t.string "status", default: "attente signature agent"
+    t.integer "docusign_envelope_id", default: 0
     t.jsonb "data", default: "{}", null: false
-    t.integer "document_ref"
+    t.string "cl_pdf_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pdf"
     t.index ["document_type_id"], name: "index_documents_on_document_type_id"
     t.index ["house_id"], name: "index_documents_on_house_id"
   end

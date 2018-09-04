@@ -121,7 +121,8 @@ class HousesController < ApplicationController
       :property_taxes,
       :agence_fee,
       :net_price_seller,
-      :annual_charges
+      :annual_charges,
+      :photo
     )
   end
 

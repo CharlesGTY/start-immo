@@ -1,5 +1,8 @@
+require "tempfile"
+require "open-uri"
+
 class DocumentsController < ApplicationController
-  before_action :document_selector, only: [:show]
+  before_action :document_selector, only: [:show, :esign]
 
   def create
     @house = House.find(params[:house_id])
@@ -13,6 +16,7 @@ class DocumentsController < ApplicationController
     authorize @document
     if @document.save
       redirect_to house_path(@house)
+      GenerateDocumentPdfService.new(@document).call
     else
       render 'houses/show'
     end
@@ -22,29 +26,50 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    data = @document.data.deep_symbolize_keys
-    h = data[:house]
-    u = data[:user]
-    o = data[:owner]
-    a = data[:agence]
-    authorize @document
-    template = "documents/show_mandat.pdf.erb"
-    case @document.document_type.name
-      when "Mandat de vente" then template = "documents/show_mandat.pdf.erb"
-      when "Avenant au mandat de vente -> Prix" then template = "documents/show_avenant_prix.pdf.erb"
-    #  when valeur then template = "document/show.pdf.erb"
-    #  when valeur then template = "document/show.pdf.erb"
-    #  else template = "document/show.pdf.erb"
-    #end
-    end
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: 'Hello',   # Excluding ".pdf" extension.
-               template: template,
-               locals: {document: @document, house: h, agence: a, user: u, owner: o}
-      end
-    end
+    # data = @document.data.deep_symbolize_keys
+    # h = data[:house]
+    # u = data[:user]
+    # o = data[:owner]
+    # a = data[:agence]
+    # authorize @document
+    # template = "documents/show_mandat.pdf.erb"
+    # case @document.document_type.name
+    #   when "Mandat de vente" then template = "documents/show_mandat.pdf.erb"
+    #   when "Avenant au mandat de vente -> Prix" then template = "documents/show_avenant_prix.pdf.erb"
+    # #  when valeur then template = "document/show.pdf.erb"
+    # #  when valeur then template = "document/show.pdf.erb"
+    # #  else template = "document/show.pdf.erb"
+    # #end
+    # end
+
+    # # tempfile = Tempfile.new("document.pdf")
+    # @document.reload
+    # tempfile = Tempfile.new(['document','.pdf.erb'], File.expand_path('') + '/app/views/documents')
+    # File.open(tempfile,'wb') do |file|
+    #   file << open(@document.pdf.url).read
+    # end
+
+    # # File.open(File.dirname(__FILE__) +'show_avenant_prix.pdf.erb','wb') do |file|
+    # #   file << open(@document.pdf.url).read
+    # # end
+    # authorize @document
+    # raise
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     render pdf: temfile.path.slice('views')[1],
+    #            template: '/documents/show_mandat.pdf.erb',
+    #            layout: 'pdf',
+    #            formats: :html,
+    #            encoding: 'utf8'
+    #   end
+    # end
+
+
+    # # Cloudinary::Uploader.upload("app/pdfs/temp.pdf", :public_id => "#{@document.id}_#{@document.docusign_envelope_id}_pdf")
+    # # @document.update(cl_pdf_name: "#{@document.id}_#{@document.docusign_envelope_id}_pdf")
+
+    # @document.update(pdf: File.open(tempfile.path))
   end
 
   def edit
@@ -56,6 +81,88 @@ class DocumentsController < ApplicationController
   def destroy
   end
 
+  def esign
+    authorize @document
+    CreateDocusignEnvelopService.new(@document).call
+    redirect_to house_path(@document.house)
+  end
+    # house = @document.house
+    # authorize @document
+
+    # # pdf_path = "#{cl_image_path(@document.cl_pdf_name)}.pdf"
+    # # pdf_name = "#{@document.cl_pdf_name}.pdf"
+    # tempfile = Tempfile.new("document.pdf")
+    # tempfile.write(open(@document.pdf.url).read)
+
+    # client = DocusignRest::Client.new
+    # envelope = client.create_envelope_from_document(
+    #   email: {
+    #     subject: "test email subject",
+    #     body: "this is the email body and it's large!"
+    #   },
+    #   # If embedded is set to true in the signers array below, emails
+    #   # don't go out to the signers and you can embed the signature page in an
+    #   # iframe by using the client.get_recipient_view method
+    #   signers: [
+    #     {
+    #       embedded: false,
+    #       name: "Joe Dimaggio",
+    #       email: "mottet.julien123@gmail.com",
+    #       role_name: 'Issuer',
+    #       sign_here_tabs: [
+    #         {
+    #           anchor_string: 'THIS SPACE INTENTIONALLY LEFT BLANK',
+    #           anchor_x_offset: '-30',
+    #           anchor_y_offset: '35'
+    #         }
+    #       ]
+    #     },
+    #   ],
+    #   files: [
+    #     # {path: 'http://res.cloudinary.com/foodfutur/image/upload/v1535987118/4_0_pdf.pdf', name: '4_0_pdf.pdf' },
+    #     {path: tempfile.path, name: 'document.pdf' },
+    #   ],
+    #   status: 'sent'
+    # )
+    # envelope = client2.create_envelope_from_document(
+    #  { email: {
+    #     subject: "pdf to sign",
+    #     body: "please sign this mandat"
+    #   },
+    #   documents: [{
+    #     documentId: "1",
+    #     path: '/Users/julienmottet/code/CharlesGTY/start-immo/app/views/documents',
+    #     name: "test.pdf"
+    #   }],
+    #   # If embedded is set to true in the signers array below, emails
+    #   # don't go out to the signers and you can embed the signature page in an
+    #   # iframe by using the client.get_recipient_view method
+    #   recipients: {
+    #     signers: [{
+    #       name: "Joe Dimaggio",
+    #       email: "mottet.julien123@gmail.com",
+    #       recipientId: "1",
+    #       routingOrder: "1",
+    #       tabs: {
+    #         sign_here_tabs: [{
+    #           anchor_string: 'all your money',
+    #           anchor_x_offset: '-30',
+    #           anchor_y_offset: '35'
+    #         }]
+    #       }
+    #     }]
+    #   }
+    # }
+    # )
+    # url = client2.get_recipient_view(envelope_id: envelope['envelopeId'], name: 'Joe Dimaggio', email: 'mottet.julien123@gmail.com', return_url: 'http://google.com')['url']
+    # binding.pry
+
+    # `open #{url}`
+
+    # @document.update(docusign_envelope_id: envelope["envelopeId"])
+    # redirect_to house_path(house)
+
+
   private
 
   def document_selector
@@ -63,7 +170,7 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require('document').permit(:data, :status, :document_type, :document_ref)
+    params.require('document').permit(:data, :status, :document_type, :docusign_envelope_id, :pdf)
   end
 
   def store_hash(house, agence, owner, user)

@@ -47,12 +47,16 @@
     width:55%;
     font-size: 10px
   }
-  .doc-signature-status {
-    width:15%;
+  .doc-signature-status i{
+    width:10%;
+    margin-left: 5px;
+    margin-bottom: 0px;
   }
-  .doc-time-status {
-    width:15%;
+
+  .pdf-sign{
+    width:25%;
   }
+
 
   hr {
     display: block;
