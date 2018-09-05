@@ -1,5 +1,4 @@
 <div class="row margin-list">
-  <h5 id="list-title" class="text-center"> Biens de l'agence </h5>
   <div class="main-container">
     <div class="title-search-bar col-sm-8">
       <div class="logo-and-search-bar z-depth-2 fa-2x" id="navbar-fixed">
@@ -41,35 +40,24 @@
               </strong></p>
             </div>
             <div class="message-type">
-               <% dossier = ["exclusif","standard", "standardd"].sample %>
-               <% if dossier == "exclusif" %>
-                  <i class="fas fa-star fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title=<%= dossier %>></i>
+               <% if house.exclusive %>
+                  <i class="fas fa-star fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i>
                <% else %>
                <% end %>
-             </div>
+            </div>
             <div class="message-status">
-                <% clock =
-            [["red", "Urgent"],
-              ["green", "Nouveau bien"],
-              ["orange", "En_cours"]
-            ].sample %>
-            <% case clock[0] %>
-            <% when "red" %>
-             <i class="fas fa-clock fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
-            <% when "green" %>
-             <i class="fas fa-clock fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
-            <% when "orange" %>
-             <i class="fas fa-clock fa-2x icon-warning" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+              <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
+                <i class="fas fa-file-pdf fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dosser incomplet"></i>
+              <% else %>
+                <i class="fas fa-file-pdf fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dossier complet"></i>
              <% end %>
             </div>
-            <div class="message-date">
-                        <% imagge =
-            [["https://kitt.lewagon.com/placeholder/users/CharlesGTY", "Charles"],
-              ["https://kitt.lewagon.com/placeholder/users/MateoDDB", "Mateo"],
-              ["https://kitt.lewagon.com/placeholder/users/timotte1984", "Julien"],
-              ["https://kitt.lewagon.com/placeholder/users/nicmey", "Nico"]
-            ].sample %>
-            <img class="avatar-large" src=<%= imagge[0] %> data-toggle="tooltip" data-placement="bottom" title= <%= imagge[1] %>>
+            <div class="message-signature-attente">
+              <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
+                <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dosser incomplet"></i>
+              <% else %>
+                <i class="fas fa-pen-fancy fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dossier complet"></i>
+              <% end %>
             </div>
           </div>
         <% end %>

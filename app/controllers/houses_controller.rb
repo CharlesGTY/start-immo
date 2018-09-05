@@ -54,6 +54,7 @@ class HousesController < ApplicationController
             id: house.id
         }
       end
+      # raise
     if !current_user
       redirect_to new_user_session_path
     end
@@ -67,6 +68,9 @@ class HousesController < ApplicationController
       lng: @house.longitude
     }
     authorize @house
+  end
+
+  def index_filter_
   end
 
   def show_doc

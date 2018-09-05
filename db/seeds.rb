@@ -86,7 +86,7 @@ names = ["Boris Paillard", "Seb Saunier", "Edward Schults", "Kevin Robert", "Bri
   })
 end
 
-10.times do |i|
+30.times do |i|
   House.create({
     owner: Owner.all[i],
     user: User.all.sample,
@@ -109,9 +109,10 @@ end
     surface_Carrez: rand(50..150),
     surface_total: rand(50..150),
     dpe_done: true,
+    exclusive: [true, false].sample,
     energy_consumption: 100,
     ges_emission: 100,
-    photo: File.open("photo#{rand(1..5)}.jpeg")
+    photo: File.open("photo#{rand(1..10)}.jpeg")
   })
 end
 
