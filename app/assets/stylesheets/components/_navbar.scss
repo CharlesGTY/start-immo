@@ -40,12 +40,25 @@
 .navbar-wagon-link {
   color: $white;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: lighter;
   letter-spacing: .05em;
+  transition: 0.5s ease;
 }
 .navbar-wagon-link:hover {
-  color: white;
+  color: $green;
   text-decoration: none;
+}
+
+.i-notif {
+  font-size: 21px;
+  text-align: center;
+  color: $white;
+  transition: 0.5s ease;
+  padding-top: 9px;
+  &:hover {
+  color: $green;
+  text-decoration: none;
+  }
 }
 
 /* Dropdown menu */
