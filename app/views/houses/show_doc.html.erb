@@ -2,18 +2,11 @@
 <div class="show-margin">
   <div class="row reset-boot" id="link-historique">
     <div class="col-md-8 col-lg-8">
-      <div class="white-back z-depth-1">
-        <ul class="list-inline text-center ul-link-show">
-          <li>
-            <%= link_to "Informations", house_path(anchor: "link-information"), class:"link-show"  %>
-          </li>
-          <li>
-            <span class="tab-nav">|</span>
-          </li>
-          <li>
-            <%= link_to "Historique", house_doc_path,  class:"link-show"  %>
-          </li>
-        </ul>
+      <div class="white-back padding-link-show">
+        <div class="tab-histo-info text-center">
+          <%= link_to "Informations", house_path(anchor: "link-information"), class:"link-show-white"  %>
+          <%= link_to "Historique", house_doc_path,  class:"link-show-blue"  %>
+        </div>
       </div>
       <div class="container-show">
         <div class="line">

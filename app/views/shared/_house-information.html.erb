@@ -1,15 +1,8 @@
-<div class="white-back z-depth-3">
-  <ul class="list-inline text-center ul-link-show">
-    <li>
-      <%= link_to "Informations", house_path, class:"link-show"  %>
-    </li>
-    <li>
-      <span class="tab-nav">|</span>
-    </li>
-    <li>
-      <%= link_to "Historique", house_doc_path(anchor: "link-historique"),  class:"link-show"  %>
-    </li>
-  </ul>
+<div class="white-back padding-link-show">
+  <div class="tab-histo-info text-center">
+    <%= link_to "Informations", house_path, class:"link-show-blue"  %>
+    <%= link_to "Historique", house_doc_path(anchor: "link-historique"),  class:"link-show-white"  %>
+  </div>
 </div>
 <div class="white-back z-depth-3">
   <div class="title-icon">
@@ -29,7 +22,7 @@
   <div class="title-icon">
     <h4>
       <i class="fas fa-users"></i>
-      Copopriété
+      Copropriété
     </h4>
   </div>
   <div class="wrap">
@@ -56,7 +49,7 @@
   <div class="title-icon">
     <h4>
       <i class="fas fa-envira"></i>
-      Diagnostique énergitique
+      Diagnostic énergétique
     </h4>
   </div>
   <div class="wrap">

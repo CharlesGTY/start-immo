@@ -28,15 +28,40 @@
   }
 }
 
-.link-show {
-  color: $green;
-  padding: 5px;
+.tab-histo-info {
+  margin: 15px 0px;
+}
+
+.link-show-blue {
+  background: $blue;
+  color: $white;
+  padding: 5px 70px;
   font-size: 24px;
+  transition: 0.5s ease;
+  border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.link-show-white {
+  background: #A9A9A9;
+  color: $white;
+  padding: 5px 70px;
+  font-size: 24px;
+  border-radius: 3px;
   transition: 0.5s ease;
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $white;
+    background: $blue;
   }
+}
+
+.padding-link-show {
+  padding: 0 !important;
+  background: none !important;
 }
 
 .tab-nav {
