@@ -98,9 +98,13 @@ class DocumentsController < ApplicationController
   end
 
   def webhooks
-    notif = Notification.create(description: "Nouveau document signé")
+    pattern = /UserName>(?<name>[\s\S]*?)<\/UserName>/
+    data = request.body.read
+    match_data = data.scan(pattern)
+    notif = Notification.create(description: "Document signé par #{match_data[1]}")
+
     authorize notif
-    redirect_to houses_path
+    # redirect_to houses_path
   end
     # house = @document.house
     # authorize @document
@@ -186,7 +190,7 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require('document').permit(:data, :status, :document_type, :docusign_envelope_id, :pdf)
+    params.require('document').permit(:data, :status, :document_type, :docusign_envelope_id, :pdf, :controller, :actions)
   end
 
   def store_hash(house, agence, owner, user)
