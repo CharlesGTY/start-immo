@@ -17,8 +17,9 @@
       <% end %>
       <%= link_to "Config", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "#", class: "i-notif" do %>
-        <i class="far fa-bell"></i>
+        <i class="far fa-bell" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" <%= Notification.last.description if Notification.last %> "></i>
       <% end %>
+      <div> <%= Notification.count if Notification.count > 0 %> </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

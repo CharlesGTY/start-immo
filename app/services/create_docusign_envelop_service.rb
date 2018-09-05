@@ -26,7 +26,7 @@ class CreateDocusignEnvelopService
         {
           embedded: false,
           name: "#{@document.house.user.first_name} #{@document.house.user.last_name}",
-          email: "mottet.julien123@gmail.com",
+          email: "start.immo.paris@gmail.com",
           role_name: 'Mandataire',
           sign_here_tabs: [
             {
@@ -69,7 +69,6 @@ class CreateDocusignEnvelopService
       ],
       status: 'sent'
     )
-
     # raise document_envelope_response["message"] if document_envelope_response.has?("errorCode")
     @document.update!(
       docusign_envelope_id: document_envelope_response['envelopeId'],

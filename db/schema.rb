@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_05_133236) do
+ActiveRecord::Schema.define(version: 2018_09_05_162451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_09_05_133236) do
   create_table "documents", force: :cascade do |t|
     t.bigint "house_id"
     t.bigint "document_type_id"
-    t.integer "docusign_envelope_id", default: 0
+    t.string "docusign_envelope_id", default: "0"
     t.jsonb "data", default: "{}", null: false
     t.string "cl_pdf_name"
     t.datetime "created_at", null: false
