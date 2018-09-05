@@ -101,7 +101,7 @@ class DocumentsController < ApplicationController
     pattern = /UserName>(?<name>[\s\S]*?)<\/UserName>/
     data = request.body.read
     match_data = data.scan(pattern)
-    notif = Notification.create(description: "Document signé par #{match_data[1]}")
+    notif = Notification.create(description: "Document signé par #{match_data[1].first}")
 
     authorize notif
     # redirect_to houses_path

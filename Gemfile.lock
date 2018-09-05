@@ -271,6 +271,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   money-rails
+  nokogiri
   pg (~> 0.21)
   pg_search
   pry-byebug
