@@ -212,8 +212,6 @@ GEM
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    spinners (1.1.0)
-      sass (~> 3.2)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -283,7 +281,6 @@ DEPENDENCIES
   redis
   sass-rails
   simple_form
-  spinners
   spring
   spring-watcher-listen (~> 2.0.0)
   sweetify

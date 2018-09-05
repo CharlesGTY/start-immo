@@ -3,7 +3,7 @@ function initMap() {
   if(mapElement) {
     const markers = JSON.parse(mapElement.dataset.markers);
 
-    var mymap = L.map('mapid').setView([markers[0].lat, markers[0].lng], 13);
+    var mymap = L.map('mapid').setView([markers[0].lat, markers[0].lng], 11);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 25,

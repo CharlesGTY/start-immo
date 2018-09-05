@@ -30,6 +30,7 @@
 .message-type {
   padding-left: 10px;
   font-size: 13px;
+  width: 50px;
 }
 .message-name {
   padding-left: 10px;
@@ -57,8 +58,8 @@
 
 .logo-search-bar i {
   color: $white;
-  // margin-right: 10px
-  margin-left: 20px;
+  margin-right: 20px;
+  margin-left: 5px;
 }
 
 .search-bar-houses {
@@ -78,7 +79,7 @@
 
 #list-title {
   color: $blue;
-  font-size: 32px;
+  font-size: 50px;
   margin: 30px 0px !important;
 }
 
@@ -86,4 +87,13 @@
   position: fixed;
   z-index: 2;
   top:0;
+}
+
+.main-container{
+  display: flex;
+}
+
+.map-index{
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
 }
