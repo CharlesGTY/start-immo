@@ -10,8 +10,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "dashboard", houses_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "config", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if  current_page?(houses_path) %>
+        <%= link_to "Dashboard", houses_path, class: "navbar-wagon-item navbar-wagon-link nav-link-bold"%>
+      <% else %>
+        <%= link_to "Dashboard", houses_path, class: "navbar-wagon-item navbar-wagon-link"%>
+      <% end %>
+      <%= link_to "Config", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "#", class: "i-notif" do %>
         <i class="far fa-bell"></i>
       <% end %>
