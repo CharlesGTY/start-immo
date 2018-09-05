@@ -4,7 +4,9 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "elegant-spinner": "^1.0.1",
     "jquery": "^3.3.1",
+    "jquery.fakeloader": "^1.0.0",
     "sweetalert": "^2.1.0"
   },
   "devDependencies": {

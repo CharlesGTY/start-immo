@@ -26,9 +26,7 @@
   <div class="text-center">
     <%= simple_form_for [@house, @document] do |f| %>
       <%= f.association :document_type %>
-      <%= f.button :submit, value: "Créer votre document"%>
+      <%= f.button :button, "Créer votre document", class: "btn-primary".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Chargement"} %>
     <% end %>
   </div>
-
-  <%= cl_image_tag("4_0_pdf.pdf") %>
 </div>
