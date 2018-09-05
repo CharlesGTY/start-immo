@@ -43,7 +43,11 @@
     <div class="filter-card z-depth-1">
       <%= link_to "", houses_path %>
       <p> Dossiers incomplets</p><p><span class="index-numb">
+        <% if !Document.all.empty? %>
         <%= House.all.reject {|h| (Document.all.map{|d| d.house_id}).uniq.include?(h.id)}.count %>
+        <% else %>
+        0
+        <% end %>
       </span> </p>
     </div>
   </div>
@@ -51,7 +55,11 @@
     <div class="filter-card z-depth-1">
       <%= link_to "", houses_path %>
       <p> Signatures en attente</p><p><span class="index-numb">
+      <% if !Document.all.empty? %>
       <%= Document.all.select {|d| d.docusign_envelope_id != "0"}.count %>
+      <% else %>
+        0
+        <% end %>
        </span> </p>
     </div>
   </div>
