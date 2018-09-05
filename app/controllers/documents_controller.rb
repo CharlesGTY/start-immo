@@ -83,8 +83,17 @@ class DocumentsController < ApplicationController
 
   def esign
     authorize @document
-    CreateDocusignEnvelopService.new(@document).call
-    redirect_to house_path(@document.house)
+    if CreateDocusignEnvelopService.new(@document).call
+      respond_to do |format|
+        format.html {redirect_to house_path(@document.house)}
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to house_path(@document.house)}
+        format.js
+      end
+    end
   end
     # house = @document.house
     # authorize @document

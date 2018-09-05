@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :agence
   has_many :houses
-  after_create :send_welcome_email
 
   private
 

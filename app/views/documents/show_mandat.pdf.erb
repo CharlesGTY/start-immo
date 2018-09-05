@@ -1,5 +1,5 @@
 <div class="content">
-<h1 class="text-center"> MANDAT DE VENTE SIMPLE HORS ÉTABLISSEMENT </h1>
+<h1 class="text-center big-text"> MANDAT DE VENTE SIMPLE HORS ÉTABLISSEMENT </h1>
 <h1 class="text-center"><strong>(SANS EXCLUSIVITE)</strong></h1>
 <h2 class="text-center">En application des articles 6 de la loi N°70-9 du 2 janvier 1970 et
 articles 72 et suivants du décret n°72-678 du 20 juillet 1972</h2>
@@ -11,7 +11,21 @@ articles 72 et suivants du décret n°72-678 du 20 juillet 1972</h2>
 <br/>
 <br/>
 
+<h1 class="signature"> Signature du mandataire <%= @document.house.user.first_name %> <%= @document.house.user.last_name %> </h1></h1>
+<h1 class="to_hide"> Mandataireeee</h1>
 
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/><br/>
+<br/><h1 class="signature"> Signature du propriétaire  <%= @document.house.owner.first_name %> <%= @document.house.owner.last_name %> </h1>
+<h1 class="to_hide"> Proprietaireeee</h1>
+<br/><br/>
+<br/>
+<br/>
+<br/><br/>
+<br/>
 <h1>Identification du mandataire : </h1>
 
 <ul>
@@ -121,7 +135,7 @@ Délivrée le <span class="data"> <%= @user[:attes_collab_number_date] %> </span
   <li><h2> Libre de toute occupation</h2></li>
   <li><h2> Loué suivant le contrat de bail et les conditions ci annexés</h2></li>
 
-Si le(s) bien(s) objet des présentes ne sont pas loués, le mandant déclare que ce(s) bien(s) seront, le jour de la signature de l'acte authentique de vente, libres de toute location ou occupation.
+<p>Si le(s) bien(s) objet des présentes ne sont pas loués, le mandant déclare que ce(s) bien(s) seront, le jour de la signature de l'acte authentique de vente, libres de toute location ou occupation.</p>
 Si le(s) bien(s) objet des présentes sont loués, ils le seront suivant l'état locatif ci-annexé.
   <li><h2> Présence de détecteurs de fumée : <span class="data"> <%= @house[:smoke_detector_presence] ? "Oui" : "Non" %> </span> </h2></li>
   <li><h2> Nombre de pièces : <span class="data"> <%= @house[:nb_rooms] %> </span></h2></li>

@@ -16,8 +16,8 @@ class CreateDocusignEnvelopService
     client = DocusignRest::Client.new
     document_envelope_response = client.create_envelope_from_document(
       email: {
-        subject: "test email subject",
-        body: "this is the email body and it's large!"
+        subject: "Mandat n°#{@document.id} à signer",
+        body: "Merci de signer ce mandat "
       },
       # If embedded is set to true in the signers array below, emails
       # don't go out to the signers and you can embed the signature page in an
@@ -25,17 +25,43 @@ class CreateDocusignEnvelopService
       signers: [
         {
           embedded: false,
-          name: "Joe Dimaggio",
+          name: "#{@document.house.user.first_name} #{@document.house.user.last_name}",
           email: "mottet.julien123@gmail.com",
-          role_name: 'Issuer',
+          role_name: 'Mandataire',
           sign_here_tabs: [
             {
-              anchor_string: 'Signatureee',
-              anchor_x_offset: '-30',
+              anchor_string: 'Mandataireeee',
+              anchor_x_offset: '200',
               anchor_y_offset: '35'
             }
           ]
         },
+        {
+          embedded: false,
+          name: "#{@document.house.owner.first_name} #{@document.house.owner.last_name}",
+          email: "mottet.julien123@gmail.com",
+          role_name: 'Owner',
+          sign_here_tabs: [
+            {
+              anchor_string: 'Proprietaireeee',
+              anchor_x_offset: '200',
+              anchor_y_offset: '35'
+            }
+          ]
+        },
+        # {
+        #   embedded: true,
+        #   name: 'tim',
+        #   email: 'someone+else@gmail.com',
+        #   role_name: 'Attorney',
+        #   sign_here_tabs: [
+        #     {
+        #       anchor_string: 'attorney_sig',
+        #       anchor_x_offset: '140',
+        #       anchor_y_offset: '8'
+        #     }
+        #   ]
+        # }
       ],
       files: [
         # {path: 'http://res.cloudinary.com/foodfutur/image/upload/v1535987118/4_0_pdf.pdf', name: '4_0_pdf.pdf' },
@@ -47,7 +73,6 @@ class CreateDocusignEnvelopService
     p temp_pdf_file.path
     p document_envelope_response
     # raise document_envelope_response["message"] if document_envelope_response.has?("errorCode")
-
     @document.update!(
       docusign_envelope_id: document_envelope_response['envelopeId'],
       # uri: document_envelope_response['uri']

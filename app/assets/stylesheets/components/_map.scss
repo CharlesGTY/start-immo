@@ -1,4 +1,26 @@
-#mapid {
-  height: 60vh;
+.map-adress {
   border-left: 3px solid $blue;
+}
+
+#mapid {
+  height: 50vh;
+}
+
+.address-map {
+  height: 10vh;
+  background: #EADFD7;
+  color: $blue;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  i {
+    font-size: 26px !important;
+    font-weight: black !important;
+    text-align: center !important;
+  }
+  p {
+    font-size: 26px !important;
+    font-weight: black !important;
+    margin-bottom: 0 !important;
+  }
 }
