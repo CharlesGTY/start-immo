@@ -44,32 +44,32 @@
      <div class="button-next btn-inline" id="button-1">Continuer</div>
   </div>
 
-    <div class="step" id="step_2" style="display: none;" >
-      <h4>Propriétaires</h4>
-        <%= f.simple_fields_for :owner do |o| %>
-          <div class="row no-padded space-row" id="owner-data" data-owners="<%= @owners.to_json %>">
-            <div class="col-xs-6 no-padded autocomplete">
-              <%= o.input :last_name, label: 'Nom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
-            </div>
-            <div class="col-xs-6 no-padded">
-              <%= o.input :first_name, label: 'Prénom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
-            </div>
-            <div class="col-xs-12 no-padded">
-              <%= o.input :address, label: 'Adresse', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
-            </div>
-            <div class="col-xs-6 no-padded">
-              <%= o.input :email, label: 'email', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
-            </div>
-            <div class="col-xs-6 no-padded">
-              <%= o.input :phone_number, label: 'Téléphone', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
-            </div>
+  <div class="step" id="step_2" style="display: none;" >
+    <h4>Propriétaires</h4>
+      <%= f.simple_fields_for :owner do |o| %>
+        <div class="row no-padded space-row" id="owner-data" data-owners="<%= @owners.to_json %>">
+          <div class="col-xs-6 no-padded autocomplete">
+            <%= o.input :last_name, label: 'Nom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
           </div>
-        <% end %>
-        <div class="button-back btn-inline" id="button-back-2">Retour</div>
-        <div class="button-next btn-inline" id="button-2">Continuer</div>
-    </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :first_name, label: 'Prénom', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+          <div class="col-xs-12 no-padded">
+            <%= o.input :address, label: 'Adresse', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :email, label: 'email', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+          <div class="col-xs-6 no-padded">
+            <%= o.input :phone_number, label: 'Téléphone', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+          </div>
+        </div>
+      <% end %>
+      <div class="button-back btn-inline" id="button-back-2">Retour</div>
+      <div class="button-next btn-inline" id="button-2">Continuer</div>
+  </div>
 
-  <div class="step" id="step_3" style="display: none;" >
+  <div class="step marge-align" id="step_3" style="display: none;" >
       <h4>Intérieur du bien</h4>
       <div class="row no-padded space-row">
         <%= f.input :surface_living, label: 'Surface habitable d environ', input_html: { class: 'small-field'}, label_html: { class: 'big-label' } %>
@@ -114,7 +114,7 @@
       <div class="button-next btn-inline" id="button-3">Continuer</div>
   </div>
 
-  <div class="step" id="step_4" style="display: none;" >
+  <div class="step marge-align" id="step_4" style="display: none;" >
     <h4>Aspects financiers</h4>
     <div class="col-xs-6">
       <%= f.input :price, label: 'Prix TTC', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
