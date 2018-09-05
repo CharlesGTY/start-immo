@@ -25,8 +25,7 @@
         <%= render 'sweetify/alert' %>
           <%= yield %>
       </div>
-
-        <%= render 'shared/footer' %>
+        <%= render 'shared/footer' unless current_page?(controller: "houses", action:"new") %>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>

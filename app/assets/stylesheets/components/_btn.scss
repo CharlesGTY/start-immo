@@ -19,6 +19,15 @@
   }
 }
 
+.btn-contact {
+  color: $white !important;
+  font-size: 12px !important;
+  &:hover {
+    transform: none !important;
+    opacity: 0.8 !important;
+  }
+}
+
 .link-show {
   color: $green;
   padding: 5px;
