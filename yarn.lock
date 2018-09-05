@@ -5217,6 +5217,10 @@ spdy@^3.4.1:
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
 
+spinners@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/spinners/-/spinners-1.2.2.tgz#0af88cb6b3de9a6884ab1e2e9220a612d72c73c3"
+
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
