@@ -2,6 +2,7 @@ require "tempfile"
 require "open-uri"
 
 class DocumentsController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => :webhooks
   before_action :document_selector, only: [:show, :esign]
 
   def create
@@ -94,6 +95,12 @@ class DocumentsController < ApplicationController
         format.js
       end
     end
+  end
+
+  def webhooks
+    notif = Notification.create(description: "Nouveau document signé")
+    authorize notif
+    redirect_to houses_path
   end
     # house = @document.house
     # authorize @document
