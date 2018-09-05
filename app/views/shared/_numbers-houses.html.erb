@@ -22,62 +22,37 @@
   </div>
 </div> -->
 
-<div class="row box-numb">
-  <div>
-    <p class="titre-activites"> 2018
-      <span class="index-var">
-        (diff. 2017) :
-      </span>
-    </p>
+<div class="row">
+  <div class="col-sm-3 col-xs-12">
+    <div class="filter-card z-depth-1">
+      <%= link_to "", houses_path %>
+      <p> Biens à la vente</p><p><span class="index-numb"> <%= House.count %> </span> </p>
+   </div>
   </div>
-  <div>
-    <p class="index-name">
-      <span class="index-numb">
-        156
-      </span>
-      Ventes
-      <i class="fas fa-arrow-up icon-green"></i>
-      <span class="index-var-up">
-        (+12%)
-      </span>
-     </p>
+  <div class="col-sm-3 col-xs-12">
+    <div class="filter-card z-depth-1">
+      <%= link_to "", houses_path(:exclusive => true) %>
+      <p> Biens exclusifs</p><p><span class="index-numb">
+        <%= House.where(exclusive: true).count %>
+        </span> </p>
+    </div>
   </div>
-  <div>
-    <p class="index-name">
-      <span class="index-numb">
-        185
-      </span>
-      Avis de valeurs
-      <i class="fas fa-arrow-down icon-red"></i>
-      <span class="index-var-down">
-        (-12%)
-      </span>
-    </p>
+  <div class="col-sm-3 col-xs-12">
+    <div class="filter-card z-depth-1">
+      <%= link_to "", houses_path %>
+      <p> Dossiers incomplets</p><p><span class="index-numb">
+        <%= House.all.reject {|h| (Document.all.map{|d| d.house_id}).uniq.include?(h.id)}.count %>
+      </span> </p>
+    </div>
   </div>
-  <div>
-    <p class="index-name">
-      <span class="index-numb">
-        345
-      </span>
-      Visites
-      <i class="fas fa-arrow-down icon-red"></i>
-      <span class="index-var-down">
-        (-5%)
-      </span>
-    </p>
-  </div>
-  <div>
-    <p class="index-name">
-      <span class="index-numb">
-        20
-      </span> Mandats dénoncés
-      <i class="fas fa-arrow-down icon-red"></i>
-      <span class="index-var-down">
-      (-5%)
-    </span>
-    </p>
+  <div class="col-sm-3 col-xs-12">
+    <div class="filter-card z-depth-1">
+      <%= link_to "", houses_path %>
+      <p> Signatures en attente</p><p><span class="index-numb"> 159 </span> </p>
+    </div>
   </div>
 </div>
+
 
 
 
