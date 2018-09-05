@@ -26,7 +26,7 @@ class CreateDocusignEnvelopService
         {
           embedded: false,
           name: "#{@document.house.user.first_name} #{@document.house.user.last_name}",
-          email: "mottet.julien123@gmail.com",
+          email: "start.immo.paris@gmail.com",
           role_name: 'Mandataire',
           sign_here_tabs: [
             {
