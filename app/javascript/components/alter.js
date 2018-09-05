@@ -5,7 +5,7 @@ const displayAlert = (statuts) => {
   {
   swal({
   title: "Nouveau Mandat!",
-  text: "Mandat envoyé pour signature aux adresses" <%= @document.house.user.email %> <%= @document.house.owner.email%>,
+  text: "Mandat envoyé pour signature",
   icon: "success"})
   }
   else
