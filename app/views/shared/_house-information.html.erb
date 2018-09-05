@@ -4,151 +4,117 @@
     <%= link_to "Historique", house_doc_path(anchor: "link-historique"),  class:"link-show-white"  %>
   </div>
 </div>
-<div class="white-back z-depth-3">
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-male"></i>
-      Propriétaire
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-name">
-      <div class="wrap-inside"><%= @house.owner.first_name %> <%= @house.owner.last_name %>
+
+<div class="full-body">
+  <div class="white-back z-depth-3">
+    <div class="bottom-line">
+      <div class="title-icon">
+        <i class="fas fa-user fa-2x"></i><h4>Propriétaire</h4>
+      </div>
+      <div class="wrap">
+ <!--        <div class="wrap-name">
+          <div class="wrap-inside"><%= @house.owner.first_name %> <%= @house.owner.last_name %>
+          </div>
+        </div> -->
+        <div class="wrap-inside"><b>Prénom :</b> <%= @house.owner.first_name %></div>
+        <div class="wrap-inside"><b>Email :</b> <%= @house.owner.last_name %></div>
+        <div class="wrap-inside"><b>Email :</b> <%= @house.owner.email %></div>
+        <div class="wrap-inside"><b>Tel :</b> <%= @house.owner.phone_number%></div>
       </div>
     </div>
-    <div class="wrap-inside"><%= @house.owner.email %></div>
-    <div class="wrap-inside"><%= @house.owner.phone_number%></div>
-  </div>
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-users"></i>
-      Copropriété
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">
-      Bien en copropriété : Oui
-      <br>
-      <br>
-      Nombre de lots : 30
+    <div class="title-icon">
+      <i class="fas fa-building fa-2x"></i><h4>Copropriété</h4>
     </div>
-    <div class="wrap-inside">
-      Charges annuelles : 300€
-      <br>
-      <br>
-      Procédure en cours : Non
+    <div class="wrap">
+      <div class="wrap-inside"><b>Bien en copropriété :</b> Non
+        <br>
+        <b>Nombre de lots :</b> 30
+      </div>
+      <div class="wrap-inside"><b>Charges annuelles :</b> 300€
+        <br>
+        <b>Procédure en cours : </b> Non
+      </div>
+      <div class="wrap-inside"><b>Surface Carrez :</b> 95 m2
+        <br>
+        <b>Informations :</b> Belle maison
+      </div>
     </div>
-
-    <div class="wrap-inside">
-      Surface Carrez : 95 m2
-      <br>
-      <br>
-      Informations : Belle maison
-    </div>
-  </div>
-</div>
-
-
-<div class="white-back z-depth-3">
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-home"></i>
-      Intérieur du bien
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">
-      Total: <%= @house.surface_total%> m2
-      <br>
-      <br>
-      Habitable: <%= @house.surface_living%> m2
-    </div>
-    <div class="wrap-inside">
-      Carrez: <%= @house.surface_Carrez%> m2
-      <br>
-      <br>
-      <%= @house.nb_rooms %> pièces
-    </div>
-    <div class="wrap-inside">
-      <%= @house.nb_bedrooms %> chambres
-      <br>
-      <br>
-      <%= @house.nb_livingrooms%> séjours
-    </div>
-    <div class="wrap-inside">
-      <%= @house.nb_bathrooms%> salles de bain
-      <br>
-      <br>
-      <%= @house.equiped_kitchen ? "Cuisine équipée" : "Cuisine non équipée" %>
-    </div>
-  </div>
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-leaf"></i>
-        Extérieur du bien
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">
-      Année de construction : 1990
-      <br>
-      <br>
-      Terrasse: 20 m2
-    </div>
-
-    <div class="wrap-inside">
-      Balcon : 20 m2
-      <br>
-      <br>
-      Surface du terrain : 100 m2
-    </div>
-  </div>
-</div>
-
-<div class="white-back z-depth-3">
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-envira"></i>
-      Diagnostic énergétique
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">DPE effectué : oui</div>
-    <div class="wrap-inside">Consommation : 574 Kwh/m2/an</div>
-    <div class="wrap-inside">Emission GES : 7kg co2/m2/an</div>
-  </div>
- </div>
-
-<div class="white-back z-depth-3">
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-money-bill"></i>
-      Aspects financiers
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">Charges : éléctricité + eau</div>
-    <div class="wrap-inside">Taxe foncière : 480€</div>
   </div>
 
 
-  <div class="title-icon">
-    <h4>
-      <i class="fas fa-euro-sign"></i>
-      Prix de vente et rémunération
-    </h4>
-  </div>
-  <div class="wrap">
-    <div class="wrap-inside">
-      Prix TTC <%= humanized_money_with_symbol(@house.price) %>€
-      <br>
-      <br>
-      Prix net vendeur : <%= humanized_money_with_symbol(@house.net_price_seller) %>€</div>
-    <div class="wrap-inside">
-      Charges : acquereur
-      <br>
-      <br>
-      Honnoraires TTC : <%= humanized_money_with_symbol(@house.agence_fee) %>€
+  <div class="white-back z-depth-3">
+    <div class="bottom-line">
+      <div class="title-icon">
+        <i class="fas fa-home fa-2x"></i><h4>Intérieur du bien</h4>
+      </div>
+      <div class="wrap">
+        <div class="wrap-inside"><b>Total :</b> <%= @house.surface_total%> m2
+          <br>
+          <b>Habitable :</b> <%= @house.surface_living%> m2
+        </div>
+        <div class="wrap-inside"><b>Carrez :</b> <%= @house.surface_Carrez%> m2
+          <br>
+          <b>Pièces :</b> <%= @house.nb_rooms %>
+        </div>
+        <div class="wrap-inside"><b>Chambre(s) :</b> <%= @house.nb_bedrooms %>
+          <br>
+          <b>Séjour(s) :</b> <%= @house.nb_livingrooms%>
+        </div>
+        <div class="wrap-inside"><b>Salle(s) de bain :</b> 1
+          <br>
+          <b>Cuisine :</b> <%= @house.equiped_kitchen ? "équipée" : "non équipée" %>
+        </div>
+      </div>
+     </div>
+      <div class="title-icon">
+        <i class="fas fa-leaf fa-2x"></i><h4>Extérieur du bien</h4>
+      </div>
+      <div class="wrap">
+        <div class="wrap-inside"><b>Année de construction :</b> 1990
+          <br>
+          <b>Terrasse :</b> 20 m2
+        </div>
+
+        <div class="wrap-inside"><b>Balcon :</b> 20 m2
+          <br>
+          <b>Surface du terrain :</b> 100 m2
+        </div>
+      </div>
+    </div>
+
+  <div class="white-back z-depth-3">
+    <div class="title-icon">
+      <i class="fas fa-burn fa-2x"></i><h4>Diagnostic énergétique</h4>
+    </div>
+    <div class="wrap">
+      <div class="wrap-inside"><b>DPE effectué :</b> oui</div>
+      <div class="wrap-inside"><b>Consommation :</b> 574 Kwh/m2/an</div>
+      <div class="wrap-inside"><b>Emission GES :</b> 7kg co2/m2/an</div>
+    </div>
+   </div>
+
+  <div class="white-back z-depth-3">
+    <div class="bottom-line">
+      <div class="title-icon">
+        <i class="fas fa-bolt fa-2x"></i><h4>Charges & dépenses</h4>
+      </div>
+      <div class="wrap">
+        <div class="wrap-inside"><b>Charges(éléctricité + eau) :</b> 120€/mois</div>
+        <div class="wrap-inside"><b>Taxe foncière :</b> 480€/an</div>
+      </div>
+    </div>
+
+    <div class="title-icon">
+      <i class="fas fa-euro-sign fa-2x"></i><h4>Prix de vente et rémunération</h4>
+    </div>
+    <div class="wrap">
+      <div class="wrap-inside"><b>Prix TTC:</b> <%= humanized_money_with_symbol(@house.price) %>€
+        <br>
+        <b>Prix net vendeur :</b> <%= humanized_money_with_symbol(@house.net_price_seller) %>€</div>
+      <div class="wrap-inside"><b>Charges :</b> acquereur
+        <br>
+        <b>Honnoraires TTC :</b> <%= humanized_money_with_symbol(@house.agence_fee) %>€
+      </div>
     </div>
   </div>
 </div>
