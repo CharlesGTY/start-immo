@@ -1,12 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(80,80,80,0.6) 0%, rgba(80,80,80,0.6) 50%), url(<%= image_url('banner-home-02.jpg') %>);">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.4) 100%), url(<%= image_url('banner-home-02.jpg') %>);">
   <div class="banner-content">
-    <h1>START IMMO</h1>
-    <p>Gérez vos transactions immobilières en ligne</p>
+    <h1 style="font-size: 64px">START IMMO</h1>
+    <p style="font-size: 40px">Gérez vos transactions immobilières en ligne</p>
 
     <% if current_user %>
-      <%= link_to "Tester la solution", houses_path , class: "btn btn-primary btn-banner" %>
+      <%= link_to "Gérer vos biens", houses_path , class: "btn-banner" %>
     <% else %>
-      <%= link_to "Tester la solution", user_session_path , class: "btn btn-primary btn-banner" %>
+      <%= link_to "Gérer vos biens", user_session_path , class: "btn-banner" %>
     <% end %>
   </div>
 </div>
