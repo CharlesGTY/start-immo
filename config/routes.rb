@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   get 'houses/:id/doc', to: 'houses#show_doc', as: :house_doc
+  post '/listener', to: 'documents#webhooks', as: :doc_sign
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
