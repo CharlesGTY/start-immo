@@ -47,16 +47,15 @@
             </div>
             <div class="message-status">
               <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
-                <i class="fas fa-file-pdf fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dosser incomplet"></i>
+                <i class="fas fa-file-pdf fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dosser complet"></i>
               <% else %>
-                <i class="fas fa-file-pdf fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dossier complet"></i>
+                <i class="fas fa-file-pdf fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dossier incomplet"></i>
              <% end %>
             </div>
             <div class="message-signature-attente">
-              <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
-                <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dosser incomplet"></i>
+              <% if  Document.all.find{|d| d.house_id = house.id}.docusign_envelope_id != "0"%>
+                <i class="fas fa-pen-fancy fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dosser incomplet"></i>
               <% else %>
-                <i class="fas fa-pen-fancy fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dossier complet"></i>
               <% end %>
             </div>
           </div>
