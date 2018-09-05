@@ -23,9 +23,9 @@
       </li>
     <% end %>
   </ul>
-  <div class="text-center">
+  <div class="text-center doc-type-size">
     <%= simple_form_for [@house, @document] do |f| %>
-      <%= f.association :document_type %>
+      <%= f.association :document_type, label: "Type de document" %>
       <%= f.button :submit, value: "Créer votre document"%>
     <% end %>
   </div>
