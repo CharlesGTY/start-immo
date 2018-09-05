@@ -1,79 +1,84 @@
 <div class="row margin-list">
-  <!-- <h5 id="list-title" class="text-center"> Biens de l'agence </h5> -->
-  <div class="title-search-bar col-sm-8">
-    <div class="logo-and-search-bar z-depth-2 fa-2x" id="navbar-fixed">
-      <div class="flex-btn-search-bar">
-        <div class="logo-search-bar">
-          <i class="fas fa-search"></i>
+  <h5 id="list-title" class="text-center"> Biens de l'agence </h5>
+  <div class="main-container">
+    <div class="title-search-bar col-sm-8">
+      <div class="logo-and-search-bar z-depth-2 fa-2x" id="navbar-fixed">
+        <div class="flex-btn-search-bar">
+          <div class="logo-search-bar">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="search-bar-houses">
+            <%= form_tag houses_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                placeholder: "Adresse et / ou Proprietaire" %>
+            <% end %>
+          </div>
         </div>
-        <div class="search-bar-houses">
-          <%= form_tag houses_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              placeholder: "Adresse et / ou Proprietaire" %>
-          <% end %>
+        <div class="btn-search-bar">
+          <%= link_to "Créer un bien", new_house_path, class:"btn-base" %>
         </div>
       </div>
-      <div class="btn-search-bar">
-        <%= link_to "Créer un bien", new_house_path, class:"btn-base" %>
-      </div>
-    </div>
-    <% @houses.each do |house| %>
-      <%= link_to house_path(house), class:"message-hover" do %>
-        <div class="message z-depth-3" data-house-id="<%= house.id %>">
-          <div class="message-name">
-            <h5><%= house.address %></h5>
-            <p>
-              Prop:
-              <%= house.owner.first_name %>
-              <%= house.owner.last_name %>
-            </p>
+      <% @houses.each do |house| %>
+        <%= link_to house_path(house), class:"message-hover" do %>
+          <div class="message z-depth-3" data-house-id="<%= house.id %>">
+            <div class="message-name">
+              <h5><%= house.address %></h5>
+              <p>
+                Prop:
+                <%= house.owner.first_name %>
+                <%= house.owner.last_name %>
+              </p>
+            </div>
+            <div class="message-body">
+              <p><strong>
+                <% case house.house_type %>
+                  <% when "Maison" then %>
+                    <i class='fas fa-home fa-2x' data-toggle="tooltip" data-placement="bottom" title="Maison"></i>
+                  <% when "Appartement" then %>
+                    <i class='fas fa-building fa-2x' data-toggle="tooltip" data-placement="bottom" title="Appartement"></i>
+                <% end %>
+              </strong></p>
+            </div>
+            <div class="message-type">
+               <% dossier = ["exclusif","standard", "standardd"].sample %>
+               <% if dossier == "exclusif" %>
+                  <i class="fas fa-star fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title=<%= dossier %>></i>
+               <% else %>
+               <% end %>
+             </div>
+            <div class="message-status">
+                <% clock =
+            [["red", "Urgent"],
+              ["green", "Nouveau bien"],
+              ["orange", "En_cours"]
+            ].sample %>
+            <% case clock[0] %>
+            <% when "red" %>
+             <i class="fas fa-clock fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+            <% when "green" %>
+             <i class="fas fa-clock fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+            <% when "orange" %>
+             <i class="fas fa-clock fa-2x icon-warning" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
+             <% end %>
+            </div>
+            <div class="message-date">
+                        <% imagge =
+            [["https://kitt.lewagon.com/placeholder/users/CharlesGTY", "Charles"],
+              ["https://kitt.lewagon.com/placeholder/users/MateoDDB", "Mateo"],
+              ["https://kitt.lewagon.com/placeholder/users/timotte1984", "Julien"],
+              ["https://kitt.lewagon.com/placeholder/users/nicmey", "Nico"]
+            ].sample %>
+            <img class="avatar-large" src=<%= imagge[0] %> data-toggle="tooltip" data-placement="bottom" title= <%= imagge[1] %>>
+            </div>
           </div>
-          <div class="message-body">
-            <p><strong>
-              <% case house.house_type %>
-                <% when "Maison" then %>
-                  <i class='fas fa-home fa-2x' data-toggle="tooltip" data-placement="bottom" title="Maison"></i>
-                <% when "Appartement" then %>
-                  <i class='fas fa-building fa-2x' data-toggle="tooltip" data-placement="bottom" title="Appartement"></i>
-              <% end %>
-            </strong></p>
-          </div>
-          <div class="message-type">
-            <h6 class="price"><%= house.price.to_i %>€</h6>
-          </div>
-
-          <div class="message-status">
-              <% clock =
-          [["red", "Urgent"],
-            ["green", "Nouveau bien"],
-            ["orange", "En_cours"]
-          ].sample %>
-          <% case clock[0] %>
-          <% when "red" %>
-           <i class="fas fa-clock fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
-          <% when "green" %>
-           <i class="fas fa-clock fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
-          <% when "orange" %>
-           <i class="fas fa-clock fa-2x icon-warning" data-toggle="tooltip" data-placement="bottom" title=<%= clock[1] %>></i>
-           <% end %>
-          </div>
-          <div class="message-date">
-                      <% imagge =
-          [["https://kitt.lewagon.com/placeholder/users/CharlesGTY", "Charles"],
-            ["https://kitt.lewagon.com/placeholder/users/MateoDDB", "Mateo"],
-            ["https://kitt.lewagon.com/placeholder/users/timotte1984", "Julien"],
-            ["https://kitt.lewagon.com/placeholder/users/nicmey", "Nico"]
-          ].sample %>
-          <img class="avatar-large" src=<%= imagge[0] %> data-toggle="tooltip" data-placement="bottom" title= <%= imagge[1] %>>
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="col-sm-4">
-    <div class="map-index">
-      <div id="mapid" data-markers=" <%= @markers.to_json %>"></div>
+    </div>
+    <div class="col-sm-4">
+      <div class="map-index">
+        <div id="mapid" data-markers=" <%= @markers.to_json %>"></div>
+      </div>
     </div>
   </div>
 </div>
