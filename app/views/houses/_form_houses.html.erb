@@ -147,7 +147,13 @@
 
 
 <script>
-
+  document.getElementById('new_house').querySelectorAll('input').forEach((el)=> {
+    el.addEventListener('keydown', (ev)=>{
+      if(ev.key === "Enter") {
+        ev.preventDefault()
+      }
+    })
+  })
   document.addEventListener("DOMContentLoaded", function() {
     var flatAddress = document.getElementById('house_address');
 
