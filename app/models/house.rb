@@ -5,7 +5,6 @@ class House < ApplicationRecord
   monetize :price_cents
   monetize :net_price_seller_cents
   monetize :agence_fee_cents
-  monetize :annual_charges_cents
   mount_uploader :photo, PhotoUploader
 
   geocoded_by :address

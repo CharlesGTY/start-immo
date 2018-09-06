@@ -99,11 +99,11 @@ ActiveRecord::Schema.define(version: 2018_09_05_162451) do
     t.boolean "current_procedure"
     t.text "particular_information"
     t.float "surface_terrace"
+    t.string "charges", default: "Vendeur"
     t.integer "charges_cents", default: 0, null: false
     t.integer "property_taxes_cents", default: 0, null: false
     t.integer "agence_fee_cents", default: 0, null: false
     t.integer "net_price_seller_cents", default: 0, null: false
-    t.integer "annual_charges_cents", default: 0, null: false
     t.float "latitude"
     t.float "longitude"
     t.boolean "exclusive"
