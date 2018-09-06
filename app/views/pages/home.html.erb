@@ -4,9 +4,9 @@
     <p style="font-size: 40px">Gérez vos transactions immobilières en ligne</p>
 
     <% if current_user %>
-      <%= link_to "Gérer vos biens", houses_path , class: "btn-banner" %>
+      <%= link_to "Gérez vos biens", houses_path , class: "btn-banner" %>
     <% else %>
-      <%= link_to "Gérer vos biens", user_session_path , class: "btn-banner" %>
+      <%= link_to "Gérez vos biens", user_session_path , class: "btn-banner" %>
     <% end %>
   </div>
 </div>

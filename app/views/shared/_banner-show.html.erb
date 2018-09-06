@@ -24,8 +24,7 @@
       <div id="mapid" data-markers=" <%= @markers.to_json %>"></div>
       <div class="address-map">
         <p>
-          <i class="fas fa-map-marker-alt"></i>
-          <%= @house.address %>
+          <%= @house.address.gsub(", France", "") %>
         </p>
       </div>
     </div>
