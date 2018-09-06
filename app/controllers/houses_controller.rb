@@ -41,6 +41,10 @@ class HousesController < ApplicationController
       @houses = policy_scope(House).order(created_at: :desc)
       @houses = House.global_search(params[:query])
       authorize @houses
+    elsif params[:exclusive].present?
+      @houses = policy_scope(House).order(created_at: :desc)
+      @houses = @houses.select{|house| house.exclusive}
+      @houses.each { |house| authorize house }
     else
       @houses = policy_scope(House).order(created_at: :desc)
       authorize @houses
