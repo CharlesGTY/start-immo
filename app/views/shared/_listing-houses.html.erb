@@ -24,20 +24,12 @@
             <div class="message-name">
               <h5><%= house.address.gsub(", France", "") %></h5>
               <p>
-                Prop:
-                <%= house.owner.first_name %>
-                <%= house.owner.last_name %>
+                Propriétaire :
+                <strong><%= house.owner.first_name %> <%= house.owner.last_name %></strong>
               </p>
             </div>
-            <div class="message-body">
-              <p><strong>
-                <% case house.house_type %>
-                  <% when "Maison" then %>
-                    <i class='fas fa-home fa-2x' data-toggle="tooltip" data-placement="bottom" title="Maison"></i>
-                  <% when "Appartement" then %>
-                    <i class='fas fa-building fa-2x' data-toggle="tooltip" data-placement="bottom" title="Appartement"></i>
-                <% end %>
-              </strong></p>
+            <div class="message-status">
+              <p><strong><%= house.surface_living.to_i %> m<sup>2</sup></strong></p>
             </div>
             <div class="message-type">
                <% if house.exclusive %>
@@ -45,11 +37,22 @@
                <% else %>
                <% end %>
             </div>
-            <div class="message-status">
-
-            </div>
-            <div class="message-signature-attente">
-
+            <div class="message-signature-attente ">
+              <% agents = ["https://kitt.lewagon.com/placeholder/users/CharlesGTY",
+                           "https://kitt.lewagon.com/placeholder/users/nicmey",
+                           "https://kitt.lewagon.com/placeholder/users/mateoDDB",
+                           "https://kitt.lewagon.com/placeholder/users/timotte1984"
+                          ] %>
+              <% case house.user.first_name %>
+              <% when "Julien" then %>
+               <p> agent ref. <%= image_tag agents[3], class: "avatar-large" %></p>
+              <% when "Charles" then  %>
+                <p> agent ref.<%= image_tag agents[0], class: "avatar-large" %></p>
+              <% when "Mateo" then %>
+                <p> agent ref.<%= image_tag agents[2], class: "avatar-large" %></p>
+              <% when "Nico" then %>
+                <p> agent ref.<%= image_tag agents[1], class: "avatar-large" %> </p>
+              <% end %>
             </div>
           </div>
         <% end %>
