@@ -8,7 +8,8 @@
          document.pdf.url, format: 'pdf', target: "_blank" %>
       </div>
       <div class="doc-descr">
-      <strong><%= document.document_type.name %></strong> - <%= document.id %> <br> <%= document.created_at.strftime("%d/%m/%Y")%>
+      <strong><%= document.document_type.name %></strong> - doc n°<%= document.id %>
+
       </div>
       <div class="pdf-sign">
         <%= link_to "e sign", esign_house_document_path(@house,document), remote: true %>
@@ -17,14 +18,11 @@
         </div>
       </div>
       <div class="doc-signature-status">
-        <% if !Document.all.empty? %>
           <% if document.docusign_envelope_id != "0"%>
-            <i class="fas fa-pen-fancy fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="signature en attente"></i>
+            <i class="fas fa-pen-fancy fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="signature en attente"></i>
           <% else %>
             <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="en attente d'envoi pour signature"></i>
           <% end %>
-        <%else %>
-         <% end %>
       </div>
       </li>
     <% end %>

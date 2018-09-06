@@ -108,12 +108,12 @@
       <i class="fas fa-euro-sign fa-2x"></i><h4>Prix de vente et rémunération</h4>
     </div>
     <div class="wrap">
-      <div class="wrap-inside"><b>Prix TTC:</b> <%= humanized_money_with_symbol(@house.price) %>€
+      <div class="wrap-inside"><b>Prix TTC:</b> <%= humanized_money(@house.price).gsub(",", " ") %>€
         <br>
-        <b>Prix net vendeur :</b> <%= humanized_money_with_symbol(@house.net_price_seller) %>€</div>
+        <b>Prix net vendeur :</b> <%= humanized_money(@house.net_price_seller).gsub(",", " ") %>€</div>
       <div class="wrap-inside"><b>Charges :</b> acquereur
         <br>
-        <b>Honnoraires TTC :</b> <%= humanized_money_with_symbol(@house.agence_fee) %>€
+        <b>Honnoraires TTC :</b> <%= humanized_money(@house.agence_fee).gsub(",", " ") %>€
       </div>
     </div>
   </div>
