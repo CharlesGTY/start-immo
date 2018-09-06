@@ -1,7 +1,7 @@
 .index-numb {
   font-weight: bolder;
   color: $brand-success;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .titre-activites{
@@ -19,7 +19,8 @@
 
 .iconcog{
   color: $brand-info !important;
-  height: 30px;
+  height: 30px !important;
+  padding-top: 0px !important;
 }
 
 .icon-small{
@@ -29,7 +30,7 @@
 .filter-card{
   background-color: $white;
   height: 80px;
-  border-radius: 10px;
+  border-radius: 4px;
   text-align: center;
   padding: 5px;
   margin-top: 40px;
@@ -40,10 +41,17 @@
   }
     &:hover {
     transform: scale(1.01);
-    background-color: rgb(220,220,220);
+    border: solid 1px #114f6b;
   }
 }
 
+.filter-card p{
+  margin-bottom: 0px;
+}
+
+
 .grey-back {
-  background-color: rgb(220,220,220);
+  // background-color: rgb(220,220,220);
+  font-weight: bolder;
+  border: solid 2px #114f6b;
 }
