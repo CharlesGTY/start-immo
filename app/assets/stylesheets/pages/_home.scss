@@ -193,7 +193,7 @@
 }
 
 .btn-banner{
-  font-weight: 600;
+  font-weight: medium;
   padding: 10px 20px;
   margin-right: 20px;
   font-size: 20px;
@@ -207,4 +207,8 @@
     color: white;
     text-decoration: none;
   }
+}
+
+.pad-i {
+  padding-top: 14px !important;
 }
