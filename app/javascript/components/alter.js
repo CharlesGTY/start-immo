@@ -5,7 +5,7 @@ const displayAlert = (statuts) => {
   {
   swal({
   title: "Nouveau Mandat!",
-  text: "Mandat envoyé pour signature",
+  text: "Mandat envoyé pour signature au propriétaire et au mandataire",
   icon: "success"})
   }
   else

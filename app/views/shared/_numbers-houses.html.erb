@@ -46,7 +46,7 @@
         <% if !Document.all.empty? %>
         <%= House.all.reject {|h| (Document.all.map{|d| d.house_id}).uniq.include?(h.id)}.count %>
         <% else %>
-        0
+        <%= House.all.count %>
         <% end %>
       </span> </p>
     </div>
