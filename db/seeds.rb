@@ -2,6 +2,7 @@ House.destroy_all
 User.destroy_all
 Agence.destroy_all
 Owner.destroy_all
+DocumentType.destroy_all
 
 agence = Agence.create({
 juridic_form: "SARL",
