@@ -9,7 +9,7 @@
   <div class="col-sm-3 col-xs-12">
     <div class="filter-card z-depth-1">
       <%= link_to houses_path(exclusive: true) do %>
-      <p> Biens exclusifs</p><p><span class="index-numb">
+      <p> Biens exclusifs <i class="fas fa-star iconcog" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i></p><p><span class="index-numb">
         <%= House.where(exclusive: true).count %>
         </span> </p>
         <% end %>
