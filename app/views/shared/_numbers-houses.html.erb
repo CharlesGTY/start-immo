@@ -1,22 +1,22 @@
 <div class="row">
   <div class="col-sm-3 col-xs-12">
-    <div class="filter-card z-depth-1 houses_number <%= "grey-back" unless params[:exclusive].present?%>">
+    <div class="filter-card z-depth-3 houses_number <%= "grey-back" unless params[:exclusive].present?%>">
       <%= link_to houses_path do %>
       <p> Biens à la vente</p><p><span class="index-numb"> <%= House.count %> </span> </p>
       <% end %>
    </div>
   </div>
   <div class="col-sm-3 col-xs-12">
-    <div class="filter-card z-depth-1 exclusive_houses <%= "grey-back" if params[:exclusive].present?%>">
+    <div class="filter-card z-depth-3 exclusive_houses <%= "grey-back" if params[:exclusive].present?%>">
       <%= link_to houses_path(exclusive: true) do %>
-      <p> Biens exclusifs <i class="fas fa-star iconcog" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i></p><p><span class="index-numb">
+      <p class="icon-small"> Biens exclusifs <i class="fas fa-star iconcog icon-small" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i></p><p><span class="index-numb">
         <%= House.where(exclusive: true).count %>
         </span> </p>
         <% end %>
     </div>
   </div>
   <div class="col-sm-3 col-xs-12">
-    <div class="filter-card z-depth-1">
+    <div class="filter-card z-depth-3">
       <%= link_to "", houses_path %>
       <p> Dossiers incomplets</p><p><span class="index-numb">
         <% if !Document.all.empty? %>
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="col-sm-3 col-xs-12">
-    <div class="filter-card z-depth-1">
+    <div class="filter-card z-depth-3">
       <%= link_to "", houses_path %>
       <p> Signatures en attente</p><p><span class="index-numb">
       <% if !Document.all.empty? %>

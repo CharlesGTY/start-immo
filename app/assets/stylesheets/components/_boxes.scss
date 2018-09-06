@@ -19,11 +19,16 @@
 
 .iconcog{
   color: $brand-info !important;
+  height: 30px;
+}
+
+.icon-small{
+  height: 27px;
 }
 
 .filter-card{
   background-color: $white;
-  width: 200;
+  height: 80px;
   border-radius: 10px;
   text-align: center;
   padding: 5px;
