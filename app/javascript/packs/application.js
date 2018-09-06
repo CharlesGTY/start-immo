@@ -8,4 +8,3 @@ import {displayAlert} from "../components/alter";
 initMap();
 loading();
 global.displayAlert = displayAlert;
-
