@@ -87,7 +87,7 @@ names = ["Boris Paillard", "Seb Saunier", "Edward Schults", "Kevin Robert", "Bri
   })
 end
 
-30.times do |i|
+10.times do |i|
   House.create({
     owner: Owner.all[i],
     user: User.all.sample,
