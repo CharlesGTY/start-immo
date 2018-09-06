@@ -10,7 +10,7 @@
       </div> -->
       <div class="house-description-show text-center">
         <p>
-          <%= @house.price %> €
+          <%= humanized_money(@house.price).gsub(",", " ") %> €
         </p>
       </div>
 <!--       <div class="house-description-show text-center">
