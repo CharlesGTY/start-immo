@@ -15,7 +15,6 @@
       <% else %>
         <%= link_to "Dashboard", houses_path, class: "navbar-wagon-item navbar-wagon-link"%>
       <% end %>
-      <%= link_to "Config", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "#", class: "i-notif" do %>
         <i class="far fa-bell" data-toggle="tooltip" data-placement="bottom" data-html="true" title=" <%= Notification.last.description if Notification.last %> "></i>
       <% end %>
@@ -50,11 +49,6 @@
           <li>
             <%= link_to houses_path do %>
               <i class="fas fa-user"></i><%= t(".profile", default: "dashboard") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="fas fa-cog"></i><%= t(".profile", default: "config") %>
             <% end %>
           </li>
           <li>
