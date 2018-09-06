@@ -12,6 +12,9 @@
       </div>
       <div class="pdf-sign">
         <%= link_to "e sign", esign_house_document_path(@house,document), remote: true %>
+        <div class="loader hidden">
+          <span class="loader-inner"></span>
+        </div>
       </div>
       <div class="doc-signature-status">
         <% if !Document.all.empty? %>
@@ -29,7 +32,7 @@
   <div class="text-center doc-type-size">
     <%= simple_form_for [@house, @document] do |f| %>
       <%= f.association :document_type, label: "Type de document" %>
-      <%= f.button :button, "Créer votre document", class: "btn-primary".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Chargement"} %>
+      <%= f.button :button, "Créer votre document", class: "btn-primary loading-padding", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"} %>
     <% end %>
   </div>
 </div>
