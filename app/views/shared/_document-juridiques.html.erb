@@ -14,11 +14,14 @@
         <%= link_to "e sign", esign_house_document_path(@house,document), remote: true %>
       </div>
       <div class="doc-signature-status">
-        <% if document.docusign_envelope_id = "0" %>
-        <i class='fas fa-pen-fancy fa-2x icon-red ' data-toggle="tooltip" data-placement="bottom" data-html="true" title="vérifier votre pdf avant de l'envoyer pour signature"></i>
-        <% else %>
-        <i class='fas fa-pen-fancy fa-2x icon-green' data-toggle="tooltip" data-placement="bottom" data-html="true" title="en attente de signature"></i>
-        <% end %>
+        <% if !Document.all.empty? %>
+          <% if document.docusign_envelope_id != "0"%>
+            <i class="fas fa-pen-fancy fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="signature en attente"></i>
+          <% else %>
+            <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="en attente d'envoi pour signature"></i>
+          <% end %>
+        <%else %>
+         <% end %>
       </div>
       </li>
     <% end %>
@@ -26,8 +29,7 @@
   <div class="text-center doc-type-size">
     <%= simple_form_for [@house, @document] do |f| %>
       <%= f.association :document_type, label: "Type de document" %>
-      <%= f.button :submit, value: "Créer votre document"%>
+      <%= f.button :button, "Créer votre document", class: "btn-primary".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Chargement"} %>
     <% end %>
   </div>
-
 </div>
