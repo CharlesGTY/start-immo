@@ -72,7 +72,7 @@
   <div class="step marge-align" id="step_3" style="display: none;" >
       <h4>Intérieur du bien</h4>
       <div class="row no-padded space-row">
-        <%= f.input :surface_living, label: 'Surface habitable d environ', input_html: { class: 'small-field'}, label_html: { class: 'big-label' } %>
+        <%= f.input :surface_living, label: "Surface habitable d'environ", input_html: { class: 'small-field'}, label_html: { class: 'big-label' } %>
       </div>
       <div class="row no-padded space-row">
         <div class="col-xs-2">
@@ -126,7 +126,7 @@
       <%= f.input :agence_fee, label: 'Honoraires TTC', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="col-xs-6">
-      <%= f.input :annual_charges, label: 'Charges', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
+      <%= f.input :charges, label: 'Charges', input_html: { class: 'small-field'}, label_html: { class: 'big-label' }%>
     </div>
     <div class="button-back btn-inline" id="button-back-4">Retour</div>
     <%= f.submit 'Créer le bien', class: "btn btn-primary btn-inline" %>
