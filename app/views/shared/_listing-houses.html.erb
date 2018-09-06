@@ -22,7 +22,7 @@
         <%= link_to house_path(house), class:"message-hover" do %>
           <div class="message z-depth-3" data-house-id="<%= house.id %>">
             <div class="message-name">
-              <h5><%= house.address %></h5>
+              <h5><%= house.address.gsub(", France", "") %></h5>
               <p>
                 Prop:
                 <%= house.owner.first_name %>
