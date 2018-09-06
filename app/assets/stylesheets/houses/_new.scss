@@ -146,8 +146,6 @@ legend {
 }
 
 .test-form-one {
-  height: 90vh;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -255,3 +253,15 @@ legend {
 //   }
 // }
 
+.full-height {
+  height:90vh;
+  background-size: cover;
+  background-position: center;
+  // margin-top: -10px;
+  // margin-right: -10px !important;
+  // padding: 0px !important;
+}
+
+#new_house {
+  margin-top: 20px;
+}
