@@ -38,21 +38,19 @@
                <% end %>
             </div>
             <div class="message-signature-attente ">
-              <% agents = ["https://kitt.lewagon.com/placeholder/users/CharlesGTY",
+        <% agents = ["https://kitt.lewagon.com/placeholder/users/CharlesGTY",
                            "https://kitt.lewagon.com/placeholder/users/nicmey",
                            "https://kitt.lewagon.com/placeholder/users/mateoDDB",
                            "https://kitt.lewagon.com/placeholder/users/timotte1984"
                           ] %>
-              <% case house.user.first_name %>
-              <% when "Julien" then %>
-               <p> agent ref. <%= image_tag agents[3], class: "avatar-large" %></p>
-              <% when "Charles" then  %>
-                <p> agent ref.<%= image_tag agents[0], class: "avatar-large" %></p>
-              <% when "Mateo" then %>
-                <p> agent ref.<%= image_tag agents[2], class: "avatar-large" %></p>
-              <% when "Nico" then %>
-                <p> agent ref.<%= image_tag agents[1], class: "avatar-large" %> </p>
-              <% end %>
+
+        <% case house.user.first_name %>
+        <% when "Julien" then a = agents[3]%>
+        <% when "Charles" then a = agents[0] %>
+        <% when "Mateo" then a = agents[2] %>
+        <% when "Nico" then a = agents[1] %>
+        <% end %>
+        <img class="avatar-large avatar-border" src=<%= a %> data-toggle="tooltip" data-placement="bottom" title=<%= house.user.first_name%>>
             </div>
           </div>
         <% end %>
