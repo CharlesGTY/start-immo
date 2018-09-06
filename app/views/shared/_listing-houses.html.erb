@@ -46,28 +46,10 @@
                <% end %>
             </div>
             <div class="message-status">
-              <% if !Document.all.empty? %>
-                <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
-                  <i class="fas fa-file-pdf fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="Dossier complet"></i>
-                <% else %>
-                  <i class="fas fa-file-pdf fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dossier incomplet"></i>
-               <% end %>
-               <%else %>
-                   <i class="fas fa-file-pdf fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="Dossier incomplet"></i>
-               <% end %>
+
             </div>
             <div class="message-signature-attente">
-              <% if !Document.all.empty? %>
-                <% if Document.all.map{|d| d.house_id}.uniq.include?(house.id) %>
-                  <% if Document.all.find{|d| d.house_id = house.id}.docusign_envelope_id != "0"%>
-                    <i class="fas fa-pen-fancy fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="signature en attente"></i>
-                  <% else %>
-                    <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="en attente d'envoi pour signature"></i>
-                  <% end %>
-                <%else %>
-                 <% end %>
-               <%else %>
-               <% end %>
+
             </div>
           </div>
         <% end %>
