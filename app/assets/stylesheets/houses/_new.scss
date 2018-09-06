@@ -136,12 +136,20 @@ legend {
   font-size: 28px;
   font-weight: 800;
   color: #484848;
+  margin-top: 0 !important;
 }
 
 .step-route h5{
   font-size: 15px;
   font-weight: 600;
   margin-top: 0px !important;
+}
+
+.test-form-one {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #new_house fieldset {
@@ -155,11 +163,6 @@ legend {
 .form-check b {
     font-size: 14px;
     padding-left: 10px;
-}
-
-.space-row{
-  margin-bottom: 0px !important;
-  padding: 0px !important;
 }
 
 .small-field{
