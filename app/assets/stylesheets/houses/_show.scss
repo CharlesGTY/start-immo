@@ -38,19 +38,40 @@
 
 
   .doc-descr {
-    width:55%;
-    font-size: 15px
+    width:45%;
   }
-  .doc-signature-status i{
-    width:10%;
-    margin-left: 5px;
-    margin-bottom: 0px;
+
+  .doc-descr p{
+    font-size: 15px;
+    padding: 0px;
   }
 
   .pdf-sign{
-    width:25%;
+    display: flex;
+    width:45%;
+    background-color: rgb(250,250,250);
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
   }
 
+   .pdf-sign:hover{
+    a{
+      font-weight: bolder;
+    }
+   }
+
+.pdf-sign a{
+  text-decoration: none;
+  padding: 10px 5px;
+  color: #114F6B;
+}
+
+#icon-margintop{
+  height: 20px;
+}
 
   hr {
     display: block;
@@ -97,6 +118,11 @@
   padding: 0px 5px;
   color: gray
 }
+
+#icon-margintop{
+  padding-top: 0px !important;
+}
+
 
 .white-back {
   background: $white;

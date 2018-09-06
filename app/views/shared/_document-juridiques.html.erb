@@ -4,26 +4,21 @@
     <% @house.documents.each do |document| %>
       <li>
       <div class="pdf-link">
-        <%= link_to "<i class='far fa-file-pdf fa-2x' data-toggle='tooltip' data-placement='bottom' title='Télécharger'></i>".html_safe ,
+        <%= link_to "<i class='far fa-file-pdf fa-2x' data-toggle='tooltip' data-placement='bottom' title='Télécharger'></i>".html_safe,
          document.pdf.url, format: 'pdf', target: "_blank" %>
       </div>
       <div class="doc-descr">
-      <strong><%= document.document_type.name %></strong> - doc n°<%= document.id %>
+      <p><strong><%= document.document_type.name %></strong></p>
+      <p> doc n°<%= document.id %></p>
 
       </div>
       <div class="pdf-sign">
-        <%= link_to "e sign", esign_house_document_path(@house,document), remote: true %>
+        <%= link_to "<i class='fas fa-envelope' id='icon-margintop'></i> ".html_safe + "E signature", esign_house_document_path(@house,document), remote: true %>
+
+      </div>
         <div class="loader hidden">
           <span class="loader-inner"></span>
         </div>
-      </div>
-      <div class="doc-signature-status">
-          <% if document.docusign_envelope_id != "0"%>
-            <i class="fas fa-pen-fancy fa-2x icon-green" data-toggle="tooltip" data-placement="bottom" title="signature en attente"></i>
-          <% else %>
-            <i class="fas fa-pen-fancy fa-2x icon-red" data-toggle="tooltip" data-placement="bottom" title="en attente d'envoi pour signature"></i>
-          <% end %>
-      </div>
       </li>
     <% end %>
   </ul>
