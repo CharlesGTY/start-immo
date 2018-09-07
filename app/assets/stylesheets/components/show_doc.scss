@@ -70,8 +70,13 @@
 
 .show-doc-time {
   color: $grey;
-  font-size: 16px;
+  font-size: 24px;
 }
+
+#avatar-margintop{
+  margin-top: 10px;
+}
+
 
 .show-doc-name, .show-time-status, .show-doc-types-changed, .show-doc-time {
   margin: 0px 15px !important;

@@ -10,6 +10,31 @@
       </div>
       <div class="container-show">
         <div class="line">
+        <% agents = [["https://kitt.lewagon.com/placeholder/users/nicmey","Nico"],
+         ["https://kitt.lewagon.com/placeholder/users/mateoDDB","Mateo"],
+         ["https://kitt.lewagon.com/placeholder/users/timotte1984","Julien"]
+        ] %>
+        <% agents.each_with_index do |agent, index| %>
+          <div class="p-show-doc">
+            <div class="doc-type">
+              <p class="">
+                <i class="far fa-file-alt"></i>
+                <span class="show-doc-name">
+                  Visite n°<%= index + 1 %>
+                </span>
+              </p>
+            </div>
+            <p>
+              <i class="far fa-calendar-alt"></i>
+              <span class="show-doc-time">
+                Réalisée le : <strong>0<%= (index+1)*2 %> /09/2018</strong>
+               par l'agent </span>
+               <img class="avatar-large avatar-border" id="avatar-margintop" src=<%= agent[0] %> data-toggle="tooltip" data-placement="bottom" title=<%= agent[1] %>>
+            </p>
+          </div>
+          <% end %>
+
+
           <% @documents.each do |document| %>
             <div class="p-show-doc">
               <div class="doc-type">
@@ -17,6 +42,8 @@
                   <i class="far fa-file-alt"></i>
                   <span class="show-doc-name">
                     <%= document.document_type.name %>
+                    n°
+                    <%= document.id %>
                   </span>
                 </p>
               </div>
