@@ -8,7 +8,11 @@ class DocumentsController < ApplicationController
   def create
     @house = House.find(params[:house_id])
     @document = Document.new(document_params)
-    @document.document_type_id = params[:document][:document_type_id]
+    if !params[:document][:document_type_id].empty?
+      @document.document_type_id = params[:document][:document_type_id]
+    else
+      @document.document_type = DocumentType.first
+    end
     @user = @house.user
     @owner = @house.owner
     @agence = @house.user.agence

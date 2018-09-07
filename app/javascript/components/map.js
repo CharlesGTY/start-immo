@@ -3,7 +3,10 @@ function initMap() {
   if(mapElement) {
     const markers = JSON.parse(mapElement.dataset.markers);
 
-    var mymap = L.map('mapid').setView([markers[0].lat, markers[0].lng], 11);
+    let latAvg = markers.reduce( (acc, current) => acc + current.lat, 0)/markers.length;
+    let lngAvg = markers.reduce( (acc, current) => acc + current.lng, 0)/markers.length;
+
+    var mymap = L.map('mapid').setView([latAvg, lngAvg], 11);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 25,

@@ -64,10 +64,10 @@ last_name = %w"Mottet Gotty Ceron Meyer"
     first_name: first_name[i],
     last_name: last_name[i],
     password: "123456",
-    phone_number: "0101010101",
-    attes_collab_number: "0101010101",
-    attes_collab_number_date: "0101010101",
-    attes_collab_number_city: "0101010101",
+    phone_number: "0146576790",
+    attes_collab_number: "0146576790",
+    attes_collab_number_date: "0146576790",
+    attes_collab_number_city: "0146576790",
     agence: agence
   })
 end
@@ -87,14 +87,14 @@ names = ["Boris Paillard", "Seb Saunier", "Edward Schults", "Kevin Robert", "Bri
   })
 end
 
-10.times do |i|
+8.times do |i|
   House.create({
     owner: Owner.all[i],
     user: User.all.sample,
     price: [100_000, 200_000, 300_000, 400_000].sample,
-    address: ["5 Rue Riquet, Paris", "34 Rue Legendre, Paris", "15 Rue de Rochechouart, Paris", "12 rue Mademoiselle, Paris","328 Rue de Vaugirard, Paris","122 Boulevard Murat, Paris","14 Rue Crespin du Gast, Paris","1 Port de la Rapée, Paris", "16 Villa Gaudelet, Paris","2 rue Houdart, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris","44 Rue des Vinaigriers, 75010 Paris","23 Rue Mazarine, 75006 Paris","34 Rue Duperré, 75009 Paris","51 Quai des Grands Augustins, 75006 Paris","10 Rue de Bruxelles, 75009 Paris","21 Rue Saint-Sauveur, 75002 Paris","19 Avenue Kléber, 75116 Paris", "3 Rue Oberkampf, 75011 Paris"][i],
+    address: ["5 Rue Riquet, Paris", "34 Rue Legendre, Paris", "15 Rue de Rochechouart, Paris", "12 rue Mademoiselle, Paris","328 Rue de Vaugirard, Paris","122 Boulevard Murat, Paris","1 Port de la Rapée, Paris", "17 rue des Epinettes, Paris","2 rue Houdart, Paris", "20 rue menilmontant, Paris", "5 rue du Borrego, Paris","44 Rue des Vinaigriers, 75010 Paris","23 Rue Mazarine, 75006 Paris","34 Rue Duperré, 75009 Paris","51 Quai des Grands Augustins, 75006 Paris","10 Rue de Bruxelles, 75009 Paris","21 Rue Saint-Sauveur, 75002 Paris","19 Avenue Kléber, 75116 Paris", "3 Rue Oberkampf, 75011 Paris"][i],
     description: "A vendre",
-    house_type: %w"Maison Appartement".sample,
+    house_type: "Appartement",
     smoke_detector_presence: true,
     nb_rooms: rand(1..4),
     nb_bedrooms: rand(1..4),
@@ -110,12 +110,68 @@ end
     surface_Carrez: rand(50..150),
     surface_total: rand(50..150),
     dpe_done: true,
-    exclusive: [true, false].sample,
+    exclusive: [true, false,false].sample,
     energy_consumption: 100,
     ges_emission: 100,
-    photo: File.open("photo#{rand(1..10)}.jpeg")
+    photo: File.open("photo#{i+1}.jpeg")
   })
 end
+
+  House.create({
+    owner: Owner.all[1],
+    user: User.all[1],
+    price: 400_000,
+    address: "14 rue Crespin du Gast, Paris",
+    description: "A vendre",
+    house_type: "Appartement",
+    smoke_detector_presence: true,
+    nb_rooms: 3,
+    nb_bedrooms: 1,
+    nb_livingrooms: 1,
+    nb_diningrooms: 1,
+    nb_bathrooms: 1,
+    equiped_kitchen: true,
+    nb_showers: 1,
+    nb_bathtubs: 1,
+    nb_terraces:0,
+    nb_balconies:1,
+    surface_living: 90,
+    surface_Carrez: 90,
+    surface_total: 90,
+    dpe_done: true,
+    exclusive: true,
+    energy_consumption: 100,
+    ges_emission: 100,
+    photo: File.open("photo9.jpeg")
+  })
+
+  House.create({
+    owner: Owner.all[0],
+    user: User.all[1],
+    price: [100_000, 200_000, 300_000, 400_000].sample,
+    address: "2 rue Houdart, Paris",
+    description: "A vendre",
+    house_type: "Appartement",
+    smoke_detector_presence: true,
+    nb_rooms: 3,
+    nb_bedrooms: 2,
+    nb_livingrooms: 1,
+    nb_diningrooms: 1,
+    nb_bathrooms: 1,
+    equiped_kitchen: true,
+    nb_showers: 1,
+    nb_bathtubs: 1,
+    nb_terraces:0,
+    nb_balconies:1,
+    surface_living: 60,
+    surface_Carrez: 60,
+    surface_total: 60,
+    dpe_done: true,
+    exclusive: true,
+    energy_consumption: 100,
+    ges_emission: 100,
+    photo: File.open("photo10.jpeg")
+  })
 
 mandat = DocumentType.create({
   name: "Mandat de vente"
