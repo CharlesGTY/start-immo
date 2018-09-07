@@ -24,7 +24,7 @@
   </ul>
   <div class="text-center doc-type-size">
     <%= simple_form_for [@house, @document] do |f| %>
-      <%= f.association :document_type, label: "Type de document" %>
+      <%= f.association :document_type, label: "Type de document", error: 'Le type de document est obligatoire.' %>
       <%= f.button :button, "Créer votre document", class: "btn-primary loading-padding", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>"} %>
     <% end %>
   </div>

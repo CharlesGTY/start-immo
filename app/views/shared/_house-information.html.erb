@@ -30,7 +30,7 @@
         <br>
         <b>Procédure en cours : </b> Non
       </div>
-      <div class="wrap-inside"><b>Surface Carrez :</b> 95 m2
+      <div class="wrap-inside"><b>Surface Carrez :</b> <%= @house.surface_Carrez.to_i %> m<sup>2</sup>
         <br>
         <b>Informations :</b> Belle maison
       </div>
@@ -44,11 +44,11 @@
         <i class="fas fa-home fa-2x"></i><h4>Intérieur du bien</h4>
       </div>
       <div class="wrap">
-        <div class="wrap-inside"><b>Total :</b> <%= @house.surface_total%> m2
+        <div class="wrap-inside"><b>Total :</b> <%= @house.surface_total.to_i%> m<sup>2</sup>
           <br>
-          <b>Habitable :</b> <%= @house.surface_living%> m2
+          <b>Habitable :</b> <%= @house.surface_living.to_i%> m<sup>2</sup>
         </div>
-        <div class="wrap-inside"><b>Carrez :</b> <%= @house.surface_Carrez%> m2
+        <div class="wrap-inside"><b>Carrez :</b> <%= @house.surface_Carrez.to_i%> m<sup>2</sup>
           <br>
           <b>Pièces :</b> <%= @house.nb_rooms %>
         </div>
@@ -68,12 +68,12 @@
       <div class="wrap">
         <div class="wrap-inside"><b>Année de construction :</b> 1990
           <br>
-          <b>Terrasse :</b> 20 m2
+          <b>Terrasse :</b> 20 m<sup>2</sup>
         </div>
 
-        <div class="wrap-inside"><b>Balcon :</b> 20 m2
+        <div class="wrap-inside"><b>Balcon :</b> 20 m<sup>2</sup>
           <br>
-          <b>Surface du terrain :</b> 100 m2
+          <b>Surface du terrain :</b> 100 m<sup>2</sup>
         </div>
       </div>
     </div>
@@ -84,8 +84,8 @@
     </div>
     <div class="wrap">
       <div class="wrap-inside"><b>DPE effectué :</b> oui</div>
-      <div class="wrap-inside"><b>Consommation :</b> 574 Kwh/m2/an</div>
-      <div class="wrap-inside"><b>Emission GES :</b> 7kg co2/m2/an</div>
+      <div class="wrap-inside"><b>Consommation :</b> 574 Kwh/m<sup>2</sup>/an</div>
+      <div class="wrap-inside"><b>Emission GES :</b> 7kg co2/m<sup>2</sup>/an</div>
     </div>
    </div>
 
