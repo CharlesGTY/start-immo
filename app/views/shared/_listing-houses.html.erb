@@ -21,6 +21,12 @@
       <% @houses.each do |house| %>
         <%= link_to house_path(house), class:"message-hover" do %>
           <div class="message z-depth-3" data-house-id="<%= house.id %>">
+            <div class="message-type">
+            <% if house.exclusive %>
+              <i class="fas fa-star fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i>
+            <% else %>
+            <% end %>
+            </div>
             <div class="message-name">
               <h5><%= house.address.gsub(", France", "") %></h5>
               <p>
@@ -29,15 +35,9 @@
               </p>
             </div>
             <div class="message-status">
-              <p><strong><%= house.surface_living.to_i %> m<sup>2</sup></strong></p>
+              <strong><%= house.surface_living.to_i %> m<sup>2</sup></strong>
             </div>
-            <div class="message-type">
-               <% if house.exclusive %>
-                  <i class="fas fa-star fa-2x iconcog" data-toggle="tooltip" data-placement="bottom" title="exclusive"></i>
-               <% else %>
-               <% end %>
-            </div>
-            <div class="message-signature-attente ">
+            <div class="avatar-index">
         <% agents = ["https://kitt.lewagon.com/placeholder/users/CharlesGTY",
                            "https://kitt.lewagon.com/placeholder/users/nicmey",
                            "https://kitt.lewagon.com/placeholder/users/mateoDDB",
@@ -50,7 +50,8 @@
         <% when "Mateo" then a = agents[2] %>
         <% when "Nico" then a = agents[1] %>
         <% end %>
-        <img class="avatar-large avatar-border" src=<%= a %> data-toggle="tooltip" data-placement="bottom" title=<%= house.user.first_name%>>
+        agent ref.<img class="avatar-large" src=<%= a %> data-toggle="tooltip" data-placement="bottom" title=<%= house.user.first_name%>>
+
             </div>
           </div>
         <% end %>
